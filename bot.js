@@ -39,10 +39,10 @@ if (item.content.startsWith(prefix + "SAY ") || item.content.startsWith(prefix +
   item.channel.send(args.join(" "))
 }
 // Birb
-if (item.content.startsWith(prefix + "BIRB ") || item.content.startsWith(prefix + "birb ")) {
+if (item.content.startsWith(prefix + "BIRB") || item.content.startsWith(prefix + "birb")) {
   const embed = new Discord.RichEmbed()
   .setColor(0x318F9F)
-  .setImage("https://random.birb.pw") 
+  .setImage("random.birb.pw") 
   item.channel.send({embed})
 }
 // Create-Role
