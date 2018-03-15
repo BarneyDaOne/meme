@@ -38,6 +38,13 @@ const owner = 240488610955132929
 if (item.content.startsWith(prefix + "SAY ") || item.content.startsWith(prefix + "say ")) {
   item.channel.send(args.join(" "))
 }
+// Birb
+if (item.content.startsWith(prefix + "BIRB ") || item.content.startsWith(prefix + "birb ")) {
+  const embed = new Discord.RichEmbed()
+  .setColor(0x318F9F)
+  .setImage("random.birb.pw") 
+  item.channel.send({embed})
+}
 // Create-Role
 if (item.content.startsWith(prefix + "CREATE-ROLE #") || item.content.startsWith(prefix + "create-role #")) {
   if (item.member.hasPermission("ADMINISTRATOR")) {
