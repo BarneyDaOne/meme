@@ -31,7 +31,7 @@ let dynRandom = random5 = Math.floor((Math.random() * 6));
 var mentioned = 1
 var nomention = 0
 var bot = 417334712697356318
-var u = `I am now online 24/7! Unless i crash ofcourse. :)`
+var u = `Create role command!\nEdit role command!\nDelete role command!`
 // Constant Variables
 const owner = 240488610955132929
 // Say
