@@ -34,7 +34,6 @@ var bot = 417334712697356318
 var u = `I am now online 24/7! Unless i crash ofcourse. :)`
 // Constant Variables
 const owner = 240488610955132929
-if(!msg.channel.type == "dm") {
 // Say
 if (item.content.startsWith(prefix + "SAY ") || item.content.startsWith(prefix + "say ")) {
   item.channel.send(args.join(" "))
@@ -371,7 +370,6 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       .addField("Mod Commands", "**z!purge** : Delete a certain amount of messages\n**z!kick** : Kick a member\n**z!ban** : Ban a member\n**z!unban** : Unban a member\n**z!create-role** : Create a role\n**z!remove-role** : Delete a role\n**z!edit-role** : Edit a role")
       item.author.send({embed})
     }
-}
 }
 });
 
