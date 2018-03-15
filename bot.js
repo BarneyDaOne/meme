@@ -372,7 +372,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       item.author.send({embed})
     }
 }
-} else msg.channels.filter(c => c.type === "dm") return item.reply("Not here sir.")
+} else if (message.channel.type === 'dm') return item.reply("Nope. Go outta DM's to use me.")
 });
 
 client.login(process.env.BOT_TOKEN);
