@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: client.users.size + " users. z!help", type: 2 } })
+  client.user.setGame('with ' + client.users.size + '. (z!help)')
 });
 
 let prefix = "z!"
@@ -291,8 +291,7 @@ if (item.content.startsWith(prefix + "INFO") || item.content.startsWith(prefix +
   .addField("ID", bot)
   .addField("Prefix", "z!")
   .addField("Language", "English")
-  .addField("Coding Language", "Discord.js")
-  .addField("Uptime", client.uptime)
+  .addField("Coding Language", "Node.js")
   .addField("Official Server", "https://discord.gg/U6mU9ak")
   .setFooter("Created by 🥔 Potapo🥔  on " + client.user.createdAt)
   .setThumbnail(client.user.avatarURL)
@@ -371,6 +370,31 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       .addField("Mod Commands", "**z!purge** : Delete a certain amount of messages\n**z!kick** : Kick a member\n**z!ban** : Ban a member\n**z!unban** : Unban a member\n**z!create-role** : Create a role\n**z!remove-role** : Delete a role\n**z!edit-role** : Edit a role")
       item.author.send({embed})
     }
+}
+
+if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+
+let coinAmt = Math.floor(Math.random() * 15) + 1;
+let baseAmt = Math.floor(Math.random() * 15) + 1;
+console.log(`${coinAmt} ; ${baseAmt}`);
+
+if(coinAmt === baseAmt){
+  coins[message.author.id] = {
+    coins: coins[message.author.id].coins + coinAmt
+  };
+fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+  if (err) console.log(err)
+});
+let coinEmbed = new Discord.RichEmbed()
+.setAuthor(message.author.username)
+.setColor("#0000FF")
+.addField("💵", `${coinAmt} coins added!`);
+
+message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
 });
 
