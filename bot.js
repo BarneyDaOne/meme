@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame('with ' + client.users.size + '. (z!help)')
+  client.user.setPresence({ game: { name: client.users.size + "users. z!help', type: 3 } });
 });
 
 let prefix = "z!"
