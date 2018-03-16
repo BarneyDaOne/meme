@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
+let prefix = require("./ServerPref.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
@@ -10,7 +11,6 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: client.users.size + ' users. (p!help)', type: 3 } });
 });
 
-let prefix = "p!"
 // 416053252585684994
 
 
@@ -363,7 +363,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       .setColor(0x1b8F98)
       .addField("Fun Commands", "**p!kiss** : Kiss someone ;)\n**p!egg** : Egg someone ;)\n**p!cb** : Put something in a code block.\n")
       .addField("Level Commands (WIP)", `**p!level** : Displays your level and xp`)
-      .addField("Informative Commands", "**p!help** : Displays this\n**p!avatar** : Shows the avatar of you or a mentioned user \n**p!id** : Gets the id of you or a mentioned user\n**z!info** : Get my info\n**z!userinfo** : Get your own info\n**z!serverinfo** : Get the info of the server\n")
+      .addField("Informative Commands", "**p!help** : Displays this\n**p!avatar** : Shows the avatar of you or a mentioned user \n**p!id** : Gets the id of you or a mentioned user\n**p!info** : Get my info\n**p!userinfo** : Get your own info\n**p!serverinfo** : Get the info of the server\n")
       .addField("Other Commands", "**p!poll** : Create a poll.\n**p!invite** : Sends a bot invite so you can add me to other servers\n**p!request** : Request a command\n")
       .addField("Mod Commands", "**p!purge** : Delete a certain amount of messages\n**p!kick** : Kick a member\n**p!ban** : Ban a member\n**p!unban** : Unban a member\n**p!create-role** : Create a role\n**p!remove-role** : Delete a role\n**p!edit-role** : Edit a role")
       item.author.send({embed})
