@@ -422,9 +422,11 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
 item.channel.send({embed})
 }
 
-fs.writeFile("./serverPref.json", JSON.stringify(prefix), (err) => {
+if (item.content.startsWith(prefix + "setprefix ") || item.content.startsWith(prefix + "SETPREFIX ")) {
+  prefix = args.join(" ")
+  fs.writeFile("./ServerPref.json", JSON.stringify(prefix), (err) => {
   if(err) console.log(err)
-});
-
+  });
+}
 });
 client.login(process.env.BOT_TOKEN);
