@@ -376,12 +376,12 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 // XP
 let xpAdd = Math.floor(Math.random() * 7) + 8;
 console.log(xpAdd);
-let coinAdd = Math.floor(Math.random() * 2) + 3;
-console.log(coinAdd)
+let coinAdd = Math.floor(Math.random() * 1) + 2;
+console.log(coinAdd + " coins")
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
-    coins: 0,  
+    coins: 0,
     level: 1
   };
 }
@@ -397,7 +397,7 @@ talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
   xp[item.author.id].xp =  curxp + xpAdd;
-  coins[item.author.id].coins = curcoins + coinAdd;  
+  xp[item.author.id].xp = curcoins + coinAdd;
   talkedRecently.delete(item.author.id);
 }, 30000);
 
@@ -427,8 +427,8 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    .addField("Overall XP", curxp)
    .addField("Next Level", curlvl + 1)
    .addField("XP Needed", nxtLvl)
-   .addField("Gems 💎", curcoins)   
-   .setThumbnail(item.author.avatarURL) 
+   .addField("Gems 💎", curcoins)
+   .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
 });
