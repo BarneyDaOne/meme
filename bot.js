@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const coins = require("./coins.json");
+const fs = require("fs")
+let xp = require("./xp.json");
+let purple = 0x291F9F
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -23,6 +25,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', msg => {
+
 // Let commands
 let item = msg
 let args = item.content.split(" ").slice(1)
@@ -32,7 +35,7 @@ let dynRandom = random5 = Math.floor((Math.random() * 6));
 var mentioned = 1
 var nomention = 0
 var bot = 417334712697356318
-var u = `Create role command!\nEdit role command!\nDelete role command!`
+var u = `New level system! (WIP)`
 // Constant Variables
 const owner = 240488610955132929
 // Say
@@ -372,31 +375,43 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       item.author.send({embed})
     }
 }
+// XP
+let xpAdd = Math.floor(Math.random() * 7) + 8;
+console.log(xpAdd);
 
-if(!coins[message.author.id]){
-  coins[message.author.id] = {
-    coins: 0
+if(!xp[item.author.id]){
+  xp[item.author.id] = {
+    xp: 0,
+    level: 1
   };
 }
 
-let coinAmt = Math.floor(Math.random() * 15) + 1;
-let baseAmt = Math.floor(Math.random() * 15) + 1;
-console.log(`${coinAmt} ; ${baseAmt}`);
 
-if(coinAmt === baseAmt){
-  coins[message.author.id] = {
-    coins: coins[message.author.id].coins + coinAmt
-  };
-fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-  if (err) console.log(err)
+let curxp = xp[item.author.id].xp;
+let curlvl = xp[item.author.id].level;
+let nxtLvl = xp[item.author.id].level * 1000;
+xp[item.author.id].xp =  curxp + xpAdd;
+if(nxtLvl <= xp[item.author.id].xp){
+  xp[item.author.id].level = curlvl + 1;
+  let lvlup = new Discord.RichEmbed()
+  .setTitle("Level Up!")
+  .setColor(purple)
+  .addField("New Level", curlvl + 1);
+
+  item.channel.send(lvlup).then(msg => {msg.delete(50000)});
+}
+fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+  if(err) console.log(err)
 });
-let coinEmbed = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("#0000FF")
-.addField("💵", `${coinAmt} coins added!`);
 
-message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
+  const embed = new Discord.RichEmbed()
+  .setAuthor(item.author.username)
+  .setColor(purple)
+  .addField("Overall Level", curlvl)
+  .addField("Overall XP", curxp)
+  .addField("Next Level", curlvl + 1)
+  item.channel.send({embed})
 }
 });
-
 client.login(process.env.BOT_TOKEN);
