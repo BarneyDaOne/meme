@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
-let prefix = require("./ServerPref.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
@@ -10,6 +9,8 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (p!help)', type: 3 } });
 });
+
+let prefix = p!
 
 // 416053252585684994
 
@@ -420,13 +421,6 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField("XP Needed", nxtLvl)
   .setThumbnail(item.author.avatarURL) 
 item.channel.send({embed})
-}
-
-if (item.content.startsWith(prefix + "setprefix ") || item.content.startsWith(prefix + "SETPREFIX ")) {
-  prefix = args.join(" ")
-  fs.writeFile("./ServerPref.json", JSON.stringify(prefix), (err) => {
-  if(err) console.log(err)
-  });
 }
 });
 client.login(process.env.BOT_TOKEN);
