@@ -373,6 +373,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       const embed = new Discord.RichEmbed()
       .setColor(0x1b8F98)
       .addField("Fun Commands", "**z!kiss** : Kiss someone ;)\n**z!egg** : Egg someone ;)\n**z!cb** : Put something in a code block.\n")
+      .addField("Level Commands (WIP)", `**z!level** : Displays your level and xp`)
       .addField("Informative Commands", "**z!help** : Displays this\n**z!avatar** : Shows the avatar of you or a mentioned user \n**z!id** : Gets the id of you or a mentioned user\n**z!info** : Get my info\n**z!userinfo** : Get your own info\n**z!serverinfo** : Get the info of the server\n")
       .addField("Other Commands", "**z!poll** : Create a poll.\n**z!invite** : Sends a bot invite so you can add me to other servers\n**z!request** : Request a command\n")
       .addField("Mod Commands", "**z!purge** : Delete a certain amount of messages\n**z!kick** : Kick a member\n**z!ban** : Ban a member\n**z!unban** : Unban a member\n**z!create-role** : Create a role\n**z!remove-role** : Delete a role\n**z!edit-role** : Edit a role")
