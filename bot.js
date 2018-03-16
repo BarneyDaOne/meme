@@ -411,25 +411,27 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
 });
 
 
-if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
-   const embed = new Discord.RichEmbed()
-   .setAuthor(item.author.username)
-  .setColor(purple)
-  .addField("Overall Level", curlvl)
-  .addField("Overall XP", curxp)
-  .addField("Next Level", curlvl + 1)
-  .addField("XP Needed", nxtLvl)
-  .setThumbnail(item.author.avatarURL) 
-item.channel.send({embed})
+if (item.content === prefix + "setdata" || item.content === prefix + "SETDATA") {
+  it (item.author.id === owner) {  
+    const embed = new Discord.RichEmbed()
+    curlvl = args.join(" ")   
+.setAuthor(item.author.username)
+   .setColor(purple)
+   .addField("Level Set to", curlvl)
+   .setThumbnail(item.author.avatarURL) 
+   item.channel.send({embed})
+  }
 }
 
 if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    const embed = new Discord.RichEmbed()
-  curlvl = args.join(" ")  
-.setAuthor(item.author.username)
-  .setColor(purple)
-  .addField("Level Set To", curlvl)
-  .setThumbnail(item.author.avatarURL) 
+   .setAuthor(item.author.username)
+   .setColor(purple)
+   .addField("Overall Level", curlvl)
+   .addField("Overall XP", curxp)
+   .addField("Next Level", curlvl + 1)
+   .addField("XP Needed", nxtLvl)
+   .setThumbnail(item.author.avatarURL) 
 item.channel.send({embed})
 }
 });
