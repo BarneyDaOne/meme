@@ -11,19 +11,8 @@ client.on('ready', () => {
 });
 
 let prefix = "p!"
-
-client.on('guildMemberAdd', member => {
-    if (item.guild.id === "423124275554418699") {
-       client.channels.get("423124275554418701").send(`Welcome to the server, ${member}!`);
-       member.addRole("423125708416745474")
-       console.log(`${member.user.username} has joined`);
-} else if (item.guild.id === "416052765480189952") {
-       client.channels.get("418885860449189888").send(`Welcome to the server, ${member}!`);
-       member.addRole("416053252585684994")
-       console.log(`${member.user.username} has joined`);
-}
 // 416053252585684994
-});
+
 
 client.on('message', msg => {
 
@@ -394,12 +383,9 @@ if(!xp[item.author.id]){
 }
 
 
-let curxp = xp[item.mentions.members.first().id].xp;
-let curlvl = xp[item.mentions.members.first().id].level;
-let nxtLvl = xp[item.mentions.members.first().id].level * 200;
-let Mcurxp = xp[item.mentions.members.first().id].xp;
-let Mcurlvl = xp[item.mentions.members.first().id].level;
-let MnxtLvl = xp[item.mentions.members.first().id].level * 200;
+let curxp = xp[item.author.id].xp;
+let curlvl = xp[item.author.id].level;
+let nxtLvl = xp[item.author.id].level * 200;
 var lb1 = 0;
 
 talkedRecently.add(item.author.id);
@@ -431,18 +417,6 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField("Next Level", curlvl + 1)
   .addField(curlvl + 1 + " XP Needed", nxtLvl)
  item.channel.send({embed})
-}
-if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
-  if (item.mentions.members.size === 1) {
-    const embed = new Discord.RichEmbed()
-    .setAuthor(item.mentions.members.first().username)
-    .setColor(purple)
-    .addField("His Overall Level", Mcurlvl)
-    .addField("His Overall XP", Mcurxp)
-    .addField("His Next Level", Mcurlvl + 1)
-    .addField(curlvl + 1 + " XP Needed", MnxtLvl)
-    item.channel.send({embed})
-  }
 }
 });
 client.login(process.env.BOT_TOKEN);
