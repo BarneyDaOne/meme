@@ -437,10 +437,10 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
     const embed = new Discord.RichEmbed()
     .setAuthor(item.mentions.members.first().username)
     .setColor(purple)
-    .addField("His Overall Level", curlvl)
-    .addField("His Overall XP", curxp)
-    .addField("His Next Level", curlvl + 1)
-    .addField(curlvl + 1 + " XP Needed", nxtLvl)
+    .addField("His Overall Level", Mcurlvl)
+    .addField("His Overall XP", Mcurxp)
+    .addField("His Next Level", Mcurlvl + 1)
+    .addField(curlvl + 1 + " XP Needed", MnxtLvl)
     item.channel.send({embed})
   }
 }
