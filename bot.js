@@ -8,6 +8,7 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (p!help)', type: 3 } });
+  client.user.setUsername('ポタ | Potabot')
 });
 
 let prefix = "p!"
