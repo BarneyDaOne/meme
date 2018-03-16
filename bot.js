@@ -405,7 +405,7 @@ if(nxtLvl <= xp[item.author.id].xp){
   item.channel.send(lvlup).then(msg => {msg.delete(50000)});
 }
 
-fs.writeFile("./server.json", JSON.stringify(xp), (err) => {
+fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
@@ -422,7 +422,7 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
 item.channel.send({embed})
 }
 
-fs.writeFile("./xp.json", JSON.stringify(prefix), (err) => {
+fs.writeFile("./serverPref.json", JSON.stringify(prefix), (err) => {
   if(err) console.log(err)
 });
 
