@@ -376,11 +376,12 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 // XP
 let xpAdd = Math.floor(Math.random() * 7) + 8;
 console.log(xpAdd);
-let coinAdd = Math.floor(Math.random() * 7) + 8;
+let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(coinAdd)
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
+    coins: 0,  
     level: 1
   };
 }
