@@ -367,7 +367,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       .addField("Level Commands (WIP)", `**${prefix}level** : Displays your level and xp`)
       .addField("Informative Commands", `**${prefix}help** : Displays this\n**${prefix}avatar** : Shows the avatar of you or a mentioned user \n**${prefix}id** : Gets the id of you or a mentioned user\n**${prefix}info** : Get my info\n**${prefix}userinfo** : Get your own info\n**${prefix}serverinfo** : Get the info of the server\n`)
       .addField("Other Commands", `**${prefix}poll** : Create a poll.\n**${prefix}invite** : Sends a bot invite so you can add me to other servers\n**${prefix}request** : Request a command\n`)
-      .addField("Mod Commands", `**${prefix}purge** : Delete a certain amount of messages\n**${prefix}kick** : Kick a member\n**${prefix}ban** : Ban a member\n**${prefix}unban** : Unban a member\n**${prefix}create-role** : Create a role\n**${prefix}remove-role** : Delete a role${prefix}**p!edit-role** : Edit a role`)
+      .addField("Mod Commands", `**${prefix}purge** : Delete a certain amount of messages\n**${prefix}kick** : Kick a member\n**${prefix}ban** : Ban a member\n**${prefix}unban** : Unban a member\n**${prefix}create-role** : Create a role\n**${prefix}remove-role** : Delete a role\n**${prefix}edit-role** : Edit a role`)
       item.author.send({embed})
     }
 }
