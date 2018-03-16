@@ -390,9 +390,6 @@ var lb1 = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
-  fs.writeFile("./serverL.json", JSON.stringify(curxp), (err) => {
-  if(err) console.log(err)
-  });
   // Removes the user from the set after 2.5 seconds
   xp[item.author.id].xp =  curxp + xpAdd;
   talkedRecently.delete(item.author.id);
@@ -407,6 +404,7 @@ if(nxtLvl <= xp[item.author.id].xp){
 
   item.channel.send(lvlup).then(msg => {msg.delete(50000)});
 }
+
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
