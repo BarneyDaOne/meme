@@ -42,7 +42,7 @@ const owner = 240488610955132929
 if (item.channel.type === "dm") return;
 // Say
 if (item.content.startsWith(prefix + "SAY ") || item.content.startsWith(prefix + "say ")) {
-  if (item.member.hasPermission("MANAGE_SERVER")) {  
+  if (item.member.hasPermission("MANAGE_SERVER")) {
    item.channel.send(args.join(" "))
   }
 }
@@ -397,11 +397,11 @@ let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 1000;
 
-talkedRecently.add(message.author.id);
+talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
-  xp[item.author.id].xp =  curxp + xpAdd;  
-  talkedRecently.delete(message.author.id);
+  xp[item.author.id].xp =  curxp + xpAdd;
+  talkedRecently.delete(item.author.id);
 }, 30000);
 
 if(nxtLvl <= xp[item.author.id].xp){
@@ -424,7 +424,7 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField("Overall Level", curlvl)
   .addField("Overall XP", curxp)
   .addField("Next Level", curlvl + 1)
-  .addField(curlvl + 1 + " XP Needed", nxtLvl) 
+  .addField(curlvl + 1 + " XP Needed", nxtLvl)
  item.channel.send({embed})
 }
 });
