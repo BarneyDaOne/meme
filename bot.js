@@ -415,7 +415,7 @@ if (item.content === prefix + "setdata" || item.content === prefix + "SETDATA") 
   it (item.author.id === owner) {  
     const embed = new Discord.RichEmbed()
     curlvl = args.join(" ")   
-.setAuthor(item.author.username)
+    .setAuthor(item.author.username)
    .setColor(purple)
    .addField("Level Set to", curlvl)
    .setThumbnail(item.author.avatarURL) 
