@@ -428,5 +428,13 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField(curlvl + 1 + " XP Needed", nxtLvl)
  item.channel.send({embed})
 }
+
+if (item.content === prefix + "lb" || item.content === prefix + "LB") {
+  const embed = new Discord.RichEmbed()
+  .setAuthor(item.author.username)
+  .setColor(purple)
+  .addField(`${client.guild.name}'s leaderboard`)
+  item.channel.send({embed})
+}
 });
 client.login(process.env.BOT_TOKEN);
