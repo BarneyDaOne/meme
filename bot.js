@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
 let purple = 0x291F9F
+const talkedRecently = new Set();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -395,7 +396,14 @@ if(!xp[item.author.id]){
 let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 1000;
-xp[item.author.id].xp =  curxp + xpAdd;
+
+talkedRecently.add(message.author.id);
+setTimeout(() => {
+  // Removes the user from the set after 2.5 seconds
+  xp[item.author.id].xp =  curxp + xpAdd;  
+  talkedRecently.delete(message.author.id);
+}, 30000);
+
 if(nxtLvl <= xp[item.author.id].xp){
   xp[item.author.id].level = curlvl + 1;
   let lvlup = new Discord.RichEmbed()
