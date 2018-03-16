@@ -395,9 +395,7 @@ if(!xp[item.author.id]){
 let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 1000;
-setInterval(function{(
 xp[item.author.id].xp =  curxp + xpAdd;
- }, 5000)
 if(nxtLvl <= xp[item.author.id].xp){
   xp[item.author.id].level = curlvl + 1;
   let lvlup = new Discord.RichEmbed()
