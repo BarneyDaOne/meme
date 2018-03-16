@@ -383,7 +383,6 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 
 
 // XP
-if (!cooldown.has(item.author.id)) {
 let xpAdd = Math.floor(Math.random() * 7) + 8;
 console.log(xpAdd);
 
@@ -411,7 +410,7 @@ if(nxtLvl <= xp[item.author.id].xp){
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
-}
+
 if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   const embed = new Discord.RichEmbed()
   .setAuthor(item.author.username)
