@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
-let servxp = require("./server.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
@@ -410,9 +409,6 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
-fs.writeFile("./server.json", JSON.stringify(servxp), (err) => {
-  if(err) console.log(err)
-});
 
 if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    const embed = new Discord.RichEmbed()
