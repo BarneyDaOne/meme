@@ -370,7 +370,7 @@ if (dynamPoll) {
 // HELP
 if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix + "help")) {
     if (item.content === prefix + "HELP" || item.content === prefix + "help") {
-      item.react(":ZB:422919167893831701")
+      item.react(":Sent:424022425080954888")
       const embed = new Discord.RichEmbed()
       .setColor(0x1b8F98)
       .addField("Fun Commands", "**p!kiss** : Kiss someone ;)\n**p!egg** : Egg someone ;)\n**p!cb** : Put something in a code block.\n")
