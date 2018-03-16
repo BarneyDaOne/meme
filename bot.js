@@ -10,7 +10,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: client.users.size + ' users. (p!help)', type: 3 } });
 });
 
-let prefix = p!
+let prefix = "p!"
 
 // 416053252585684994
 
