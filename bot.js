@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
+let servxp = require("./server.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
