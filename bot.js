@@ -417,5 +417,10 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField(curlvl + 1 + " XP Needed", nxtLvl) 
  item.channel.send({embed})
 }
+if (item.content.startsWIth(prefix + "setlvl ") {
+  if (message.author.id === message.guild.owner.id) {
+    curlvl = args.join(" ") 
+  }
+}
 });
 client.login(process.env.BOT_TOKEN);
