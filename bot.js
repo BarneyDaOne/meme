@@ -394,9 +394,13 @@ if(!xp[item.author.id]){
 }
 
 
-let curxp = xp[item.author.id].xp;
-let curlvl = xp[item.author.id].level;
-let nxtLvl = xp[item.author.id].level * 200;
+let curxp = xp[item.mentions.members.first().id].xp;
+let curlvl = xp[item.mentions.members.first().id].level;
+let nxtLvl = xp[item.mentions.members.first().id].level * 200;
+let Mcurxp = xp[item.mentions.members.first().id].xp;
+let Mcurlvl = xp[item.mentions.members.first().id].level;
+let MnxtLvl = xp[item.mentions.members.first().id].level * 200;
+var lb1 = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -419,8 +423,8 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
 });
 
 if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
-  const embed = new Discord.RichEmbed()
-  .setAuthor(item.author.username)
+   const embed = new Discord.RichEmbed()
+   .setAuthor(item.author.username)
   .setColor(purple)
   .addField("Overall Level", curlvl)
   .addField("Overall XP", curxp)
@@ -428,13 +432,17 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField(curlvl + 1 + " XP Needed", nxtLvl)
  item.channel.send({embed})
 }
-
-if (item.content === prefix + "lb" || item.content === prefix + "LB") {
-  const embed = new Discord.RichEmbed()
-  .setAuthor(item.author.username)
-  .setColor(purple)
-  .addField(`${client.guild.name}'s leaderboard`)
-  item.channel.send({embed})
+if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
+  if (item.mentions.members.size === 1) {
+    const embed = new Discord.RichEmbed()
+    .setAuthor(item.mentions.members.first().username)
+    .setColor(purple)
+    .addField("His Overall Level", curlvl)
+    .addField("His Overall XP", curxp)
+    .addField("His Next Level", curlvl + 1)
+    .addField(curlvl + 1 + " XP Needed", nxtLvl)
+    item.channel.send({embed})
+  }
 }
 });
 client.login(process.env.BOT_TOKEN);
