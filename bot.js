@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
+let coins = require("./coins.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
@@ -375,7 +376,8 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 // XP
 let xpAdd = Math.floor(Math.random() * 7) + 8;
 console.log(xpAdd);
-
+let coinAdd = Math.floor(Math.random() * 7) + 8;
+console.log(coinAdd)
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
@@ -387,12 +389,14 @@ if(!xp[item.author.id]){
 let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
+let curcoins = xp[item.author.id].coins;
 var lb1 = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
   xp[item.author.id].xp =  curxp + xpAdd;
+  xp[item.author.id].xp = curcoins + coinAdd;  
   talkedRecently.delete(item.author.id);
 }, 30000);
 
@@ -410,6 +414,10 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
+fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+  if(err) console.log(err)
+});
+
 if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    const embed = new Discord.RichEmbed()
    .setAuthor(item.author.username)
@@ -418,8 +426,9 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    .addField("Overall XP", curxp)
    .addField("Next Level", curlvl + 1)
    .addField("XP Needed", nxtLvl)
+   .addField("Gems 💎", curcoins)   
    .setThumbnail(item.author.avatarURL) 
-item.channel.send({embed})
-}
+   item.channel.send({embed})
+  }
 });
 client.login(process.env.BOT_TOKEN);
