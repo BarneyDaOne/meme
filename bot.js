@@ -390,6 +390,9 @@ var lb1 = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
+  fs.writeFile("./serverL.json", JSON.stringify(curxp), (err) => {
+  if(err) console.log(err)
+  });
   // Removes the user from the set after 2.5 seconds
   xp[item.author.id].xp =  curxp + xpAdd;
   talkedRecently.delete(item.author.id);
