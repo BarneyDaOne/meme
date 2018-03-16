@@ -8,9 +8,10 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (z!help)', type: 3 } });
+  client.user.setUsername('Potabot')
 });
 
-let prefix = "z!"
+let prefix = "p!"
 
 client.on('guildMemberAdd', member => {
     if (item.guild.id === "423124275554418699") {
@@ -372,11 +373,11 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       item.react(":ZB:422919167893831701")
       const embed = new Discord.RichEmbed()
       .setColor(0x1b8F98)
-      .addField("Fun Commands", "**z!kiss** : Kiss someone ;)\n**z!egg** : Egg someone ;)\n**z!cb** : Put something in a code block.\n")
-      .addField("Level Commands (WIP)", `**z!level** : Displays your level and xp`)
-      .addField("Informative Commands", "**z!help** : Displays this\n**z!avatar** : Shows the avatar of you or a mentioned user \n**z!id** : Gets the id of you or a mentioned user\n**z!info** : Get my info\n**z!userinfo** : Get your own info\n**z!serverinfo** : Get the info of the server\n")
-      .addField("Other Commands", "**z!poll** : Create a poll.\n**z!invite** : Sends a bot invite so you can add me to other servers\n**z!request** : Request a command\n")
-      .addField("Mod Commands", "**z!purge** : Delete a certain amount of messages\n**z!kick** : Kick a member\n**z!ban** : Ban a member\n**z!unban** : Unban a member\n**z!create-role** : Create a role\n**z!remove-role** : Delete a role\n**z!edit-role** : Edit a role")
+      .addField("Fun Commands", "**p!kiss** : Kiss someone ;)\n**p!egg** : Egg someone ;)\n**p!cb** : Put something in a code block.\n")
+      .addField("Level Commands (WIP)", `**p!level** : Displays your level and xp`)
+      .addField("Informative Commands", "**p!help** : Displays this\n**p!avatar** : Shows the avatar of you or a mentioned user \n**p!id** : Gets the id of you or a mentioned user\n**z!info** : Get my info\n**z!userinfo** : Get your own info\n**z!serverinfo** : Get the info of the server\n")
+      .addField("Other Commands", "**p!poll** : Create a poll.\n**p!invite** : Sends a bot invite so you can add me to other servers\n**p!request** : Request a command\n")
+      .addField("Mod Commands", "**p!purge** : Delete a certain amount of messages\n**p!kick** : Kick a member\n**p!ban** : Ban a member\n**p!unban** : Unban a member\n**p!create-role** : Create a role\n**p!remove-role** : Delete a role\n**p!edit-role** : Edit a role")
       item.author.send({embed})
     }
 }
