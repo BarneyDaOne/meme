@@ -413,5 +413,18 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField("Next Level", curlvl + 1)
   item.channel.send({embed})
 }
+
+if (item.content.startsWith(prefix + "setlevel ") || item.content.startsWith(prefix + "SETLEVEL ")) {
+  it (item.author.id === owner) {  
+    curxp = args.join(" ")
+    const embed = new Discord.RichEmbed()
+    .setAuthor(item.author.username)
+    .setColor(purple)
+    .addField("Overall Level", curlvl)
+    .addField("Overall XP", curxp)
+    .addField("Next Level", curlvl + 1)
+    item.channel.send({embed})
+  }
+}
 });
 client.login(process.env.BOT_TOKEN);
