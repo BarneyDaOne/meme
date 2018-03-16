@@ -434,7 +434,8 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    .addField("Overall XP", curxp)
    .addField("Next Level", curlvl + 1)
    .addField("XP Needed", nxtLvl)
-   .setThumbnail(item.author.avatarURL)
+   .addField("Coins", coinAmt)
+    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
 });
