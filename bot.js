@@ -39,7 +39,6 @@ var u = `New level system! (WIP)`
 // Constant Variables
 const owner = 240488610955132929
 if (item.channel.type === "dm") return;
-if (!item.channel.type === "dm") {
 // Say
 if (item.content.startsWith(prefix + "SAY ") || item.content.startsWith(prefix + "say ")) {
   if (item.member.hasPermission("MANAGE_SERVER")) {  
@@ -416,7 +415,6 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField("Overall XP", curxp)
   .addField("Next Level", curlvl + 1)
   item.channel.send({embed})
-}
 }
 });
 client.login(process.env.BOT_TOKEN);
