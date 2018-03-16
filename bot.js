@@ -3,8 +3,6 @@ const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
 let purple = 0x291F9F
-let cooldown = new.Set()
-let cdseconds = 40;
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
