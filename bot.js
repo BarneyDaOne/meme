@@ -422,5 +422,15 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .setThumbnail(item.author.avatarURL) 
 item.channel.send({embed})
 }
+
+if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
+   const embed = new Discord.RichEmbed()
+  curlvl = args.join(" ")  
+.setAuthor(item.author.username)
+  .setColor(purple)
+  .addField("Level Set To", curlvl)
+  .setThumbnail(item.author.avatarURL) 
+item.channel.send({embed})
+}
 });
 client.login(process.env.BOT_TOKEN);
