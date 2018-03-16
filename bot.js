@@ -6,7 +6,7 @@ let purple = 0x291F9F
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: client.users.size + ' users. (z!help)', type: 1 } });
+  client.user.setPresence({ game: { name: client.users.size + ' users. (z!help)', type: 3 } });
 });
 
 let prefix = "z!"
