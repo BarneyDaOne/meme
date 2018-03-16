@@ -286,7 +286,7 @@ if (item.content.startsWith(prefix + "INFO") || item.content.startsWith(prefix +
   .setColor(0xffca00)
   .addField("Servers On", client.guilds.size)
   .addField("ID", bot)
-  .addField("Prefix", "z!")
+  .addField("Prefix", "p!")
   .addField("Language", "English")
   .addField("Coding Language", "Node.js")
   .addField("Official Server", "https://discord.gg/U6mU9ak")
@@ -384,6 +384,7 @@ if(!xp[item.author.id]){
 
 
 let curxp = xp[item.author.id].xp;
+let servxp = xp[item.guild.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 var lb1 = 0;
@@ -406,6 +407,10 @@ if(nxtLvl <= xp[item.author.id].xp){
 }
 
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+  if(err) console.log(err)
+});
+
+fs.writeFile("./server.json", JSON.stringify(servxp), (err) => {
   if(err) console.log(err)
 });
 
