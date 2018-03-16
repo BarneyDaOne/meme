@@ -364,7 +364,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       const embed = new Discord.RichEmbed()
       .setColor(0x1b8F98)
       .addField("Fun Commands", `**${prefix}kiss** : Kiss someone ;)\n**${prefix}egg** : Egg someone ;)\n**${prefix}cb** : Put something in a code block.\n`)
-      .addField("Level Commands (WIP)", `**${prefix}level** : Displays your level and xp`)
+      .addField("Level Commands (WIP)", `**${prefix}profile** : Displays your level and xp`)
       .addField("Informative Commands", `**${prefix}help** : Displays this\n**${prefix}avatar** : Shows the avatar of you or a mentioned user \n**${prefix}id** : Gets the id of you or a mentioned user\n**${prefix}info** : Get my info\n**${prefix}userinfo** : Get your own info\n**${prefix}serverinfo** : Get the info of the server\n`)
       .addField("Other Commands", `**${prefix}poll** : Create a poll.\n**${prefix}invite** : Sends a bot invite so you can add me to other servers\n**${prefix}request** : Request a command\n`)
       .addField("Mod Commands", `**${prefix}purge** : Delete a certain amount of messages\n**${prefix}kick** : Kick a member\n**${prefix}ban** : Ban a member\n**${prefix}unban** : Unban a member\n**${prefix}create-role** : Create a role\n**${prefix}remove-role** : Delete a role\n**${prefix}edit-role** : Edit a role`)
@@ -375,6 +375,8 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 
 // XP
 let xpAdd = Math.floor(Math.random() * 7) + 8;
+console.log(xpAdd);
+let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
 if(!xp[item.author.id]){
   xp[item.author.id] = {
@@ -387,6 +389,7 @@ if(!xp[item.author.id]){
 let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
+let curoinAmt = xp[item.author.id].xp * 2
 var lb1 = 0;
 
 talkedRecently.add(item.author.id);
@@ -400,20 +403,9 @@ setTimeout(() => {
   let baseAmt = Math.floor(Math.random() * 15) + 1;
   console.log(`${coinAmt} ; ${baseAmt}`);
 
-  if(coinAmt === baseAmt){
-    coins[message.author.id] = {
-      setTimeout(() => {
-       // Removes the user from the set after 2.5 seconds
-       coins: coins[message.author.id].coins + coinAmt
-        talkedRecently.delete(item.author.id);
-    }, 10000);     
-    };
-  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-    if (err) console.log(err)
-  });
-
 if(nxtLvl <= xp[item.author.id].xp){
   xp[item.author.id].level = curlvl + 1;
+  curoinAmt += 100
   let lvlup = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setColor(purple)
@@ -426,7 +418,11 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
-if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
+fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+  if (err) console.log(err)
+});
+
+if (item.content === prefix + "profile" || item.content === prefix + "PROFILE") {
    const embed = new Discord.RichEmbed()
    .setAuthor(item.author.username)
    .setColor(purple)
@@ -434,9 +430,19 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    .addField("Overall XP", curxp)
    .addField("Next Level", curlvl + 1)
    .addField("XP Needed", nxtLvl)
-   .addField("Coins", coinAmt)
-    .setThumbnail(item.author.avatarURL)
+   .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
+if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
+    const embed = new Discord.RichEmbed()
+    .setAuthor(item.author.username)
+    .setColor(0x9dff90)
+    .addField("Bits", curoinAmt)
+    .addField("Items", "0")
+    .setThumbnail(item.author.avatarURL)
+    item.channel.send({embed})
+  }
+
 });
+
 client.login(process.env.BOT_TOKEN);
