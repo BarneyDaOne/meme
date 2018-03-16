@@ -418,7 +418,8 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField("Overall XP", curxp)
   .addField("Next Level", curlvl + 1)
   .addField("XP Needed", nxtLvl)
- item.channel.send({embed})
+  .setThumbnail(item.author.avatarURL) 
+item.channel.send({embed})
 }
 });
 client.login(process.env.BOT_TOKEN);
