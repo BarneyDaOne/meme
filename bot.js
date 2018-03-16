@@ -38,9 +38,13 @@ var bot = 417334712697356318
 var u = `New level system! (WIP)`
 // Constant Variables
 const owner = 240488610955132929
+if (item.channel.type === "dm") return;
+if (!item.channel.type === "dm") {
 // Say
 if (item.content.startsWith(prefix + "SAY ") || item.content.startsWith(prefix + "say ")) {
-  item.channel.send(args.join(" "))
+  if (item.member.hasPermission("MANAGE_SERVER")) {  
+   item.channel.send(args.join(" "))
+  }
 }
 // Create-Role
 if (item.content.startsWith(prefix + "CREATE-ROLE #") || item.content.startsWith(prefix + "create-role #")) {
@@ -412,6 +416,7 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
   .addField("Overall XP", curxp)
   .addField("Next Level", curlvl + 1)
   item.channel.send({embed})
+}
 }
 });
 client.login(process.env.BOT_TOKEN);
