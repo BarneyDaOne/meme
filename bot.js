@@ -396,6 +396,22 @@ setTimeout(() => {
   talkedRecently.delete(item.author.id);
 }, 30000);
 
+  let coinAmt = Math.floor(Math.random() * 15) + 1;
+  let baseAmt = Math.floor(Math.random() * 15) + 1;
+  console.log(`${coinAmt} ; ${baseAmt}`);
+
+  if(coinAmt === baseAmt){
+    coins[message.author.id] = {
+      setTimeout(() => {
+       // Removes the user from the set after 2.5 seconds
+       coins: coins[message.author.id].coins + coinAmt
+        talkedRecently.delete(item.author.id);
+    }, 10000);     
+    };
+  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+    if (err) console.log(err)
+  });
+
 if(nxtLvl <= xp[item.author.id].xp){
   xp[item.author.id].level = curlvl + 1;
   let lvlup = new Discord.RichEmbed()
