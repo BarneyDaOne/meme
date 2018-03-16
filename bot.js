@@ -385,7 +385,6 @@ if(!xp[item.author.id]){
 
 
 let curxp = xp[item.author.id].xp;
-let servxp = xp[item.guild.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 var lb1 = 0;
