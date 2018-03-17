@@ -512,12 +512,6 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
     }
   }
 }
-
-if (item.content.startsWith(prefix + "setDV xp") {
-  if (item.author.id === owner) {
-     xp[item.author.id].xp =  curxp + xpAdd;
-  }
-}
 });
 
 client.login(process.env.BOT_TOKEN);
