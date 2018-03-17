@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
 let coins = require("./coins.json");
+let items = require("./items.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
@@ -390,7 +391,6 @@ let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2
-var lb1 = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -451,6 +451,38 @@ if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
     .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 400 Bits\n`3` : 👍 | 600 Bits\n`4` : ❤ | 800 Bits\n`5` : 📱 | 1000 Bits\n`6` : ⏱ | 1200 Bits\n`7` : 💎 | 1400 Bits\n`8` : 💵 | 1600 Bits\n`9` : 💴 | 1800 Bits\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2100 Bits\n`12` : ⚛ | 2200 Bits\n`13` : 🌟 | 2300 Bits\n")
     .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})
+}
+
+if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + "BUY")) {
+  if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 4" ||item.content === prefix + "BUY 4") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 5" ||item.content === prefix + "BUY 5") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 6" ||item.content === prefix + "BUY 6") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 7" ||item.content === prefix + "BUY 7") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 8" ||item.content === prefix + "BUY 8") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 9" ||item.content === prefix + "BUY 9") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 10" ||item.content === prefix + "BUY 10") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 11" ||item.content === prefix + "BUY 11") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 12" ||item.content === prefix + "BUY 12") {
+   item.reply("ok") 
+  } else if (item.content === prefix + "buy 13" ||item.content === prefix + "BUY 13") {
+   item.reply("ok") 
+  }
 }
 });
 
