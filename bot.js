@@ -448,7 +448,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
 if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
     const embed = new Discord.RichEmbed()   
     .setColor(0x2F192F)
-    .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 200 Bits\n`3` : 👍 | 200 Bits\n`4` : ❤ | 200 Bits\n`5` : 📱 | 200 Bits\n`6` : ⏱ | 200 Bits\n`7` : 💎 | 200 Bits\n`8` : 💵 | 200 Bits\n`9` : 💴 | 200 Bits\n`10` : 💶 | 200 Bits\n`11` : 💷 | 200 Bits\n`12` : ⚛ | 200 Bits\n`13` : 🌟 | 200 Bits\n")
+    .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 400 Bits\n`3` : 👍 | 600 Bits\n`4` : ❤ | 800 Bits\n`5` : 📱 | 1000 Bits\n`6` : ⏱ | 1200 Bits\n`7` : 💎 | 1400 Bits\n`8` : 💵 | 1600 Bits\n`9` : 💴 | 1800 Bits\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2100 Bits\n`12` : ⚛ | 2200 Bits\n`13` : 🌟 | 2300 Bits\n")
     .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})
 }
