@@ -375,7 +375,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 
 
 // XP
-let xpAdd = Math.floor(Math.random() * 7) + 8;
+let xpAdd = Math.floor(Math.random() * 20) + 20;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
@@ -397,7 +397,7 @@ setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
   xp[item.author.id].xp =  curxp + xpAdd;
   talkedRecently.delete(item.author.id);
-}, 30000);
+}, 20000);
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
   let baseAmt = Math.floor(Math.random() * 15) + 1;
