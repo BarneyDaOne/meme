@@ -391,7 +391,7 @@ let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2;
-let itemAmt = 0[item.author.id];
+var itemAmt = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
