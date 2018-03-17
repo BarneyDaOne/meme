@@ -448,7 +448,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
 if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
     const embed = new Discord.RichEmbed()   
     .setColor(0x2F192F)
-    .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 400 Bits\n`3` : 👍 | 600 Bits\n`4` : ❤ | 800 Bits\n`5` : 📱 | 1000 Bits\n`6` : ⏱ | 1200 Bits\n`7` : 💎 | 1400 Bits\n`8` : 💵 | 1600 Bits\n`9` : 💴 | 1800 Bits\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2100 Bits\n`12` : ⚛ | 2200 Bits\n`13` : 🌟 | 2300 Bits\n")
+    .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 400 Bits\n`3` : 👍 | 600 Bits\n`4` : ❤ | 800 Bits\n`5` : 📱 | 1000 Bits\n`6` : ⏱ | 1200 Bits\n`7` : 💎 | 1400 Bits\n`8` : 💵 | 1600 Bits\n`9` : 💴 | 1800 Bits\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2200 Bits\n`12` : ⚛ | 2400 Bits\n`13` : 🌟 | 2600 Bits\n")
     .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})
 }
@@ -458,32 +458,28 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
     if (curoinAmt > 200) {
     item.reply("ok") 
     } 
-  } else if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
+  } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
     if (curoinAmt > 400) {
     item.reply("ok") 
     } 
-  } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
+  } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
     if (curoinAmt > 600) {
     item.reply("ok") 
     } 
-  } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
-    if (curoinAmt > 800) {
-    item.reply("ok") 
-    } 
   } else if (item.content === prefix + "buy 4" ||item.content === prefix + "BUY 4") {
-    if (curoinAmt > 1000) {
+    if (curoinAmt > 800) {
     item.reply("ok") 
     } 
   } else if (item.content === prefix + "buy 5" ||item.content === prefix + "BUY 5") {
-    if (curoinAmt > 1200) {
+    if (curoinAmt > 1000) {
     item.reply("ok") 
     } 
   } else if (item.content === prefix + "buy 6" ||item.content === prefix + "BUY 6") {
-    if (curoinAmt > 1400) {
+    if (curoinAmt > 1200) {
     item.reply("ok") 
     } 
   } else if (item.content === prefix + "buy 7" ||item.content === prefix + "BUY 7") {
-    if (curoinAmt > 800) {
+    if (curoinAmt > 1400) {
     item.reply("ok") 
     } 
   } else if (item.content === prefix + "buy 8" ||item.content === prefix + "BUY 8") {
@@ -499,15 +495,15 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
     item.reply("ok") 
     } 
   } else if (item.content === prefix + "buy 11" ||item.content === prefix + "BUY 11") {
-    if (curoinAmt > 2100) {
+    if (curoinAmt > 2200) {
     item.reply("ok") 
     }
   } else if (item.content === prefix + "buy 12" ||item.content === prefix + "BUY 12") {
-    if (curoinAmt > 2200) {
+    if (curoinAmt > 2400) {
     item.reply("ok") 
     } 
   } else if (item.content === prefix + "buy 13" ||item.content === prefix + "BUY 13") {
-    if (curoinAmt > 2300) {
+    if (curoinAmt > 2600) {
     item.reply("ok") 
     }
   }
