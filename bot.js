@@ -390,8 +390,8 @@ if(!xp[item.author.id]){
 let curxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
-let curoinAmt = xp[item.author.id].xp * 2
-let itemAmt =;
+let curoinAmt = xp[item.author.id].xp * 2;
+let itemAmt = 0[item.author.id];
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -439,7 +439,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
     .setAuthor(item.author.username)
     .setColor(0x9dff90)
     .addField("Bits", curoinAmt)
-    .addField("Items", "0")
+    .addField("Items", itemAmt)
     .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})
   }
@@ -459,66 +459,79 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
     if (curoinAmt > 200) {
     curoinAmt -= 200 
     item.reply("ok") 
-    } 
+    itemAmt += 1 
+   } 
   } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
     if (curoinAmt > 400) {
     curoinAmt -= 400
     item.reply("ok") 
-    } 
+    itemAmt += 1  
+  } 
   } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
     if (curoinAmt > 600) {
     curoinAmt -= 600 
    item.reply("ok") 
-    } 
+    itemAmt += 1 
+   } 
   } else if (item.content === prefix + "buy 4" ||item.content === prefix + "BUY 4") {
     if (curoinAmt > 800) {
     curoinAmt -= 800
     item.reply("ok") 
-    } 
+    itemAmt += 1 
+   } 
   } else if (item.content === prefix + "buy 5" ||item.content === prefix + "BUY 5") {
     if (curoinAmt > 1000) {
     curoinAmt -= 1000
     item.reply("ok") 
-    } 
+    itemAmt += 1 
+   } 
   } else if (item.content === prefix + "buy 6" ||item.content === prefix + "BUY 6") {
     if (curoinAmt > 1200) {
     curoinAmt -= 1200 
    item.reply("ok") 
-    } 
+    itemAmt += 1 
+   } 
   } else if (item.content === prefix + "buy 7" ||item.content === prefix + "BUY 7") {
     if (curoinAmt > 1400) {
     curoinAmt -= 1400 
    item.reply("ok") 
+    itemAmt += 1
     } 
   } else if (item.content === prefix + "buy 8" ||item.content === prefix + "BUY 8") {
     if (curoinAmt > 1600) {
     curoinAmt -= 1600 
    item.reply("ok") 
-    }
+    itemAmt += 1 
+   }
   } else if (item.content === prefix + "buy 9" ||item.content === prefix + "BUY 9") {
     if (curoinAmt > 1800) {
     curoinAmt -= 1800
     item.reply("ok") 
+    itemAmt += 1
     }
   } else if (item.content === prefix + "buy 10" ||item.content === prefix + "BUY 10") {
     if (curoinAmt > 2000) {
     curoinAmt -= 2000
     item.reply("ok") 
+    itemAmt += 1
     } 
   } else if (item.content === prefix + "buy 11" ||item.content === prefix + "BUY 11") {
     if (curoinAmt > 2200) {
     curoinAmt -= 2200
     item.reply("ok") 
-    }
+    itemAmt += 1 
+   }
   } else if (item.content === prefix + "buy 12" ||item.content === prefix + "BUY 12") {
     if (curoinAmt > 2400) {
     curoinAmt -= 2400
     item.reply("ok") 
+    itemAmt += 1
     } 
   } else if (item.content === prefix + "buy 13" ||item.content === prefix + "BUY 13") {
     if (curoinAmt > 2600) {
     curoinAmt -= 2600 
     item.reply("ok") 
+    itemAmt += 1
     }
   }
 }
