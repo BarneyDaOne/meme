@@ -455,33 +455,67 @@ if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
 
 if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + "BUY")) {
   if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
-   item.reply("ok") 
+    if (curoinAmt > 200) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
-   item.reply("ok") 
+    if (curoinAmt > 400) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
-   item.reply("ok") 
+    if (curoinAmt > 600) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
-   item.reply("ok") 
+    if (curoinAmt > 800) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 4" ||item.content === prefix + "BUY 4") {
-   item.reply("ok") 
+    if (curoinAmt > 1000) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 5" ||item.content === prefix + "BUY 5") {
-   item.reply("ok") 
+    if (curoinAmt > 1200) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 6" ||item.content === prefix + "BUY 6") {
-   item.reply("ok") 
+    if (curoinAmt > 1400) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 7" ||item.content === prefix + "BUY 7") {
-   item.reply("ok") 
+    if (curoinAmt > 800) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 8" ||item.content === prefix + "BUY 8") {
-   item.reply("ok") 
+    if (curoinAmt > 1600) {
+    item.reply("ok") 
+    }
   } else if (item.content === prefix + "buy 9" ||item.content === prefix + "BUY 9") {
-   item.reply("ok") 
+    if (curoinAmt > 1800) {
+    item.reply("ok") 
+    }
   } else if (item.content === prefix + "buy 10" ||item.content === prefix + "BUY 10") {
-   item.reply("ok") 
+    if (curoinAmt > 2000) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 11" ||item.content === prefix + "BUY 11") {
-   item.reply("ok") 
+    if (curoinAmt > 2100) {
+    item.reply("ok") 
+    }
   } else if (item.content === prefix + "buy 12" ||item.content === prefix + "BUY 12") {
-   item.reply("ok") 
+    if (curoinAmt > 2200) {
+    item.reply("ok") 
+    } 
   } else if (item.content === prefix + "buy 13" ||item.content === prefix + "BUY 13") {
-   item.reply("ok") 
+    if (curoinAmt > 2300) {
+    item.reply("ok") 
+    }
+  }
+}
+
+if (item.content.startsWith(prefix + "setDV xp") {
+  if (item.author.id === owner) {
+     xp[item.author.id].xp =  curxp + xpAdd;
   }
 }
 });
