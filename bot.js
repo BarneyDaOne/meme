@@ -411,6 +411,16 @@ if(nxtLvl <= xp[item.author.id].xp){
   item.channel.send(lvlup).then(msg => {msg.delete(50000)});
 }
 
+  let coinAmt = Math.floor(Math.random() * 15) + 1;
+  let baseAmt = Math.floor(Math.random() * 15) + 1;
+  console.log(`${coinAmt} ; ${baseAmt}`);  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+  if (err) console.log(err)
+});
+
+fs.writeFile("./items.json", JSON.stringify(items), (err) => {
+  if (err) console.log(err)
+});
+
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
@@ -435,6 +445,106 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
     .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})
   }
+
+if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
+    const embed = new Discord.RichEmbed()
+    .setAuthor(item.author.username)
+    .setColor(0x9dff90)
+    .addField("Bits", curoinAmt)
+    .addField("Items", itemAmt)
+    .setThumbnail(item.author.avatarURL)
+    item.channel.send({embed})
+  }  // 🤔 👌 👍 ❤ 📱 ⏱ 💎 💵 💴 💶 💷 ⚛ 🌟
+
+if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
+    const embed = new Discord.RichEmbed()   
+    .setColor(0x2F192F)
+    .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 400 Bits\n`3` : 👍 | 600 Bits\n`4` : ❤ | 800 Bits\n`5` : 📱 | 1000 Bits\n`6` : ⏱ | 1200 Bits\n`7` : 💎 | 1400 Bits\n`8` : 💵 | 1600 Bits\n`9` : 💴 | 1800 Bits\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2200 Bits\n`12` : ⚛ | 2400 Bits\n`13` : 🌟 | 2600 Bits\n")
+    .setThumbnail(item.author.avatarURL)
+    item.channel.send({embed})
+}
+
+if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + "BUY")) {
+  if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
+    if (curoinAmt > 200) {
+    curoinAmt - 200 
+    item.reply("ok") 
+    itemAmt += 1 
+   } 
+  } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
+    if (curoinAmt > 400) {
+    curoinAmt - 400
+    item.reply("ok") 
+    itemAmt += 1  
+  } 
+  } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
+    if (curoinAmt > 600) {
+    curoinAmt - 600 
+   item.reply("ok") 
+    itemAmt += 1 
+   } 
+  } else if (item.content === prefix + "buy 4" ||item.content === prefix + "BUY 4") {
+    if (curoinAmt > 800) {
+    curoinAmt - 800
+    item.reply("ok") 
+    itemAmt += 1 
+   } 
+  } else if (item.content === prefix + "buy 5" ||item.content === prefix + "BUY 5") {
+    if (curoinAmt > 1000) {
+    curoinAmt - 1000
+    item.reply("ok") 
+    itemAmt += 1 
+   } 
+  } else if (item.content === prefix + "buy 6" ||item.content === prefix + "BUY 6") {
+    if (curoinAmt > 1200) {
+    curoinAmt - 1200 
+   item.reply("ok") 
+    itemAmt += 1 
+   } 
+  } else if (item.content === prefix + "buy 7" ||item.content === prefix + "BUY 7") {
+    if (curoinAmt > 1400) {
+    curoinAmt - 1400 
+   item.reply("ok") 
+    itemAmt += 1
+    } 
+  } else if (item.content === prefix + "buy 8" ||item.content === prefix + "BUY 8") {
+    if (curoinAmt > 1600) {
+    curoinAmt - 1600 
+   item.reply("ok") 
+    itemAmt += 1 
+   }
+  } else if (item.content === prefix + "buy 9" ||item.content === prefix + "BUY 9") {
+    if (curoinAmt > 1800) {
+    curoinAmt - 1800
+    item.reply("ok") 
+    itemAmt += 1
+    }
+  } else if (item.content === prefix + "buy 10" ||item.content === prefix + "BUY 10") {
+    if (curoinAmt > 2000) {
+    curoinAmt - 2000
+    item.reply("ok") 
+    itemAmt += 1
+    } 
+  } else if (item.content === prefix + "buy 11" ||item.content === prefix + "BUY 11") {
+    if (curoinAmt > 2200) {
+    curoinAmt - 2200
+    item.reply("ok") 
+    itemAmt += 1 
+   }
+  } else if (item.content === prefix + "buy 12" ||item.content === prefix + "BUY 12") {
+    if (curoinAmt > 2400) {
+    curoinAmt - 2400
+    item.reply("ok") 
+    itemAmt += 1
+    } 
+  } else if (item.content === prefix + "buy 13" ||item.content === prefix + "BUY 13") {
+    if (curoinAmt > 2600) {
+    curoinAmt - 2600 
+    item.reply("ok") 
+    itemAmt += 1
+    }
+  }
+}
 });
 
 client.login(process.env.BOT_TOKEN);
