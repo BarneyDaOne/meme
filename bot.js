@@ -407,7 +407,7 @@ setTimeout(() => {
   talkedRecently.delete(item.author.id);
 }, 25000);
 
-if (nxtLvl > xp[item.author.id].oxp) {
+if (nxtLvl < xp[item.author.id].oxp) {
   xp[item.author.id].oxp = 0;
     
   xp[item.author.id].level = curlvl + 1;
