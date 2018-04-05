@@ -426,29 +426,6 @@ console.log(`${coinAmt} ; ${baseAmt}`);fs.writeFile("./coins.json", JSON.stringi
   if (err) console.log(err)
 });
 
-if (item.content.startsWith(prefix + "setxp ") || item.content.startsWith(prefix + "SETXP ")) {
-  if (item.member.hasPermissions("ADMINISTRATOR")) {
-    if (item.mentions.users.size === 0) return item.reply("Mention someone please. ;)");
-
-    if (item.mentions.users.size === 1) {
-      xp[item.author.id].xp = curxp =+ shardCrt;
-        xp[item.author.id].oxp = curxp += shardCrt;
-     }
-
-    if (shardCrt > curlvl) {
-      curlvl =+ 1
-    } else if (shardCrt > curlvl + 1) {
-      curlvl =+ 2
-    } else if (shardCrt > curlvl + 2) {
-      curlvl =+ 3
-    } else if (shardCrt > curlvl + 3) {
-      curlvl =+ 4
-    } else if (shardCrt > curlvl + 4) {
-      curlvl =+ 5
-    }
-  }
-}
-
 fs.writeFile("./items.json", JSON.stringify(items), (err) => {
   if (err) console.log(err)
 });
