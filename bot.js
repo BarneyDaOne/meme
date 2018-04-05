@@ -454,7 +454,7 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    .setAuthor(item.author.username)
    .setColor(purple)
    .addField("Overall Level", curlvl, true)
-   .addField("XP", curxp, true)
+   .addField("XP", hiddenxp + "/" + nxtLvl + "(" + curxp + "total), true)
    .addField("Next Level", curlvl + 1, true)
    .addField("XP Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
