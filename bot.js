@@ -376,7 +376,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 
 
 // XP
-let xpAdd = Math.floor(Math.random() * 10) + 10;
+let xpAdd = 10;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
@@ -385,7 +385,8 @@ console.log(shardCrt)
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
-    level: 1
+    level: 1,
+    hiddenxp: 0
   };
 }
 
@@ -401,8 +402,9 @@ talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
   xp[item.author.id].xp = curxp += xpAdd;
+  xp[item.author.id].oxp = curxp += xpAdd;
   talkedRecently.delete(item.author.id);
-}, 5000);
+}, 25000);
 
 if (nxtLvl - 1 < hiddenxp) {
   xp[item.author.id].level = curlvl + 1;
