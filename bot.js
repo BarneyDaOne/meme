@@ -457,7 +457,7 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    .addField("Overall Level", curlvl, true)
    .addField("XP", curxp, true)
    .addField("Next Level", curlvl + 1, true)
-   .addField("Shards Needed", nxtLvl, true)
+   .addField("XP Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
