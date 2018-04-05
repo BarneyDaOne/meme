@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
+let oxp = require("./oxp.json");
 let coins = require("./coins.json");
 let items = require("./items.json");
 let purple = 0xF291F9
@@ -390,7 +391,7 @@ if(!xp[item.author.id]){
 
 
 let curxp = xp[item.author.id].xp;
-let hiddenxp = xp[item.author.id].xp;
+let hiddenxp = oxp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2;
