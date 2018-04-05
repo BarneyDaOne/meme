@@ -403,8 +403,10 @@ setTimeout(() => {
   talkedRecently.delete(item.author.id);
 }, 5000);
 
-if (nxtLvl < hiddenxp) {
+if (nxtLvl - 1 < hiddenxp) {
   xp[item.author.id].level = curlvl + 1;
+
+  hiddenxp = 0;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
