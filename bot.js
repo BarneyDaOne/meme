@@ -425,7 +425,7 @@ if (item.content.startsWith(prefix + "setxp ") || item.content.startsWith(prefix
     if (item.mentions.users.size === 0) return item.reply("Mention someone please. ;)");
 
     if (item.mentions.users.size === 1) {
-      xp[item.author.id].xp = curxp =+ shardCrt;
+      xp[item.author.id].xp = curxp += shardCrt;
     }
 
     if (shardCrt > curlvl) {
