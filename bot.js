@@ -379,6 +379,8 @@ let xpAdd = Math.floor(Math.random() * 10) + 10;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
+let shardCrt = args[2]
+console.log(shardCrt)
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
@@ -413,9 +415,19 @@ if(nxtLvl <= xp[item.author.id].xp){
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
   let baseAmt = Math.floor(Math.random() * 15) + 1;
-  console.log(`${coinAmt} ; ${baseAmt}`);  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+  console.log(`${coinAmt} ; ${baseAmt}`);fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
   if (err) console.log(err)
 });
+
+if (item.content.startsWith(prefix + "addshards " || item.content.startsWith(prefix + "ADDSHARDS ") {
+  if (item.member.hasPermission("ADMINISTRATOR")) {
+    if (item.mentions.members.users.size === 0) return item.reply("Mention someone please. ;)");
+    
+    if (item.mentions.members.users.size === 1) {
+      xp[item.mentions.members.first().user.id].xp = curxp + shardCrt;
+  }
+}
+}
 
 fs.writeFile("./items.json", JSON.stringify(items), (err) => {
   if (err) console.log(err)
