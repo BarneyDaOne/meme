@@ -376,19 +376,13 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 
 
 // XP
+
 let xpAdd = 10;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
 let shardCrt = args[1]
 console.log(shardCrt)
-if(!xp[item.author.id]){
-  xp[item.author.id] = {
-    xp: 0,
-    level: 1,
-    hiddenxp: 0
-  };
-}
 
 
 let curxp = xp[item.author.id].xp;
@@ -397,6 +391,14 @@ let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2;
 let itemAmt = 0;
+
+if(!xp[item.author.id]){
+  xp[item.author.id] = {
+    xp: 0,
+    level: 1,
+    hiddenxp: 0 
+};
+}
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
