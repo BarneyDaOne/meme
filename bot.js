@@ -399,7 +399,7 @@ var itemAmt = 0;
 talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
-  xp[item.author.id].xp =  curxp + xpAdd;
+  xp[item.author.id].xp = hiddenxp + xpAdd;
   talkedRecently.delete(item.author.id);
 }, 25000);
 
@@ -454,7 +454,7 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    .setAuthor(item.author.username)
    .setColor(purple)
    .addField("Overall Level", curlvl, true)
-   .addField("XP", hiddenxp + "/" + nxtLvl + "(" + curxp + "total), true)
+   .addField("XP", hiddenxp + "/" + nxtLvl + " (" + curxp + "total)", true)
    .addField("Next Level", curlvl + 1, true)
    .addField("XP Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
