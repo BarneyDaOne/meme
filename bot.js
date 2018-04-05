@@ -379,7 +379,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 
 let xpAdd = 13;
 console.log(xpAdd);
-let xpAdd = 13;
+let xpAd = 13;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
