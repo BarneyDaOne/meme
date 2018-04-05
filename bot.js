@@ -390,7 +390,7 @@ if(!xp[item.author.id]){
 
 
 let curxp = xp[item.author.id].xp;
-let hiddenxp = curxp
+let hiddenxp = xp[item.author.id].xp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2;
