@@ -405,6 +405,7 @@ talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
   xp[item.author.id].xp = curxp += xpAdd;
+  xp[item.author.id].oxp = hiddenxp += xpAd;
   talkedRecently.delete(item.author.id);
 }, 25000);
 
