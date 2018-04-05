@@ -377,7 +377,9 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
 
 // XP
 
-let xpAdd = 10;
+let xpAdd = 13;
+console.log(xpAdd);
+let xpAdd = 13;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
@@ -403,7 +405,7 @@ talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
   xp[item.author.id].xp = curxp += xpAdd;
-  xp[item.author.id].oxp = curxp += xpAdd;
+  xp[item.author.id].oxp = curxp += xpAd;
   talkedRecently.delete(item.author.id);
 }, 25000);
 
@@ -442,8 +444,8 @@ if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    const embed = new Discord.RichEmbed()
    .setAuthor(item.author.username)
    .setColor(purple)
-   .addField("Overall Level", curlvl, true)
-   .addField("XP", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
+   .addField("Level", curlvl, true)
+   .addField("Xp", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
    .addField("Next Level", curlvl + 1, true)
    .addField("XP Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
