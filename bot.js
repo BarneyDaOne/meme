@@ -391,7 +391,7 @@ if(!xp[item.author.id]){
 
 
 let curxp = xp[item.author.id].xp;
-let hiddenxp = xp[item.author.id].xp;
+let hiddenxp = oxp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2;
@@ -455,7 +455,7 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
 
 fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
   if(err) console.log(err)
-}
+});
 
 if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    const embed = new Discord.RichEmbed()
