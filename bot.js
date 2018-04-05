@@ -361,7 +361,6 @@ if (dynamPoll) {
 // HELP
 if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix + "help")) {
     if (item.content === prefix + "HELP" || item.content === prefix + "help") {
-      item.delete(15000)
       item.react(":Sent:424022425080954888")
       const embed = new Discord.RichEmbed()
       .setColor(0x1b8F98)
@@ -370,7 +369,7 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       .addField("Informative Commands", `**${prefix}help** : Displays this\n**${prefix}avatar** : Shows the avatar of you or a mentioned user \n**${prefix}id** : Gets the id of you or a mentioned user\n**${prefix}info** : Get my info\n**${prefix}userinfo** : Get your own info\n**${prefix}serverinfo** : Get the info of the server\n`)
       .addField("Other Commands", `**${prefix}poll** : Create a poll.\n**${prefix}invite** : Sends a bot invite so you can add me to other servers\n**${prefix}request** : Request a command\n`)
       .addField("Mod Commands", `**${prefix}purge** : Delete a certain amount of messages\n**${prefix}kick** : Kick a member\n**${prefix}ban** : Ban a member\n**${prefix}unban** : Unban a member\n**${prefix}create-role** : Create a role\n**${prefix}remove-role** : Delete a role\n**${prefix}edit-role** : Edit a role`)
-      item.channel.send({embed})
+      item.channel.send({embed}).then(item => {item.delete(15000)})
     }
 }
 
@@ -429,15 +428,15 @@ if (item.content.startsWith(prefix + "setxp ") || item.content.startsWith(prefix
     }
 
     if (shardCrt > curlvl) {
-      curlvl =+ 1;
+      curlvl =+ 1
     } else if (shardCrt > curlvl + 1) {
-      curlvl =+ 2;
+      curlvl =+ 2
     } else if (shardCrt > curlvl + 2) {
-      curlvl =+ 3;
+      curlvl =+ 3
     } else if (shardCrt > curlvl + 3) {
-      curlvl =+ 4;
+      curlvl =+ 4
     } else if (shardCrt > curlvl + 4) {
-      curlvl =+ 5;
+      curlvl =+ 5
     }
   }
 }
