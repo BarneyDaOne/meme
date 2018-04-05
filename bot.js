@@ -403,14 +403,16 @@ setTimeout(() => {
   talkedRecently.delete(item.author.id);
 }, 25000);
 
-if(nxtLvl <= xp[item.author.id].xp){
+if (nxtLvl < xp[item.author.id.xp) {
   xp[item.author.id].level = curlvl + 1;
+  hiddenxp = 0;
+
   let lvlup = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setColor(purple)
   .addField("New Level", curlvl + 1);
 
-  item.channel.send(lvlup).then(msg => {msg.delete(50000)});
+  item.channel.send(lvlup).then(msg => {msg.delete(50000)});  
 }
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
