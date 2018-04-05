@@ -399,7 +399,7 @@ let itemAmt = 0;
 talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
-  xp[item.author.id].xp = curxp =+ xpAdd;
+  xp[item.author.id].xp = curxp += xpAdd;
   talkedRecently.delete(item.author.id);
 }, 5000);
 
