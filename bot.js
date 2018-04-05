@@ -420,7 +420,7 @@ if(nxtLvl <= xp[item.author.id].xp){
 });
 
 if (item.content.startsWith(prefix + "addshards " || item.content.startsWith(prefix + "ADDSHARDS ") {
-  if (item.member.hasPermission("ADMINISTRATOR")) {
+  if (item.member.hasPermissions("ADMINISTRATOR")) {
     if (item.mentions.members.users.size === 0) return item.reply("Mention someone please. ;)");
     
     if (item.mentions.members.users.size === 1) {
