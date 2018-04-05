@@ -379,7 +379,7 @@ let xpAdd = Math.floor(Math.random() * 10) + 10;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
-let shardCrt = args[2]
+let shardCrt = args[2 ]
 console.log(shardCrt)
 if(!xp[item.author.id]){
   xp[item.author.id] = {
@@ -390,6 +390,7 @@ if(!xp[item.author.id]){
 
 
 let curxp = xp[item.author.id].xp;
+let hiddenxp = curxp
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2;
@@ -404,7 +405,6 @@ setTimeout(() => {
 
 if(nxtLvl <= xp[item.author.id].xp){
   xp[item.author.id].level = curlvl + 1;
-  curoinAmt += 100
   let lvlup = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setColor(purple)
@@ -415,18 +415,30 @@ if(nxtLvl <= xp[item.author.id].xp){
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
   let baseAmt = Math.floor(Math.random() * 15) + 1;
-  console.log(`${coinAmt} ; ${baseAmt}`);fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+console.log(`${coinAmt} ; ${baseAmt}`);fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
   if (err) console.log(err)
 });
 
-if (item.content.startsWith(prefix + "addshards " || item.content.startsWith(prefix + "ADDSHARDS ") {
+if (item.content.startsWith(prefix + "setxp ") || item.content.startsWith(prefix + "SETXP ")) {
   if (item.member.hasPermissions("ADMINISTRATOR")) {
-    if (item.mentions.members.users.size === 0) return item.reply("Mention someone please. ;)");
-    
-    if (item.mentions.members.users.size === 1) {
-      xp[item.mentions.members.first().user.id].xp = curxp + shardCrt;
+    if (item.mentions.users.size === 0) return item.reply("Mention someone please. ;)");
+
+    if (item.mentions.users.size === 1) {
+      xp[item.author.id].xp = curxp + shardCrt;
+    }
+
+    if (shardCrt > curlvl) {
+      curlvl =+ 1;
+    } else if (shardCrt > curlvl + 1) {
+      curlvl =+ 2;
+    } else if (shardCrt > curlvl + 2) {
+      curlvl =+ 3;
+    } else if (shardCrt > curlvl + 3) {
+      curlvl =+ 4;
+    } else if (shardCrt > curlvl + 4) {
+      curlvl =+ 5;
+    }
   }
-}
 }
 
 fs.writeFile("./items.json", JSON.stringify(items), (err) => {
@@ -437,14 +449,14 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
-if (item.content === prefix + "points" || item.content === prefix + "POINTS") {
+if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
    const embed = new Discord.RichEmbed()
    .setAuthor(item.author.username)
    .setColor(purple)
-   .addField("Overall Points", curlvl)
-   .addField("Overall Shards", curxp)
-   .addField("Next Point", curlvl + 1)
-   .addField("Shards Needed", nxtLvl)
+   .addField("Overall Level", curlvl, true)
+   .addField("XP", curxp, true)
+   .addField("Next Level", curlvl + 1, true)
+   .addField("Shards Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
@@ -469,7 +481,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
   }  // 🤔 👌 👍 ❤ 📱 ⏱ 💎 💵 💴 💶 💷 ⚛ 🌟
 
 if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
-    const embed = new Discord.RichEmbed()   
+    const embed = new Discord.RichEmbed()
     .setColor(0x2F192F)
     .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 400 Bits\n`3` : 👍 | 600 Bits\n`4` : ❤ | 800 Bits\n`5` : 📱 | 1000 Bits\n`6` : ⏱ | 1200 Bits\n`7` : 💎 | 1400 Bits\n`8` : 💵 | 1600 Bits\n`9` : 💴 | 1800 Bits\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2200 Bits\n`12` : ⚛ | 2400 Bits\n`13` : 🌟 | 2600 Bits\n")
     .setThumbnail(item.author.avatarURL)
@@ -479,80 +491,80 @@ if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
 if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + "BUY")) {
   if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
     if (curoinAmt > 200) {
-    curoinAmt - 200 
-    item.reply("ok") 
-    itemAmt += 1 
-   } 
+    curoinAmt - 200
+    item.reply("ok")
+    itemAmt += 1
+   }
   } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
     if (curoinAmt > 400) {
     curoinAmt - 400
-    item.reply("ok") 
-    itemAmt += 1  
-  } 
+    item.reply("ok")
+    itemAmt += 1
+  }
   } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
     if (curoinAmt > 600) {
-    curoinAmt - 600 
-   item.reply("ok") 
-    itemAmt += 1 
-   } 
+    curoinAmt - 600
+   item.reply("ok")
+    itemAmt += 1
+   }
   } else if (item.content === prefix + "buy 4" ||item.content === prefix + "BUY 4") {
     if (curoinAmt > 800) {
     curoinAmt - 800
-    item.reply("ok") 
-    itemAmt += 1 
-   } 
+    item.reply("ok")
+    itemAmt += 1
+   }
   } else if (item.content === prefix + "buy 5" ||item.content === prefix + "BUY 5") {
     if (curoinAmt > 1000) {
     curoinAmt - 1000
-    item.reply("ok") 
-    itemAmt += 1 
-   } 
+    item.reply("ok")
+    itemAmt += 1
+   }
   } else if (item.content === prefix + "buy 6" ||item.content === prefix + "BUY 6") {
     if (curoinAmt > 1200) {
-    curoinAmt - 1200 
-   item.reply("ok") 
-    itemAmt += 1 
-   } 
+    curoinAmt - 1200
+   item.reply("ok")
+    itemAmt += 1
+   }
   } else if (item.content === prefix + "buy 7" ||item.content === prefix + "BUY 7") {
     if (curoinAmt > 1400) {
-    curoinAmt - 1400 
-   item.reply("ok") 
+    curoinAmt - 1400
+   item.reply("ok")
     itemAmt += 1
-    } 
+    }
   } else if (item.content === prefix + "buy 8" ||item.content === prefix + "BUY 8") {
     if (curoinAmt > 1600) {
-    curoinAmt - 1600 
-   item.reply("ok") 
-    itemAmt += 1 
+    curoinAmt - 1600
+   item.reply("ok")
+    itemAmt += 1
    }
   } else if (item.content === prefix + "buy 9" ||item.content === prefix + "BUY 9") {
     if (curoinAmt > 1800) {
     curoinAmt - 1800
-    item.reply("ok") 
+    item.reply("ok")
     itemAmt += 1
     }
   } else if (item.content === prefix + "buy 10" ||item.content === prefix + "BUY 10") {
     if (curoinAmt > 2000) {
     curoinAmt - 2000
-    item.reply("ok") 
+    item.reply("ok")
     itemAmt += 1
-    } 
+    }
   } else if (item.content === prefix + "buy 11" ||item.content === prefix + "BUY 11") {
     if (curoinAmt > 2200) {
     curoinAmt - 2200
-    item.reply("ok") 
-    itemAmt += 1 
+    item.reply("ok")
+    itemAmt += 1
    }
   } else if (item.content === prefix + "buy 12" ||item.content === prefix + "BUY 12") {
     if (curoinAmt > 2400) {
     curoinAmt - 2400
-    item.reply("ok") 
+    item.reply("ok")
     itemAmt += 1
-    } 
+    }
   } else if (item.content === prefix + "buy 13" ||item.content === prefix + "BUY 13") {
     if (curoinAmt > 2600) {
-    curoinAmt - 2600 
-    item.reply("ok") 
+    curoinAmt - 2600
+    item.reply("ok")
     itemAmt += 1
     }
   }
