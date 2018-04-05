@@ -394,7 +394,7 @@ let hiddenxp = curxp
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 200;
 let curoinAmt = xp[item.author.id].xp * 2;
-var itemAmt = 0;
+let itemAmt = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -405,14 +405,14 @@ setTimeout(() => {
 
 if (nxtLvl < xp[item.author.id].xp) {
   xp[item.author.id].level = curlvl + 1;
-  hiddenxp = 0;
+  hiddenxp = itemAmt;
 
-  let lvlup = new Discord.RichEmbed()
+  const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setColor(purple)
   .addField("New Level", curlvl + 1);
 
-  item.channel.send(lvlup).then(msg => {msg.delete(50000)});  
+  item.channel.send({embed}).then(msg => {msg.delete(50000)});  
 }
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
