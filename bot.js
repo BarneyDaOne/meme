@@ -361,6 +361,7 @@ if (dynamPoll) {
 // HELP
 if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix + "help")) {
     if (item.content === prefix + "HELP" || item.content === prefix + "help") {
+      item.delete(15000)
       item.react(":Sent:424022425080954888")
       const embed = new Discord.RichEmbed()
       .setColor(0x1b8F98)
@@ -370,7 +371,6 @@ if (item.content.startsWith(prefix + "HELP") || item.content.startsWith(prefix +
       .addField("Other Commands", `**${prefix}poll** : Create a poll.\n**${prefix}invite** : Sends a bot invite so you can add me to other servers\n**${prefix}request** : Request a command\n`)
       .addField("Mod Commands", `**${prefix}purge** : Delete a certain amount of messages\n**${prefix}kick** : Kick a member\n**${prefix}ban** : Ban a member\n**${prefix}unban** : Unban a member\n**${prefix}create-role** : Create a role\n**${prefix}remove-role** : Delete a role\n**${prefix}edit-role** : Edit a role`)
       item.channel.send({embed})
-      item.delete(15000)
     }
 }
 
