@@ -401,7 +401,7 @@ let itemAmt = 0;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
-  // Removes the user from the set after 2.5 seconds
+  // Removes the user from the set after 25 seconds
   xp[item.author.id].xp = curxp += xpAdd;
   xp[item.author.id].oxp = curxp += xpAdd;
   talkedRecently.delete(item.author.id);
@@ -432,7 +432,8 @@ if (item.content.startsWith(prefix + "setxp ") || item.content.startsWith(prefix
 
     if (item.mentions.users.size === 1) {
       xp[item.author.id].xp = curxp =+ shardCrt;
-    }
+        xp[item.author.id].oxp = curxp += shardCrt;
+     }
 
     if (shardCrt > curlvl) {
       curlvl =+ 1
