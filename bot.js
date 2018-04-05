@@ -399,9 +399,9 @@ let itemAmt = 0;
 talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 2.5 seconds
-  xp[item.author.id].xp = hiddenxp + xpAdd;
+  xp[item.author.id].xp = curxp =+ xpAdd;
   talkedRecently.delete(item.author.id);
-}, 25000);
+}, 5000);
 
 if (nxtLvl < hiddenxp) {
   xp[item.author.id].level = curlvl + 1;
