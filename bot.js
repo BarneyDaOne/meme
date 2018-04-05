@@ -380,7 +380,7 @@ let xpAdd = Math.floor(Math.random() * 10) + 10;
 console.log(xpAdd);
 let coinAdd = Math.floor(Math.random() * 2) + 3;
 console.log(xpAdd);
-let shardCrt = args[3]
+let shardCrt = args[1]
 console.log(shardCrt)
 if(!xp[item.author.id]){
   xp[item.author.id] = {
