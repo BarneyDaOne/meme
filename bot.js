@@ -439,7 +439,7 @@ fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
   if(err) console.log(err)
 });
 
-if (item.content === prefix + "profile" || item.content === prefix + "PROFILE") {
+if (item.content === prefix + "profile" || item.content === prefix + "PROFILE" || item.content === prefix + "pf" || item.content === prefix + "PF") {
    const embed = new Discord.RichEmbed()
    .setAuthor(item.author.username)
    .setColor(purple)
