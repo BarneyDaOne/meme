@@ -415,9 +415,8 @@ if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
   xp[item.author.id].level = curlvl + 1;
 
   const embed = new Discord.RichEmbed()
-  .setTitle("Level Up!")
+  .setTitle("Level Up!", "New Level : " + curlvl + 1)
   .setColor(purple)
-  .addField("New Level", curlvl + 1);
 
   item.channel.send({embed}).then(msg => {msg.delete(50000)});  
 }
@@ -440,14 +439,14 @@ fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
   if(err) console.log(err)
 });
 
-if (item.content === prefix + "level" || item.content === prefix + "LEVEL") {
+if (item.content === prefix + "profile" || item.content === prefix + "PROFILE") {
    const embed = new Discord.RichEmbed()
    .setAuthor(item.author.username)
    .setColor(purple)
    .addField("Level", curlvl, true)
-   .addField("Xp", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
+   .addField("Potapo Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
    .addField("Next Level", curlvl + 1, true)
-   .addField("XP Needed", nxtLvl, true)
+   .addField("Points Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
