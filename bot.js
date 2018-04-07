@@ -394,10 +394,10 @@ if(!xp[item.author.id]){
 };
 }
 
-let curxp = xp[item.author.id].[item.guild.id].xp;
-let hiddenxp = xp[item.author.id].[item.guild.id].oxp;
-let curlvl = xp[item.author.id].[item.guild.id].level;
-let nxtLvl = xp[item.author.id].[item.guild.id].level * 300;
+let curxp = xp[item.author.id] + [item.guild.id].xp;
+let hiddenxp = xp[item.author.id] + [item.guild.id].oxp;
+let curlvl = xp[item.author.id] + [item.guild.id].level;
+let nxtLvl = xp[item.author.id] + [item.guild.id].level * 300;
 let curoinAmt = xp[item.author.id].xp * 2;
 let itemAmt = 0;
 
@@ -410,9 +410,9 @@ setTimeout(() => {
 }, 25000);
 
 if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
-  xp[item.author.id].[item.guild.id].oxp = 0;
+  xp[item.author.id] + [item.guild.id].oxp = 0;
     
-  xp[item.author.id].[item.guild.id].level = curlvl + 1;
+  xp[item.author.id] + [item.guild.id].level = curlvl + 1;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
