@@ -420,7 +420,6 @@ if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
   .setDescription("New Level : " + curlvl + 1 + " Coins added : 200")
   .setColor(purple)
   item.channel.send({embed}).then(msg => {msg.delete(50000)});  
-  xp[item.author.id].ixp = curoinAmt + 200;
 }
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
