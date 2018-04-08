@@ -392,7 +392,9 @@ if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
     level: 1,
-    oxp: 0 
+    oxp: 0,
+    ixp: 0,
+    imt: 0
 };
 }
 
