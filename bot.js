@@ -6,6 +6,7 @@ let oxp = require("./oxp.json");
 let coins = require("./coins.json");
 let items = require("./items.json");
 let ixp = require("./ixp.json");
+let imt = require("./imt.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
@@ -400,7 +401,7 @@ let hiddenxp = xp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 300;
 let curoinAmt = xp[item.author.id].ixp;
-let itemAmt = 0;
+let itemAmt = xp[item.author.id].imt;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -456,7 +457,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
     const embed = new Discord.RichEmbed()
     .setAuthor(item.author.username)
     .setColor(0x9dff90)
-    .addField("Bits", curoinAmt)
+    .addField("Potads", curoinAmt)
     .addField("Items", itemAmt)
     .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})
@@ -467,7 +468,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
 if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
     const embed = new Discord.RichEmbed()
     .setColor(0x2F192F)
-    .addField("Shop", "`1` : 🤔 | 200 Bits\n`2` : 👌 | 400 Bits\n`3` : 👍 | 600 Bits\n`4` : ❤ | 800 Bits\n`5` : 📱 | 1000 Bits\n`6` : ⏱ | 1200 Bits\n`7` : 💎 | 1400 Bits\n`8` : 💵 | 1600 Bits\n`9` : 💴 | 1800 Bits\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2200 Bits\n`12` : ⚛ | 2400 Bits\n`13` : 🌟 | 2600 Bits\n")
+    .addField("Shop", "`1` : 🤔 | 200 Potads\n`2` : 👌 | 400 Potads\n`3` : 👍 | 600 Potads\n`4` : ❤ | 800 Potads\n`5` : 📱 | 1000 Potads\n`6` : ⏱ | 1200 Potads\n`7` : 💎 | 1400 Potads\n`8` : 💵 | 1600 Potads\n`9` : 💴 | 1800 Potads\n`10` : 💶 | 2000 Bits\n`11` : 💷 | 2200 Potads\n`12` : ⚛ | 2400 Potads\n`13` : 🌟 | 2600 Potads\n")
     .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})
 }
