@@ -5,7 +5,7 @@ let xp = require("./xp.json");
 let oxp = require("./oxp.json");
 let coins = require("./coins.json");
 let items = require("./items.json");
-let ixp = require("ixp.json");
+let ixp = require("./ixp.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
