@@ -5,6 +5,7 @@ let xp = require("./xp.json");
 let oxp = require("./oxp.json");
 let coins = require("./coins.json");
 let items = require("./items.json");
+let ixp = require("ixp.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
 
@@ -398,7 +399,7 @@ let curxp = xp[item.author.id].xp;
 let hiddenxp = xp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 300;
-let curoinAmt = xp[item.author.id].xp * 2;
+let curoinAmt = xp[item.author.id].ixp;
 let itemAmt = 0;
 
 talkedRecently.add(item.author.id);
@@ -416,9 +417,10 @@ if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
-  .setDescription("New Level : " + curlvl + 1)
+  .setDescription("New Level : " + curlvl + 1 + " Coins added : 200")
   .setColor(purple)
   item.channel.send({embed}).then(msg => {msg.delete(50000)});  
+  xp[item.author.id].ixp = curoinAmt + 200;
 }
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
@@ -450,6 +452,7 @@ if (item.content === prefix + "profile" || item.content === prefix + "PROFILE" |
    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
+
 if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
     const embed = new Discord.RichEmbed()
     .setAuthor(item.author.username)
@@ -460,15 +463,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
     item.channel.send({embed})
   }
 
-if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
-    const embed = new Discord.RichEmbed()
-    .setAuthor(item.author.username)
-    .setColor(0x9dff90)
-    .addField("Bits", curoinAmt)
-    .addField("Items", itemAmt)
-    .setThumbnail(item.author.avatarURL)
-    item.channel.send({embed})
-  }  // 🤔 👌 👍 ❤ 📱 ⏱ 💎 💵 💴 💶 💷 ⚛ 🌟
+// 🤔 👌 👍 ❤ 📱 ⏱ 💎 💵 💴 💶 💷 ⚛ 🌟
 
 if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
     const embed = new Discord.RichEmbed()
