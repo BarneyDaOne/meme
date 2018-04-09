@@ -393,7 +393,7 @@ if(!xp[item.author.id]){
     xp: 0,
     level: 1,
     oxp: 0,
-    ixp: 0,
+    ixp: 1000,
     imt: 0
 };
 }
@@ -466,12 +466,6 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
   }
 
 // 🤔 👌 👍 ❤ 📱 ⏱ 💎 💵 💴 💶 💷 ⚛ 🌟
-
-if (item.content.startsWith(prefix + "setbal ") || item.content.startsWith(prefix + "SETBAL ")) {
-  if (item.author.id === owner) {
-    xp[item.author.id].ixp = curoinAmt + args.join(" ");
-  }
-}
 
 if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
     const embed = new Discord.RichEmbed()
