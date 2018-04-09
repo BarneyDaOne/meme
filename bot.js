@@ -469,7 +469,7 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
 
 if (item.content.startsWith(prefix + "setbal ") || item.content.startsWith(prefix + "SETBAL ")) {
   if (item.author.id === owner) {
-    xp[item.author.id].ixp = curoinAmt + shardCrt;
+    xp[item.author.id].ixp = curoinAmt + args[0];
   }
 }
 
