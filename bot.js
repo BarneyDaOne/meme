@@ -416,11 +416,8 @@ setTimeout(() => {
 
 if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix + "WORK")) {
   talkedRecently.add(item.author.id);
-  setTimeout(() => {
-    // Removes the user from the set after 25 seconds
-    talkedRecently.delete(item.author.id);
   
-  random5 = Math.floor((Math.random() * 4));
+    random5 = Math.floor((Math.random() * 4));
    if (random5 = 0) {
     const embed = new Discord.RichEmbed()
     .setColor(0x1F98b1)
@@ -450,6 +447,9 @@ if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix +
     item.channel.send({embed})  
     xp[item.author.id].ixp = curoinAmt += 110;
    }
+  setTimeout(() => {
+    // Removes the user from the set after 25 seconds
+    talkedRecently.delete(item.author.id);
   }, 120000);
 }
 
