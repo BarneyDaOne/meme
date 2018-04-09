@@ -415,7 +415,6 @@ setTimeout(() => {
 
 
 if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix + "WORK")) {
- if (talkedRecently.
   talkedRecently.add(item.author.id);
   setTimeout(() => {
     // Removes the user from the set after 25 seconds
