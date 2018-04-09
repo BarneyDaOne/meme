@@ -415,11 +415,6 @@ setTimeout(() => {
 
 
 if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix + "WORK")) {
-  talkedRecently.add(item.author.id);
-  setTimeout(() => {
-    // Removes the user from the set after 25 seconds
-    talkedRecently.delete(item.author.id);
-  }, 120000);
  
 if (talkedRecently.has(item.author.id)) return item.reply("You can only use this command every 2 minutes!")
  
@@ -453,6 +448,12 @@ if (talkedRecently.has(item.author.id)) return item.reply("You can only use this
     item.channel.send({embed})  
     xp[item.author.id].ixp = curoinAmt += 110;
  }
+
+  talkedRecently.add(item.author.id);
+  setTimeout(() => {
+    // Removes the user from the set after 25 seconds
+    talkedRecently.delete(item.author.id);
+  }, 120000);
 }
 
 if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
