@@ -413,53 +413,6 @@ setTimeout(() => {
   talkedRecently.delete(item.author.id);
 }, 25000);
 
-
-if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix + "WORK")) {
-
-talkedRecently.add(item.author.id)
-
-if (!talkedRecently.has(item.author.id)) { 
-  return item.reply("You can only use this command every 2 minutes!")
-} 
-
-if (talkedRecently.has(item.author.id)) { 
-     random5 = Math.floor((Math.random() * 4));
-   if (random5 = 0) {
-    const embed = new Discord.RichEmbed()
-    .setColor(0x1F98b1)
-    .addField(msg.author.username, "You went to work at the local potapo hospital and racked up a normal amount of 50 Potads.")
-    .setThumbnail(item.author.avatarURL)
-    item.channel.send({embed})  
-    xp[item.author.id].ixp = curoinAmt += 25;
-   } else if (random5 = 1) {
-    const embed = new Discord.RichEmbed()
-    .setColor(0x1F98b1)
-    .addField(msg.author.username, "You went to work at the local potapo factory and racked up a decent amount of 65 Potads.")
-    .setThumbnail(item.author.avatarURL)
-    item.channel.send({embed})  
-    xp[item.author.id].ixp = curoinAmt += 65;
-   } else if (random5 = 2) {
-    const embed = new Discord.RichEmbed()
-    .setColor(0x1F98b1)
-    .addField(msg.author.username, "You went to work at the local potapo prison and racked up a good amount of 95 Potads.")
-    .setThumbnail(item.author.avatarURL)
-    item.channel.send({embed})  
-    xp[item.author.id].ixp = curoinAmt += 95;
-   } else if (random5 = 3) {
-    const embed = new Discord.RichEmbed()
-    .setColor(0x1F98b1)
-    .addField(msg.author.username, "You went to work at the local potapo mine and racked up a high amount of 110 Potads.")
-    .setThumbnail(item.author.avatarURL)
-    item.channel.send({embed})  
-    xp[item.author.id].ixp = curoinAmt += 110;
-}
-}
-  setTimeout(() => {
-    // Removes the user from the set after 25 seconds
-    talkedRecently.delete(item.author.id);
-  }, 1200);
-}
-
 if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
   xp[item.author.id].oxp = 0;
     
@@ -514,6 +467,12 @@ if (item.content === prefix + "bal" || item.content === prefix + "BAL") {
 
 // 🤔 👌 👍 ❤ 📱 ⏱ 💎 💵 💴 💶 💷 ⚛ 🌟
 
+if (item.content.startsWith(prefix + "setbal ") || item.content.startsWith(prefix + "SETBAL ")) {
+  if (item.author.id === owner) {
+    xp[item.author.id].ixp = curoinAmt + shardCrt;
+  }
+}
+
 if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
     const embed = new Discord.RichEmbed()
     .setColor(0x2F192F)
@@ -525,81 +484,81 @@ if (item.content === prefix + "shop" || item.content === prefix + "SHOP") {
 if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + "BUY")) {
   if (item.content === prefix + "buy 1" ||item.content === prefix + "BUY 1") {
     if (curoinAmt > 200) {
-    curoinAmt - 200
+    xp[item.author.id].ixp - 200
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
    } else if (curoinAmt < 200) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 2" ||item.content === prefix + "BUY 2") {
     if (curoinAmt > 400) {
-    curoinAmt - 400
+    xp[item.author.id].ixp - 400
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
   } else if (curoinAmt < 400) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 3" ||item.content === prefix + "BUY 3") {
     if (curoinAmt > 600) {
-    curoinAmt - 600
+    xp[item.author.id].ixp - 600
    item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
    } else if (curoinAmt < 600) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 4" ||item.content === prefix + "BUY 4") {
     if (curoinAmt > 800) {
-    curoinAmt - 800
+    xp[item.author.id].ixp - 800
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
    } else if (curoinAmt < 800) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 5" ||item.content === prefix + "BUY 5") {
     if (curoinAmt > 1000) {
-    curoinAmt - 1000
+    xp[item.author.id].ixp - 1000
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
    } else if (curoinAmt < 1000) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 6" ||item.content === prefix + "BUY 6") {
     if (curoinAmt > 1200) {
-    curoinAmt - 1200
+    xp[item.author.id].ixp - 1200
    item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
    } else if (curoinAmt < 1200) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 7" ||item.content === prefix + "BUY 7") {
     if (curoinAmt > 1400) {
-    curoinAmt - 1400
+    xp[item.author.id].ixp - 1400
    item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
     } else if (curoinAmt < 1400) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 8" ||item.content === prefix + "BUY 8") {
     if (curoinAmt > 1600) {
-    curoinAmt - 1600
+    xp[item.author.id].ixp - 1600
    item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
    } else if (curoinAmt < 1600) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 9" ||item.content === prefix + "BUY 9") {
     if (curoinAmt > 1800) {
-    curoinAmt - 1800
+     xp[item.author.id].ixp - 1800
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
     } else if (curoinAmt < 1800) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 10" ||item.content === prefix + "BUY 10") {
     if (curoinAmt > 2000) {
-    curoinAmt - 2000
+    xp[item.author.id].ixp - 2000
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
     } else if (curoinAmt < 2000) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 11" ||item.content === prefix + "BUY 11") {
     if (curoinAmt > 2200) {
-    curoinAmt - 2200
+    xp[item.author.id].ixp - 2200
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
    } else if (curoinAmt < 2200) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 12" ||item.content === prefix + "BUY 12") {
     if (curoinAmt > 2400) {
-    curoinAmt - 2400
+    xp[item.author.id].ixp - 2400
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
     } else if (curoinAmt < 2400) return msg.reply("You dont have enough Potads to buy this item.")
   } else if (item.content === prefix + "buy 13" ||item.content === prefix + "BUY 13") {
     if (curoinAmt > 2600) {
-    curoinAmt - 2600
+    xp[item.author.id].ixp - 2600
     item.reply("ok")
-    itemAmt += 1
+    xp[item.author.id].imt += 1
     } else if (curoinAmt < 2600) return msg.reply("You dont have enough Potads to buy this item.")
   }
 }
