@@ -413,6 +413,46 @@ setTimeout(() => {
   talkedRecently.delete(item.author.id);
 }, 25000);
 
+
+if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix + "WORK")) {
+  talkedRecently.add(item.author.id);
+  setTimeout(() => {
+    // Removes the user from the set after 25 seconds
+    talkedRecently.delete(item.author.id);
+  
+  random5 = Math.floor((Math.random() * 4));
+   if (random5 = 0) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0x1F98b1)
+    .addField(msg.author.username, "You went to work at the local potapo hospital and racked up a normal amount of 50 Potads.")
+    .setImage(item.author.avatarURL)
+    item.channel.send({embed})  
+    xp[item.author.id].ixp = curoinAmt += 25;
+   } else if (random5 = 1) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0x1F98b1)
+    .addField(msg.author.username, "You went to work at the local potapo factory and racked up a decent amount of 65 Potads.")
+    .setImage(item.author.avatarURL)
+    item.channel.send({embed})  
+    xp[item.author.id].ixp = curoinAmt += 65;
+   } else if (random5 = 2) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0x1F98b1)
+    .addField(msg.author.username, "You went to work at the local potapo prison and racked up a good amount of 95 Potads.")
+    .setImage(item.author.avatarURL)
+    item.channel.send({embed})  
+    xp[item.author.id].ixp = curoinAmt += 95;
+   } else if (random5 = 3) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0x1F98b1)
+    .addField(msg.author.username, "You went to work at the local potapo mine and racked up a high amount of 110 Potads.")
+    .setImage(item.author.avatarURL)
+    item.channel.send({embed})  
+    xp[item.author.id].ixp = curoinAmt += 110;
+   }
+  }, 120000);
+}
+
 if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
   xp[item.author.id].oxp = 0;
     
