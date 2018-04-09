@@ -433,7 +433,7 @@ if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix +
     const embed = new Discord.RichEmbed()
     .setColor(0x1F98b1)
     .addField(msg.author.username, "You went to work at the local potapo factory and racked up a decent amount of 65 Potads.")
-    .setThumbnaile(item.author.avatarURL)
+    .setThumbnail(item.author.avatarURL)
     item.channel.send({embed})  
     xp[item.author.id].ixp = curoinAmt += 65;
    } else if (random5 = 2) {
