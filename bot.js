@@ -418,10 +418,11 @@ if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix +
 
 talkedRecently.add(item.author.id)
 
-if (!talkedRecently.has(item.author.id)) { 
+if (talkedRecently.has(item.author.id)) { 
   return item.reply("You can only use this command every 2 minutes!")
 } 
 
+if (!talkedRecently.has(item.author.id)) { 
      random5 = Math.floor((Math.random() * 4));
    if (random5 = 0) {
     const embed = new Discord.RichEmbed()
@@ -452,7 +453,7 @@ if (!talkedRecently.has(item.author.id)) {
     item.channel.send({embed})  
     xp[item.author.id].ixp = curoinAmt += 110;
 }
-
+}
   setTimeout(() => {
     // Removes the user from the set after 25 seconds
     talkedRecently.delete(item.author.id);
