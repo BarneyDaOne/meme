@@ -416,7 +416,7 @@ setTimeout(() => {
 
 if (item.content.startsWith(prefix + "work") || item.content.startsWith(prefix + "WORK")) {
 
-  talkedRecently.add(item.author.id);
+  talkedRecently.add(item.author.id)
  
 if (talkedRecently.has(item.author.id)) return item.reply("You can only use this command every 2 minutes!")
  
