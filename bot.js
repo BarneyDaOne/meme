@@ -415,14 +415,14 @@ setTimeout(() => {
 
 if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
   xp[item.author.id].oxp = 0;
-    
+
   xp[item.author.id].level = curlvl + 1;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setDescription("New Level : " + curlvl + 1 + " Coins added : 200")
   .setColor(purple)
-  item.channel.send({embed}).then(msg => {msg.delete(50000)});  
+  item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
 
   let coinAmt = Math.floor(Math.random() * 15) + 1;
@@ -557,5 +557,7 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
   }
 }
 });
+
+// heyo its tomato potapo hia
 
 client.login(process.env.BOT_TOKEN);
