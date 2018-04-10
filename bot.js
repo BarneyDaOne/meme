@@ -558,6 +558,4 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
 }
 });
 
-// heyo its tomato potapo hia
-
 client.login(process.env.BOT_TOKEN);
