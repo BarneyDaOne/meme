@@ -558,4 +558,6 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
 }
 });
 
+// work tbh
+
 client.login(process.env.BOT_TOKEN);
