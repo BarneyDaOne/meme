@@ -577,7 +577,6 @@ let prefix = "d."
 client.on('message', msg => {
 
 let xpAdd = 13;
-console.log(xpAdd);
 
 if(!xp[msg.author.id]){
   xp[msg.author.id] = {
@@ -606,9 +605,9 @@ if (nxtLvl < xp[msg.author.id].xp) {
   xp[msg.author.id].xp = 0;
 
   const embed = new Discord.RichEmbed()
+  .setColor(0x182732)
   .setTitle("Level Up!")
   .setDescription("New Level : " + curlvl + 1)
-  .setColor(0x238172)
   msg.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
 
@@ -621,13 +620,13 @@ if (msg.content === prefix + "help") {
   msg.channel.send({embed});
 };
 
-if (msg.content === prefix + "level") {
+/*if (msg.content === prefix + "level") {
   const embed = new Discord.RichEmbed()
   .setColor(0x0074ff)
   .setTitle(xp[msg.author.id].xp)
 
   msg.channel.send({embed});
 
-});
+});*/
 
 client.login(process.env.BOT_TOKEN);
