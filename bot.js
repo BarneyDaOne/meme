@@ -636,13 +636,13 @@ setTimeout(() => {
 }, 1000);
 
 if (nxtLvl < xp[item.author.id].oxp) {
-  xp[item.author.id].oxp = 0;
+  xp[item.author.id].oxp -= xp[item.author.id].oxp;
 
   xp[item.author.id].level = curlvl + 1;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
-  .setDescription("New Level : " + curlvl + 1)
+  .setDescription("New Level : " + curlvl += 1)
   .setColor(0x81ffa2)
   item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
