@@ -613,6 +613,8 @@ let xpAdd = 13;
 console.log(xpAdd);
 let xpAd = 13;
 console.log(xpAdd);
+let xpRandom = 1000;
+console.log(xpAdd);
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
@@ -635,6 +637,15 @@ setTimeout(() => {
   xp[item.author.id].oxp = hiddenxp += xpAd;
   talkedRecently.delete(item.author.id);
 }, 1000);
+
+if (msg.content === prefix + "daily") {
+  talkedRecently.add(item.author.id);
+  setTimeout(() => {
+    // Removes the user from the set after 25 seconds
+   xp[item.author.id].xp = curxp += xpRandom;
+   talkedRecently.delete(item.author.id);
+  }, 86400000);
+}
 
 if (nxtLvl < xp[item.author.id].oxp) {
   xp[item.author.id].oxp = 0;
