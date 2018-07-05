@@ -580,19 +580,19 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Deppresso give you a help manual!")
-  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n • d.avatar - Displays the avatar of a user.")
+  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.")
  
   msg.channel.send({embed});
-};
+}
 
 if (msg.content.startsWith(prefix + "avatar")) {
-  if (msg.mentions.users.size === mentioned) {
+  if (msg.mentions.users.size === 1) {
     const embed = new Discord.RichEmbed()
     .setColor(0x1F98b1)
     .addField(msg.mentions.members.first().user.username, "This is their avatar.")
     .setImage(msg.mentions.members.first().user.avatarURL)
     msg.channel.send({embed})
-  } else if (msg.mentions.users.size === nomention) {
+  } else if (msg.mentions.users.size === 0) {
     const embed = new Discord.RichEmbed()
     .setColor(0x1F98b1)
     .addField(msg.author.username, "This is your avatar.")
