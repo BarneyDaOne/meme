@@ -584,6 +584,8 @@ if (msg.content === prefix + "help") {
   msg.channel.send({embed})
 }
 
+};
+
 client.on('message', msg => {
 
 client.login(process.env.BOT_TOKEN);
