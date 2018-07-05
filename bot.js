@@ -637,7 +637,7 @@ setTimeout(() => {
   xp[item.author.id].xp = curxp += xpAdd;
   xp[item.author.id].oxp = hiddenxp += xpAd;
   talkedRecently.delete(item.author.id);
-}, 25000);
+}, 10000);
 
 if (nxtLvl < xp[item.author.id].oxp) {
   xp[item.author.id].oxp = 0;
@@ -661,12 +661,11 @@ fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
 
 if (item.content === prefix + "xp") {
    const embed = new Discord.RichEmbed()
-   .setAuthor(item.author.username)
-   .setColor(purple)
+   .setColor(0x2d38f2)
    .addField("Level", curlvl, true)
-   .addField("Potapo Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
+   .addField("Deppresso Coins", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
    .addField("Next Level", curlvl + 1, true)
-   .addField("Points Needed", nxtLvl, true)
+   .addField("Coins Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
