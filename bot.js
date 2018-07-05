@@ -562,6 +562,7 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const fs = require("fs");
 let xp = require("./xp.json");
 
 client.on('ready', () => {
@@ -571,21 +572,25 @@ client.on('ready', () => {
 });
 
 let prefix = "d."
-let curxp = xp[item.guild.id + item.author.id].xp;
-let curlvl = xp[item.guild.id + item.author.id].level;
-let nxtLvl = xp[item.guild.id + item.author.id].level * 300;
+let curxp = xp[item.author.id].xp;
+let curlvl = xp[item.author.id].level;
+let nxtLvl = xp[item.author.id].level * 300;
 
 client.on('message', msg => {
 
 let xpAdd = 13;
 console.log(xpAdd);
 
-if(!xp[item.guild.id + item.author.id]){
-  xp[item.guild.id + item.author.id] = {
+if(!xp[item.author.id]){
+  xp[item.author.id] = {
     xp: 0,
     level: 1
 };
 }
+
+fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+  if(err) console.log(err)
+});
 
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
@@ -600,7 +605,7 @@ if (msg.content === prefix + "level") {
   const embed = new Discord.RichEmbed()
   .setColor(0x0074ff)
   .setAuthor(msg.author.username)
-  .setTitle(xp[item.guild.id + item.author.id].xp)
+  .setTitle(xp[item.author.id].xp)
 
   msg.channel.send({embed});
 }
