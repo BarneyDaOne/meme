@@ -643,6 +643,7 @@ if (msg.content === prefix + "daily") {
   setTimeout(() => {
     // Removes the user from the set after 25 seconds
    xp[item.author.id].xp = curxp += xpRandom;
+   msg.reply("ok");
    talkedRecently.delete(item.author.id);
   }, 86400000);
 }
