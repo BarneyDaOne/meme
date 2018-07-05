@@ -584,7 +584,7 @@ if (msg.content === prefix + "help") {
   msg.channel.send({embed})
 }
 
-};
+});
 
 client.on('message', msg => {
 
