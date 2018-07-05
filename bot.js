@@ -580,7 +580,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Deppresso give you a help manual!")
-  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.")
+  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n • d.avatar - Displays the avatar of a user.")
  
   msg.channel.send({embed});
 };
