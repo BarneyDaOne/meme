@@ -624,7 +624,6 @@ if (msg.content === prefix + "help") {
 if (msg.content === prefix + "level") {
   const embed = new Discord.RichEmbed()
   .setColor(0x0074ff)
-  .setAuthor(msg.author.username)
   .setTitle(xp[item.author.id].xp)
 
   msg.channel.send({embed});
