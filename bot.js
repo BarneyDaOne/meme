@@ -626,6 +626,7 @@ let curxp = xp[item.author.id].xp;
 let hiddenxp = xp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 120;
+let dispLvl = xp[item.author.id].level + 1;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -636,13 +637,13 @@ setTimeout(() => {
 }, 1000);
 
 if (nxtLvl < xp[item.author.id].oxp) {
-  xp[item.author.id].oxp = 0;
+  xp[item.author.id].oxp = hiddenxp * 0;
 
   xp[item.author.id].level = curlvl + 1;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
-  .setDescription("New Level : " + nxtLvl)
+  .setDescription("New Level : " + dispLvl)
   .setColor(0x81ffa2)
   item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
@@ -655,7 +656,7 @@ fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
   if(err) console.log(err)
 });
 
-if (item.content === prefix + "xp") {
+if (item.content === prefix + "points") {
    const embed = new Discord.RichEmbed()
    .setColor(0x81ffa2)
    .addField("Level", curlvl, true)
