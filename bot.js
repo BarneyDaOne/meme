@@ -642,7 +642,7 @@ if (nxtLvl < xp[item.author.id].oxp) {
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
-  .setDescription("New Level : " + curlvl += 1)
+  .setDescription("New Level : " + nxtLvl)
   .setColor(0x81ffa2)
   item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
