@@ -636,7 +636,7 @@ setTimeout(() => {
   xp[item.author.id].xp = curxp += xpAdd;
   xp[item.author.id].oxp = hiddenxp += xpAd;
   talkedRecently.delete(item.author.id);
-}, 1000);
+}, 25000);
 
 /*if (msg.content === prefix + "daily") {
   talkedRecently.add(item.author.id).then(msg => {msg.reply("ok")})  
