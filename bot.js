@@ -585,6 +585,22 @@ if (msg.content === prefix + "help") {
   msg.channel.send({embed});
 };
 
+if (msg.content.startsWith(prefix + "avatar")) {
+  if (msg.mentions.users.size === mentioned) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0x1F98b1)
+    .addField(msg.mentions.members.first().user.username, "This is their avatar.")
+    .setImage(msg.mentions.members.first().user.avatarURL)
+    msg.channel.send({embed})
+  } else if (msg.mentions.users.size === nomention) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0x1F98b1)
+    .addField(msg.author.username, "This is your avatar.")
+    .setImage(msg.author.avatarURL)
+    msg.channel.send({embed})
+  }
+}
+
 });
 
 client.login(process.env.BOT_TOKEN);
