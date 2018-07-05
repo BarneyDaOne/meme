@@ -572,6 +572,7 @@ let ixp = require("./ixp.json");
 let imt = require("./imt.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
+let item = msg;
 
 client.on('ready', () => {
 //  client.user.setUsername("ロボ | Deppresso"); 
