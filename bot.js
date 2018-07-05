@@ -564,7 +564,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  client.user.setUsername("ロボ | Deppresso Expresso"); 
+//  client.user.setUsername("ロボ | Deppresso Expresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (d.help)', type: 3 } });
 });
@@ -572,16 +572,10 @@ client.on('ready', () => {
 let prefix = "d."
 
 // 416053252585684994
+client.on('message', msg => {
 
 if (msg.content === prefix + "help") {
- 
- const embed = new Discord.RichEmbed()
-  .setColor(0xc483ff)
-  .setTitle("Deppresso Expresso Bot Help")
-  .setDescription("d.help")
-  .setFooter("Deppresso Expresso is not a drinkable substance, please refrain from drinking or digesting me.")
-
-  msg.channel.send({embed})
+  msg.channel.send("hey")
 };
 
 });
