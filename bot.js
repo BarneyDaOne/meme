@@ -638,14 +638,14 @@ setTimeout(() => {
   talkedRecently.delete(item.author.id);
 }, 1000);
 
-if (msg.content === prefix + "daily") {
+/*if (msg.content === prefix + "daily") {
   talkedRecently.add(item.author.id).then(msg => {msg.reply("ok")})  
   setTimeout(() => {
     // Removes the user from the set after 25 seconds
    xp[item.author.id].xp = curxp += xpRandom;
    talkedRecently.delete(item.author.id);
   }, 86400000);
-}
+}*/
 
 if (nxtLvl < xp[item.author.id].oxp) {
   xp[item.author.id].oxp = 0;
@@ -672,7 +672,6 @@ if (item.content === prefix + "points") {
    .setColor(0x81ffa2)
    .addField("Level", curlvl, true)
    .addField("Deppresso Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
-   .addField("Next Level", curlvl + 1, true)
    .addField("Points Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
