@@ -673,7 +673,7 @@ if (item.content === prefix + "points") {
    .addField("Level", curlvl, true)
    .addField("Deppresso Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
    .addField("Points Needed", nxtLvl, true)
-   .setThumbnail(item.author.avatarURL)
+   .setAuthor(item.author.username + "'s Deppresso Points")
    item.channel.send({embed})
   }
 
