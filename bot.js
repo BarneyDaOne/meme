@@ -563,15 +563,6 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-const talkedRecently = new Set();
-let xp = require("./xp.json");
-let oxp = require("./oxp.json");
-let coins = require("./coins.json");
-let items = require("./items.json");
-let ixp = require("./ixp.json");
-let imt = require("./imt.json");
-let purple = 0xF291F9
-const talkedRecently = new Set();
 
 client.on('ready', () => {
 //  client.user.setUsername("ロボ | Deppresso"); 
@@ -593,84 +584,6 @@ if (msg.content === prefix + "help") {
  
   msg.channel.send({embed});
 };
-
-// XP
-
-let xpAdd = 13;
-console.log(xpAdd);
-let xpAd = 13;
-console.log(xpAdd);
-let coinAdd = Math.floor(Math.random() * 2) + 3;
-console.log(xpAdd);
-let shardCrt = args[1]
-console.log(shardCrt)
-
-if(!xp[item.guild.id + item.author.id]){
-  xp[item.guild.id + item.author.id] = {
-    xp: 0,
-    level: 1,
-    oxp: 0,
-    ixp: 0,
-    imt: 0
-};
-}
-
-let curxp = xp[item.guild.id + item.author.id].xp;
-let hiddenxp = xp[item.guild.id + item.author.id].oxp;
-let curlvl = xp[item.guild.id + item.author.id].level;
-let nxtLvl = xp[item.guild.id + item.author.id].level * 300;
-let curoinAmt = xp[item.guild.id + item.author.id].ixp;
-let itemAmt = xp[item.guild.id + item.author.id].imt;
-
-talkedRecently.add(item.author.id);
-setTimeout(() => {
-  // Removes the user from the set after 25 seconds
-  xp[item.guild.id + item.author.id].xp = curxp += xpAdd;
-  xp[item.guild.id + item.author.id].oxp = hiddenxp += xpAd;
-  talkedRecently.delete(item.author.id);
-}, 25000);
-
-if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
-  xp[item.guild.id + item.author.id].oxp = 0;
-
-  xp[item.guild.id + item.author.id].level = curlvl + 1;
-
-  const embed = new Discord.RichEmbed()
-  .setTitle("Level Up!")
-  .setDescription("New Level : " + curlvl + 1 + " Coins added : 200")
-  .setColor(purple)
-  item.channel.send({embed}).then(msg => {msg.delete(50000)});
-}
-
-  let coinAmt = Math.floor(Math.random() * 15) + 1;
-  let baseAmt = Math.floor(Math.random() * 15) + 1;
-console.log(`${coinAmt} ; ${baseAmt}`);fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-  if (err) console.log(err)
-});
-
-fs.writeFile("./items.json", JSON.stringify(items), (err) => {
-  if (err) console.log(err)
-});
-
-fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-  if(err) console.log(err)
-});
-
-fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
-  if(err) console.log(err)
-});
-
-if (item.content === prefix + "profile" || item.content === prefix + "PROFILE" || item.content === prefix + "pf" || item.content === prefix + "PF") {
-   const embed = new Discord.RichEmbed()
-   .setAuthor(item.author.username)
-   .setColor(purple)
-   .addField("Level", curlvl, true)
-   .addField("Potapo Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
-   .addField("Next Level", curlvl + 1, true)
-   .addField("Points Needed", nxtLvl, true)
-   .setThumbnail(item.author.avatarURL)
-   item.channel.send({embed})
-  }
 
 });
 
