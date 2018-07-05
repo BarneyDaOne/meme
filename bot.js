@@ -636,7 +636,7 @@ setTimeout(() => {
 }, 1000);
 
 if (nxtLvl < xp[item.author.id].oxp) {
-  xp[item.author.id].oxp -= xp[item.author.id].oxp;
+  xp[item.author.id].xp = 0;
 
   xp[item.author.id].level = curlvl + 1;
 
