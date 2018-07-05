@@ -564,9 +564,9 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on('ready', () => {
+  client.user.setUsername("ロボ | Deppresso Expresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (d.help)', type: 3 } });
-  client.user.setUsername("ロボ | Deppresso Expresso");
 });
 
 let prefix = "d."
@@ -576,10 +576,10 @@ let prefix = "d."
 if (msg.content === prefix + "help") {
  
  const embed = new Discord.RichEmbed()
-  .setColor(0xc483ff);
-  .setTitle("Deppresso Expresso Bot Help");
-  .setDescription("d.help");
-  .setFooter("Deppresso Expresso is not a drinkable substance, please refrain from drinking or digesting me.");
+  .setColor(0xc483ff)
+  .setTitle("Deppresso Expresso Bot Help")
+  .setDescription("d.help")
+  .setFooter("Deppresso Expresso is not a drinkable substance, please refrain from drinking or digesting me.")
 
   msg.channel.send({embed})
 };
