@@ -589,9 +589,9 @@ let curxp = xp[msg.author.id].xp;
 let curlvl = xp[msg.author.id].level;
 let nxtLvl = xp[msg.author.id].level * 300;
 
-fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+/*fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
-});
+});*/
 
 /*talkedRecently.add(msg.author.id);
 setTimeout(() => {
