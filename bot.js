@@ -580,7 +580,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Deppresso give you a help manual!")
-  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.")
+  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n•d.invite - Invite old man Deppresso to a server.")
  
   msg.channel.send({embed});
 }
@@ -599,6 +599,10 @@ if (msg.content.startsWith(prefix + "avatar")) {
     .setImage(msg.author.avatarURL)
     msg.channel.send({embed})
   }
+}
+
+if (msg.content === prefix + "invite") {
+  msg.channel.send("https://discordapp.com/api/oauth2/authorize?client_id=419229555857817601&permissions=8&scope=bot");
 }
 
 });
