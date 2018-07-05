@@ -563,6 +563,7 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
+const talkedRecently = new Set();
 let xp = require("./xp.json");
 
 client.on('ready', () => {
@@ -592,6 +593,24 @@ let nxtLvl = xp[item.author.id].level * 300;
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
+
+talkedRecently.add(item.author.id);
+setTimeout(() => {
+  // Removes the user from the set after 25 seconds
+  xp[item.author.id].xp = curxp += xpAdd;
+  // xp[item.guild.id + item.author.id].oxp = hiddenxp += xpAd;
+  talkedRecently.delete(item.author.id);
+}, 25000);
+
+if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
+  xp[item.author.id].xp = 0;
+
+  const embed = new Discord.RichEmbed()
+  .setTitle("Level Up!")
+  .setDescription("New Level : " + curlvl + 1)
+  .setColor(0x238172)
+  item.channel.send({embed}).then(msg => {msg.delete(50000)});
+}
 
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
