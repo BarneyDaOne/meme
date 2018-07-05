@@ -564,7 +564,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  client.user.setUsername("ロボ | Deppresso Expresso"); 
+  client.user.setUsername("ロボ | Deppresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (d.help)', type: 3 } });
 });
@@ -575,7 +575,13 @@ let prefix = "d."
 client.on('message', msg => {
 
 if (msg.content === prefix + "help") {
-  msg.channel.send("hey")
+  const embed = new Discord.RichEmbed()
+  .setColor(0xa7ffab)
+  .setTitle("Deppresso's Special Guide")
+  .setDescription("I honestly don't think that the guide is special...")
+  .addField("d.help", "Displays old man Deppresso's handy guide.")
+
+  msg.channel.send({embed});
 };
 
 });
