@@ -572,7 +572,6 @@ let ixp = require("./ixp.json");
 let imt = require("./imt.json");
 let purple = 0xF291F9
 const talkedRecently = new Set();
-let item = msg;
 
 client.on('ready', () => {
 //  client.user.setUsername("ロボ | Deppresso"); 
@@ -584,6 +583,8 @@ let prefix = "d."
 
 client.on('message', msg => {
 
+ let item = msg;
+  
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
