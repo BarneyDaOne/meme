@@ -562,6 +562,7 @@ if (item.content.startsWith(prefix + "buy") || item.content.startsWith(prefix + 
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
+let xp = require("./xp.json");
 
 client.on('ready', () => {
 //  client.user.setUsername("ロボ | Deppresso"); 
@@ -570,9 +571,21 @@ client.on('ready', () => {
 });
 
 let prefix = "d."
+let curxp = xp[item.guild.id + item.author.id].xp;
+let curlvl = xp[item.guild.id + item.author.id].level;
+let nxtLvl = xp[item.guild.id + item.author.id].level * 300;
 
-// 416053252585684994
 client.on('message', msg => {
+
+let xpAdd = 13;
+console.log(xpAdd);
+
+if(!xp[item.guild.id + item.author.id]){
+  xp[item.guild.id + item.author.id] = {
+    xp: 0,
+    level: 1
+};
+}
 
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
@@ -582,6 +595,15 @@ if (msg.content === prefix + "help") {
  
   msg.channel.send({embed});
 };
+
+if (msg.content === prefix + "level") {
+  const embed = new Discord.RichEmbed()
+  .setColor(0x0074ff)
+  .setAuthor(msg.author.username)
+  .setTitle(xp[item.guild.id + item.author.id].xp)
+
+  msg.channel.send({embed});
+}
 
 });
 
