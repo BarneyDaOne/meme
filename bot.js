@@ -593,7 +593,7 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
-talkedRecently.add(msg.author.id);
+/*talkedRecently.add(msg.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
   xp[msg.author.id].xp = curxp += xpAdd;
@@ -609,7 +609,7 @@ if (nxtLvl < xp[msg.author.id].xp) {
   .setTitle("Level Up!")
   .setDescription("New Level : " + curlvl + 1)
   msg.channel.send({embed}).then(msg => {msg.delete(50000)});
-}
+}*/
 
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
