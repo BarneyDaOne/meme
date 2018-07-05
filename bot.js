@@ -566,6 +566,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (d.help)', type: 3 } });
+  msg.guild.members.get(bot.user.id).setNickname("ロボ | Deppresso Expresso")
 });
 
 let prefix = "d."
