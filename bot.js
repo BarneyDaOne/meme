@@ -565,7 +565,7 @@ const client = new Discord.Client();
 const fs = require("fs");
 
 client.on('ready', () => {
-//  client.user.setUsername("ロボ | Deppresso"); 
+  client.user.setUsername("Deppresso Expresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (d.help)', type: 3 } });
 });
