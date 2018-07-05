@@ -584,7 +584,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Deppresso give you a help manual!")
-  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n• d.invite - Invite old man Deppresso to a server.")
+  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n• d.invite - Invite old man Deppresso to a server.\n• d.points - Display your Deppresso points")
  
   msg.channel.send({embed});
 }
@@ -618,18 +618,14 @@ if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
     level: 1,
-    oxp: 0,
-    ixp: 0,
-    imt: 0
+    oxp: 0
 };
 }
 
 let curxp = xp[item.author.id].xp;
 let hiddenxp = xp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
-let nxtLvl = xp[item.author.id].level * 300;
-let curoinAmt = xp[item.author.id].ixp;
-let itemAmt = xp[item.author.id].imt;
+let nxtLvl = xp[item.author.id].level * 120;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -637,7 +633,7 @@ setTimeout(() => {
   xp[item.author.id].xp = curxp += xpAdd;
   xp[item.author.id].oxp = hiddenxp += xpAd;
   talkedRecently.delete(item.author.id);
-}, 10000);
+}, 1000);
 
 if (nxtLvl < xp[item.author.id].oxp) {
   xp[item.author.id].oxp = 0;
@@ -646,8 +642,8 @@ if (nxtLvl < xp[item.author.id].oxp) {
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
-  .setDescription("New Level : " + curlvl + 1 + " Coins added : 200")
-  .setColor(purple)
+  .setDescription("New Level : " + curlvl + 1)
+  .setColor(0x81ffa2)
   item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
 
@@ -661,11 +657,11 @@ fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
 
 if (item.content === prefix + "xp") {
    const embed = new Discord.RichEmbed()
-   .setColor(0x2d38f2)
+   .setColor(0x81ffa2)
    .addField("Level", curlvl, true)
-   .addField("Deppresso Coins", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
+   .addField("Deppresso Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
    .addField("Next Level", curlvl + 1, true)
-   .addField("Coins Needed", nxtLvl, true)
+   .addField("Points Needed", nxtLvl, true)
    .setThumbnail(item.author.avatarURL)
    item.channel.send({embed})
   }
