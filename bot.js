@@ -572,9 +572,6 @@ client.on('ready', () => {
 });
 
 let prefix = "d."
-let curxp = xp[item.author.id].xp;
-let curlvl = xp[item.author.id].level;
-let nxtLvl = xp[item.author.id].level * 300;
 
 client.on('message', msg => {
 
@@ -587,6 +584,10 @@ if(!xp[item.author.id]){
     level: 1
 };
 }
+
+let curxp = xp[item.author.id].xp;
+let curlvl = xp[item.author.id].level;
+let nxtLvl = xp[item.author.id].level * 300;
 
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
