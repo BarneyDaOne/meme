@@ -586,6 +586,4 @@ if (msg.content === prefix + "help") {
 
 });
 
-client.on('message', msg => {
-
 client.login(process.env.BOT_TOKEN);
