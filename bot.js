@@ -579,37 +579,37 @@ client.on('message', msg => {
 let xpAdd = 13;
 console.log(xpAdd);
 
-if(!xp[item.author.id]){
-  xp[item.author.id] = {
+if(!xp[msg.author.id]){
+  xp[msg.author.id] = {
     xp: 0,
     level: 1
 };
 }
 
-let curxp = xp[item.author.id].xp;
-let curlvl = xp[item.author.id].level;
-let nxtLvl = xp[item.author.id].level * 300;
+let curxp = xp[msg.author.id].xp;
+let curlvl = xp[msg.author.id].level;
+let nxtLvl = xp[msg.author.id].level * 300;
 
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
-talkedRecently.add(item.author.id);
+talkedRecently.add(msg.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
-  xp[item.author.id].xp = curxp += xpAdd;
+  xp[msg.author.id].xp = curxp += xpAdd;
   // xp[item.guild.id + item.author.id].oxp = hiddenxp += xpAd;
-  talkedRecently.delete(item.author.id);
+  talkedRecently.delete(msg.author.id);
 }, 25000);
 
-if (nxtLvl < xp[item.author.id || item.guild.id].oxp) {
-  xp[item.author.id].xp = 0;
+if (nxtLvl < xp[msg.author.id].xp) {
+  xp[msg.author.id].xp = 0;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setDescription("New Level : " + curlvl + 1)
   .setColor(0x238172)
-  item.channel.send({embed}).then(msg => {msg.delete(50000)});
+  msg.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
 
 if (msg.content === prefix + "help") {
@@ -621,13 +621,12 @@ if (msg.content === prefix + "help") {
   msg.channel.send({embed});
 };
 
-/*if (msg.content === prefix + "level") {
+if (msg.content === prefix + "level") {
   const embed = new Discord.RichEmbed()
   .setColor(0x0074ff)
-  .setTitle(xp[item.author.id].xp)
+  .setTitle(xp[msg.author.id].xp)
 
   msg.channel.send({embed});
-}*/
 
 });
 
