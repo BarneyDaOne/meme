@@ -639,7 +639,7 @@ setTimeout(() => {
 }, 1000);
 
 if (msg.content === prefix + "daily") {
-  msg.reply("ok").then(talkedRecently.add(item.author.id)); 
+  talkedRecently.add(item.author.id).then(msg => {msg.reply("ok")})  
   setTimeout(() => {
     // Removes the user from the set after 25 seconds
    xp[item.author.id].xp = curxp += xpRandom;
