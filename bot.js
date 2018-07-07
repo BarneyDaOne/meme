@@ -655,7 +655,7 @@ if (nxtLvl < xp[item.author.id].oxp) {
 
   xp[item.author.id].level = curlvl + 1;
 
-  xp[item.author.id.coins = curcoins + 200;
+  /*xp[item.author.id.coins = curcoins + 200;*/
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
@@ -677,9 +677,9 @@ if (item.content === prefix + "points") {
    const embed = new Discord.RichEmbed()
    .setColor(0x81ffa2)
    .addField("Level", curlvl, true)
-   .addField("Deppresso Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
+   .addField("Espre-Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
    .addField("Points Needed", nxtLvl, true)
-   .setAuthor(item.author.username + "'s Deppresso Points")
+   .setAuthor(item.author.username + "'s Espre-Points")
    item.channel.send({embed})
   }
 
