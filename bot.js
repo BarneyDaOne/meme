@@ -621,8 +621,8 @@ if(!xp[item.author.id]){
     xp: 0,
     level: 1,
     oxp: 0,
-    cafe: 0,
-    coins: 0
+    cafe: 0
+    //coins: 0
 };
 }
 
@@ -631,7 +631,7 @@ let hiddenxp = xp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 120;
 let dispLvl = xp[item.author.id].level + 1;
-let curcoins = xp[item.author.id].coins;
+//let curcoins = xp[item.author.id].coins;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
