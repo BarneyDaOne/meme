@@ -680,7 +680,7 @@ if (item.content === prefix + "points") {
 
 if (item.content === prefix + "rent-cafe") {
    if (xp[item.author.id].cafe === 0) {
-    xp[item.author.id].cafe === 1;
+    xp[item.author.id].cafe = 1;
     msg.channel.send("Congrats " + msg.author.username + ", You've just bought a cafe! (d.cafe to check out your new cafe)")
    }
 }
