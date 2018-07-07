@@ -622,8 +622,7 @@ if(!xp[item.author.id]){
     level: 1,
     oxp: 0,
     cafe: 0,
-    coins: 0,
-    cpm: 1
+    coins: 0
 };
 }
 
@@ -684,12 +683,12 @@ if (item.content === prefix + "points") {
    item.channel.send({embed})
   }
 
-if (item.content === prefix + "coins") {
+/*if (item.content === prefix + "coins") {
   const embed = new Discord.RichEmbed()
   .setColor(0x481faf1)
   .addField(msg.author.username + "'s coins", "**CPM (Coins per message) : " + xp[item.author.id].cpm)
   msg.channel.send({embed})
-}
+}*/
 
 if (item.content === prefix + "rent-cafe") {
    if (xp[item.author.id].cafe === 0) {
