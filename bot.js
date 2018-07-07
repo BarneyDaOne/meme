@@ -578,7 +578,7 @@ let prefix = "d."
 
 client.on('message', msg => {
 
- let item = msg;
+let item = msg;
   
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
@@ -620,7 +620,8 @@ if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 0,
     level: 1,
-    oxp: 0
+    oxp: 0,
+    cafe: 0
 };
 }
 
@@ -676,6 +677,15 @@ if (item.content === prefix + "points") {
    .setAuthor(item.author.username + "'s Deppresso Points")
    item.channel.send({embed})
   }
+
+if (item.content === prefix + "rent-cafe") {
+  if (xp[item.author.id].xp > 200) {
+    xp[item.author.id].cafe === 1;
+    msg.channel.send("Congrats " + msg.author.username + ", You've just bought a cafe!")
+  } else if (xp[item.author.id].xp < 200) {
+    msg.channel.send("Not enough funds!");
+  }
+}
 
 });
 
