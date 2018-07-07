@@ -571,7 +571,7 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   client.user.setUsername("Espresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: 'discord users. (d.help)', type: 3 } });
+  client.user.setPresence({ game: { name: ' coffee. (d.help | WIP)', type: 3 } });
 });
 
 let prefix = "d."
@@ -644,7 +644,7 @@ setTimeout(() => {
   xp[item.author.id].coins = curcpm += curcoins;  
 
   talkedRecently.delete(item.author.id);
-}, 250);
+}, 25000);
 
 /*if (msg.content === prefix + "daily") {
   talkedRecently.add(item.author.id).then(msg => {msg.reply("ok")})  
