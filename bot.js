@@ -571,7 +571,7 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   client.user.setUsername("Espresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: 'a clock. (d.help)', type: 3 } });
+  client.user.setPresence({ game: { name: 'discord users. (d.help)', type: 3 } });
 });
 
 let prefix = "d."
@@ -583,8 +583,8 @@ let item = msg;
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
-  .setDescription("Woah! You somehow managed to make old man Deppresso give you a help manual!")
-  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n• d.invite - Invite old man Deppresso to a server.\n• d.points - Display your Espresso points.\n• d.rent-cafe - Rent a cafe to earn some Espre-coins\n• d.cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)")
+  .setDescription("Woah! You somehow managed to make old man Esppresso give you a help manual!")
+  .addField("Info Commands", "• d.help - Displays old man Esppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n• d.invite - Invite old man Esppresso to a server.\n• d.points - Display your Espresso points.\n• d.rent-cafe - Rent a cafe to earn some Espre-coins\n• d.cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)\n• d.buy - Take a look or buy products to boost your earnings!")
  
   msg.channel.send({embed});
 }
@@ -718,8 +718,19 @@ if (item.content.startsWith(prefix + "buy")) {
   if (item.content === prefix + "buy") {
     const embed = new Discord.RichEmbed()
     .setTitle("Item Menu")
-    .setDescription("🥂 **Electronic Coffee Maker** : 50 Espre-coins\n✨ **Clean Items** : 100 Espre-coins")    
+    .setDescription("`1` 🥂 **Electronic Coffee Maker** : 50 Espre-coins | 1.5x more CPM\n`2` ✨ **Clean Items** : 100 Espre-coins | 2.7x more CPM")    
     msg.channel.send({embed});
+  } else if (item.content === prefix + "buy 1") {
+    if (xp[item.author.id].coins > 50) {
+      xp[item.author.id].coins -= 50;
+      xp[item.author.id].cafe += 1;
+      const embed = new Discord.RichEmbed()
+      .setTitle("Thank you for your purchase! You'll earn more money in no time!")
+      .setDescription("The **Electronic Coffee Maker** has been added to your cafe.")
+      msg.channel.send({embed});
+    } else if (xp[item.author.id].coins < 50) {
+      msg.channel.send("❗ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 50 to purchase this item!")
+    }
   }
 }
 
