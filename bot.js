@@ -644,7 +644,7 @@ setTimeout(() => {
   xp[item.author.id].coins = curcpm += curcoins;  
 
   talkedRecently.delete(item.author.id);
-}, 25000);
+}, 250);
 
 /*if (msg.content === prefix + "daily") {
   talkedRecently.add(item.author.id).then(msg => {msg.reply("ok")})  
@@ -717,6 +717,12 @@ if (item.content === prefix + "cafe") {
     .addField(msg.author.username + "'s cafe", "💸 **CPM** : " + xp[item.author.id].cpm + "\n💰 **Coins** : " + xp[item.author.id].coins)
     .setFooter("Your first cafe! You've already made your first purchase, that's great! CPM means Coins per message.")
     msg.channel.send({embed});
+  } else if (xp[item.author.id].cafe === 3) {
+    const embed = new Discord.RichEmbed()
+    .setImage("https://cdn.discordapp.com/attachments/464447104488833024/465208922169671680/cafe3-u.png")
+    .addField(msg.author.username + "'s cafe", "💸 **CPM** : " + xp[item.author.id].cpm + "\n💰 **Coins** : " + xp[item.author.id].coins)
+    .setFooter("Your first cafe! You've already made your second purchase, that's super great! CPM means Coins per message.")
+    msg.channel.send({embed});
   }
 }
 
@@ -724,19 +730,31 @@ if (item.content.startsWith(prefix + "buy")) {
   if (item.content === prefix + "buy") {
     const embed = new Discord.RichEmbed()
     .setTitle("Item Menu")
-    .setDescription("`1` 🥂 **Electronic Coffee Maker** : 50 Espre-coins | 1.5x more CPM\n`2` ✨ **Clean Items** : 100 Espre-coins | 2.7x more CPM")    
+    .setDescription("`1` 🥂 **Electronic Coffee Maker** : 50 Espre-coins | 0.8x more CPM\n`2` ✨ **Clean Items** : 100 Espre-coins | 1.3x more CPM")    
     msg.channel.send({embed});
   } else if (item.content === prefix + "buy 1") {
     if (xp[item.author.id].coins > 50) {
-      xp[item.author.id].coins -= 50;
+      xp[item.author.id].coins -= curcoins - 50;
       xp[item.author.id].cafe += 1;
-      xp[item.author.id].cpm += curcpm * 1.5;
+      xp[item.author.id].cpm += curcpm * 0.8;
       const embed = new Discord.RichEmbed()
       .setTitle("Thank you for your purchase! You'll earn more money in no time!")
       .setDescription("The **Electronic Coffee Maker** has been added to your cafe.")
       msg.channel.send({embed});
     } else if (xp[item.author.id].coins < 50) {
       msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 50 coins to purchase this item! ⛔")
+    }
+  } else if (item.content === prefix + "buy 2") {
+    if (xp[item.author.id].coins > 100) {
+      xp[item.author.id].coins -= curcoins - 100;
+      xp[item.author.id].cafe += 1;
+      xp[item.author.id].cpm += curcpm * 1.3;
+      const embed = new Discord.RichEmbed()
+      .setTitle("Thank you for your purchase! You'll earn more money in no time!")
+      .setDescription("Your items are now **Clean Items** in your cafe.")
+      msg.channel.send({embed});
+    } else if (xp[item.author.id].coins < 100) {
+      msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 100 coins to purchase this item! ⛔")
     }
   }
 }
