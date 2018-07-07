@@ -635,6 +635,7 @@ let dispLvl = xp[item.author.id].level + 1;
 let curcoins = xp[item.author.id].coins;
 let curcpm = xp[item.author.id].cpm;
 
+if (xp[item.author.id].cafe !== 0) {
 talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
@@ -645,7 +646,7 @@ setTimeout(() => {
 
   talkedRecently.delete(item.author.id);
 }, 25000);
-
+}
 /*if (msg.content === prefix + "daily") {
   talkedRecently.add(item.author.id).then(msg => {msg.reply("ok")})  
   setTimeout(() => {
@@ -658,17 +659,17 @@ setTimeout(() => {
 if (nxtLvl < xp[item.author.id].oxp) {
   xp[item.author.id].oxp = 0;
 
-  xp[item.author.id].level = curlvl + 1;
+  xp[item.author.id].level += curlvl + 1;
 
-  xp[item.author.id].cpm = curcpm * 2;
+  xp[item.author.id].cpm += curcpm * 0.5;
 
-  xp[item.author.id].coins = curcoins + 200;
+  xp[item.author.id].coins += curcoins + 200;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setDescription("New Level : " + dispLvl)
   .setColor(0x81ffa2)
-  .setFooter("200 Espre-coins added to your current balance, your cpm has now been doubled.")
+  .setFooter("200 Espre-coins added to your current balance, your cpm has now been boosted.")
   item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
 
@@ -680,15 +681,19 @@ fs.writeFile("./oxp.json", JSON.stringify(oxp), (err) => {
   if(err) console.log(err)
 });
 
-if (item.content === prefix + "points") {
+if (item.content === prefix + "xp") {
+  if (xp[item.author.id].cafe !== 0) {
    const embed = new Discord.RichEmbed()
    .setColor(0x81ffa2)
-   .addField("Level", curlvl, true)
-   .addField("Espre-Points", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
-   .addField("Points Needed", nxtLvl, true)
-   .setAuthor(item.author.username + "'s Espre-Points")
+   .addField("Cafe Level", curlvl, true)
+   .addField("Cafe XP", hiddenxp + "/" + nxtLvl + " (" + curxp + " tot.)", true)
+   .addField("XP Needed", nxtLvl, true)
+   .setAuthor(item.author.username + "'s Cafe XP")
    item.channel.send({embed})
+  } else if (xp[item.author.id].cafe === 0) {
+    msg.channel.send("⛔ You must **rent** a cafe to check your cafe level!")
   }
+}
 
 /*if (item.content === prefix + "coins") {
   const embed = new Discord.RichEmbed()
@@ -700,7 +705,7 @@ if (item.content === prefix + "points") {
 if (item.content === prefix + "rent-cafe") {
    if (xp[item.author.id].cafe === 0) {
     xp[item.author.id].cafe = 1;
-    msg.channel.send("Congrats " + msg.author.username + ", You've just bought a cafe! (;cafe to check out your new cafe)")
+    msg.channel.send("Congrats " + msg.author.username + ", You've just bought a cafe! Use ;cafe to check out your new cafe!")
    } else if (xp[item.author.id].cafe !== 0) {
       msg.channel.send("⛔ You **can't** rent more then 1 cafe!")
    }
