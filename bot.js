@@ -571,7 +571,7 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   client.user.setUsername("Espresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: ' people. (;help)', type: 3 } });
+  client.user.setPresence({ game: { name: ' people. ( ;help )', type: 3 } });
 });
 
 let prefix = ";"
@@ -584,12 +584,12 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Esppresso give you a help manual!")
-  .addField("Info Commands", "• ;help - Displays old man Esppresso's handy guide.\n• ;avatar - Displays the avatar of a user.\n• ;invite - Invite old man Esppresso to a server.\n• ;points - Display your Espresso points.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)\n• ;buy - Take a look or buy products to boost your earnings!")
- 
+  .addField("General Cafe Commands", "• ;points - Display your Espresso points.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)\n• ;buy - Take a look or buy products to boost your earnings!")
+  .addField("Other Commands", "• ;invite - Invite old man Esppresso to a server.")
   msg.channel.send({embed});
 }
 
-if (msg.content.startsWith(prefix + "avatar")) {
+/*if (msg.content.startsWith(prefix + "avatar")) {
   if (msg.mentions.users.size === 1) {
     const embed = new Discord.RichEmbed()
     .setColor(0x1F98b1)
@@ -603,7 +603,7 @@ if (msg.content.startsWith(prefix + "avatar")) {
     .setImage(msg.author.avatarURL)
     msg.channel.send({embed})
   }
-}
+}*/
 
 if (msg.content === prefix + "invite") {
   msg.channel.send("https://discordapp.com/api/oauth2/authorize?client_id=419229555857817601&permissions=8&scope=bot");
