@@ -571,7 +571,7 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   client.user.setUsername("Espresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: client.users.size + ' users. (d.help)', type: 3 } });
+  client.user.setPresence({ game: { name: 'a clock. (d.help)', type: 3 } });
 });
 
 let prefix = "d."
@@ -622,7 +622,8 @@ if(!xp[item.author.id]){
     level: 1,
     oxp: 0,
     cafe: 0,
-    coins: 0
+    coins: 0,
+    cpm: 1
 };
 }
 
@@ -631,6 +632,7 @@ let hiddenxp = xp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 120;
 let dispLvl = xp[item.author.id].level + 1;
+let curcoins = xp[item.author.id].coins;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -654,10 +656,13 @@ if (nxtLvl < xp[item.author.id].oxp) {
 
   xp[item.author.id].level = curlvl + 1;
 
+  xp[item.author.id.coins = curcoins + 200;
+
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setDescription("New Level : " + dispLvl)
   .setColor(0x81ffa2)
+  .setFooter("200 Espre-coins added to your current balance.")
   item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
 
@@ -678,6 +683,13 @@ if (item.content === prefix + "points") {
    .setAuthor(item.author.username + "'s Deppresso Points")
    item.channel.send({embed})
   }
+
+if (item.content === prefix + "coins") {
+  const embed = new Discord.RichEmbed()
+  .setColor(0x481faf1)
+  .addField(msg.author.username + "'s coins", "**CPM (Coins per message) : " + xp[item.author.id].cpm)
+  msg.channel.send({embed})
+}
 
 if (item.content === prefix + "rent-cafe") {
    if (xp[item.author.id].cafe === 0) {
