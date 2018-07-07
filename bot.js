@@ -711,6 +711,12 @@ if (item.content === prefix + "cafe") {
     .addField(msg.author.username + "'s cafe", "💸 **CPM** : " + xp[item.author.id].cpm + "\n💰 **Coins** : " + xp[item.author.id].coins)
     .setFooter("Your first cafe! Yeah... Not the most appealing cafe but atleast you got one for free! CPM means Coins per message.")
     msg.channel.send({embed});
+  } else if (xp[item.author.id].cafe === 2) {
+    const embed = new Discord.RichEmbed()
+    .setImage("https://cdn.discordapp.com/attachments/464447104488833024/465206966646603796/cafe2-u.png")
+    .addField(msg.author.username + "'s cafe", "💸 **CPM** : " + xp[item.author.id].cpm + "\n💰 **Coins** : " + xp[item.author.id].coins)
+    .setFooter("Your first cafe! You've already made your first purchase, that's great! CPM means Coins per message.")
+    msg.channel.send({embed});
   }
 }
 
