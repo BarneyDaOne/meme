@@ -623,7 +623,7 @@ if(!xp[item.author.id]){
     oxp: 0,
     cafe: 0,
     coins: 0,
-    cpm: 1
+    cpm: 15
 };
 }
 
@@ -633,12 +633,16 @@ let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 120;
 let dispLvl = xp[item.author.id].level + 1;
 let curcoins = xp[item.author.id].coins;
+let curcpm = xp[item.author.id].cpm;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
   xp[item.author.id].xp = curxp += xpAdd;
   xp[item.author.id].oxp = hiddenxp += xpAd;
+
+  xp[item.author.id].coins = curcpm += curcoins;  
+
   talkedRecently.delete(item.author.id);
 }, 25000);
 
@@ -656,13 +660,15 @@ if (nxtLvl < xp[item.author.id].oxp) {
 
   xp[item.author.id].level = curlvl + 1;
 
-  /*xp[item.author.id.coins = curcoins + 200;*/
+  xp[item.author.id].cpm = curcpm * 2;
+
+  xp[item.author.id.coins = curcoins + 200;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
   .setDescription("New Level : " + dispLvl)
   .setColor(0x81ffa2)
-  .setFooter("200 Espre-coins added to your current balance.")
+  .setFooter("200 Espre-coins added to your current balance, your cpm has now been doubled.")
   item.channel.send({embed}).then(msg => {msg.delete(50000)});
 }
 
@@ -703,7 +709,7 @@ if (item.content === prefix + "cafe") {
     const embed = new Discord.RichEmbed()
     .setImage("https://cdn.discordapp.com/attachments/464447104488833024/465162817381728276/cafe1-u.png")
     .addField(msg.author.username + "'s cafe", "💸 **CPM** : " + xp[item.author.id].cpm + "\n💰 **Coins** : " + xp[item.author.id].coins)
-    .setFooter("Your first cafe! Yeah... Not the most appealing cafe but atleast you got one for free!")
+    .setFooter("Your first cafe! Yeah... Not the most appealing cafe but atleast you got one for free! CPM means Coins per message.")
     msg.channel.send({embed});
   }
 }
