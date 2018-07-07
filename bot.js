@@ -569,7 +569,7 @@ let purple = 0xF291F9
 const talkedRecently = new Set();
 
 client.on('ready', () => {
-  client.user.setUsername("Deppresso Espresso"); 
+  client.user.setUsername("Espresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: client.users.size + ' users. (d.help)', type: 3 } });
 });
@@ -584,7 +584,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Deppresso give you a help manual!")
-  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n• d.invite - Invite old man Deppresso to a server.\n• d.points - Display your Deppresso points")
+  .addField("Info Commands", "• d.help - Displays old man Deppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n• d.invite - Invite old man Deppresso to a server.\n• d.points - Display your Espresso points.\n• d.rent-cafe - Rent a cafe to earn some Espre-coins\n• d.cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)")
  
   msg.channel.send({embed});
 }
@@ -621,7 +621,8 @@ if(!xp[item.author.id]){
     xp: 0,
     level: 1,
     oxp: 0,
-    cafe: 0
+    cafe: 0,
+    coins: 0
 };
 }
 
