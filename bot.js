@@ -714,6 +714,15 @@ if (item.content === prefix + "cafe") {
   }
 }
 
+if (item.content.startsWith(prefix + "buy") {
+  if (item.content === prefix + "buy") {
+    const embed = new Discord.RichEmbed()
+    .setTitle("Item Menu")
+    .setDescription("🥂 **Electronic Coffee Maker** : 50 Espre-coins\n✨ **Cleaner Items : 125 Espre-coins")
+    msg.channel.send({embed}) 
+ }
+}
+
 });
 
 client.login(process.env.BOT_TOKEN);
