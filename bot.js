@@ -584,7 +584,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Esppresso give you a help manual!")
-  .addField("General Cafe Commands", "• ;points - Display your Espresso points.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks.\n• ;buy - Take a look or buy products to boost your earnings!")
+  .addField("General Cafe Commands", "• ;xp - Check your cafe's xp.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks.\n• ;buy - Take a look or buy products to boost your earnings!")
   .addField("Other Commands", "• ;invite - Invite old man Esppresso to a server.")
   msg.channel.send({embed});
 }
@@ -691,7 +691,7 @@ if (item.content === prefix + "xp") {
    .setAuthor(item.author.username + "'s Cafe XP")
    item.channel.send({embed})
   } else if (xp[item.author.id].cafe === 0) {
-    msg.channel.send("⛔ You must **rent** a cafe to check your cafe level!")
+    msg.channel.send("⛔ You need to **rent** a cafe! use `;rent-cafe`")
   }
 }
 
