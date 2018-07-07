@@ -736,7 +736,7 @@ if (item.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].coins > 50) {
       xp[item.author.id].coins -= curcoins - 50;
       xp[item.author.id].cafe += 1;
-      xp[item.author.id].cpm += curcpm * 0.8;
+      xp[item.author.id].cpm += curcpm * 0.5;
       const embed = new Discord.RichEmbed()
       .setTitle("Thank you for your purchase! You'll earn more money in no time!")
       .setDescription("The **Electronic Coffee Maker** has been added to your cafe.")
@@ -748,7 +748,7 @@ if (item.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].coins > 100) {
       xp[item.author.id].coins -= curcoins - 100;
       xp[item.author.id].cafe += 1;
-      xp[item.author.id].cpm += curcpm * 1.3;
+      xp[item.author.id].cpm += curcpm * 1.0;
       const embed = new Discord.RichEmbed()
       .setTitle("Thank you for your purchase! You'll earn more money in no time!")
       .setDescription("Your items are now **Clean Items** in your cafe.")
