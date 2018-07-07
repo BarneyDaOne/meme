@@ -724,12 +724,13 @@ if (item.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].coins > 50) {
       xp[item.author.id].coins -= 50;
       xp[item.author.id].cafe += 1;
+      xp[item.author.id].cpm += curcpm * 1.5;
       const embed = new Discord.RichEmbed()
       .setTitle("Thank you for your purchase! You'll earn more money in no time!")
       .setDescription("The **Electronic Coffee Maker** has been added to your cafe.")
       msg.channel.send({embed});
     } else if (xp[item.author.id].coins < 50) {
-      msg.channel.send("❗ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 50 to purchase this item!")
+      msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need " + xp[item.author.id].coins -= 50 +"more coins to purchase this item! ⛔")
     }
   }
 }
