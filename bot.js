@@ -700,7 +700,8 @@ if (item.content === prefix + "rent-cafe") {
 if (item.content === prefix + "cafe") {
   if (xp[item.author.id].cafe === 1) {
     const embed = new Discord.RichEmbed()
-    .setImage("https://cdn.discordapp.com/attachments/464447104488833024/464967781423513611/cafe1-u.png")
+    .setImage("https://cdn.discordapp.com/attachments/464447104488833024/465162817381728276/cafe1-u.png")
+    .addField(msg.author.id + "'s cafe", "CPM : " + xp[item.author.id].cpm + ".\nCoins : " + xp[item.author.id].coins)
     .setFooter("Your first cafe! Yeah... Not the most appealing cafe but atleast you got one for free!")
     msg.channel.send({embed});
   }
