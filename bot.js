@@ -662,7 +662,7 @@ if (nxtLvl < xp[item.author.id].oxp) {
 
   xp[item.author.id].cpm = curcpm * 2;
 
-  xp[item.author.id.coins = curcoins + 200;
+  xp[item.author.id].coins = curcoins + 200;
 
   const embed = new Discord.RichEmbed()
   .setTitle("Level Up!")
