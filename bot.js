@@ -584,7 +584,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Esppresso give you a help manual!")
-  .addField("General Cafe Commands", "• ;points - Display your Espresso points.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)\n• ;buy - Take a look or buy products to boost your earnings!")
+  .addField("General Cafe Commands", "• ;points - Display your Espresso points.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks.\n• ;buy - Take a look or buy products to boost your earnings!")
   .addField("Other Commands", "• ;invite - Invite old man Esppresso to a server.")
   msg.channel.send({embed});
 }
@@ -701,6 +701,8 @@ if (item.content === prefix + "rent-cafe") {
    if (xp[item.author.id].cafe === 0) {
     xp[item.author.id].cafe = 1;
     msg.channel.send("Congrats " + msg.author.username + ", You've just bought a cafe! (;cafe to check out your new cafe)")
+   } else if (xp[item.author.id].cafe !== 0) {
+      msg.channel.send("⛔ You **can't** rent more then 1 cafe!")
    }
 }
 
@@ -723,6 +725,8 @@ if (item.content === prefix + "cafe") {
     .addField(msg.author.username + "'s cafe", "💸 **CPM** : " + xp[item.author.id].cpm + "\n💰 **Coins** : " + xp[item.author.id].coins)
     .setFooter("Your first cafe! You've already made your second purchase, that's super great! CPM means Coins per message.")
     msg.channel.send({embed});
+  } else if (xp[item.author.id].cafe === 0) {
+    msg.channel.send("⛔ You need to **rent** a cafe! use `;rent-cafe`")
   }
 }
 
