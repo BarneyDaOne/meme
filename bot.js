@@ -621,8 +621,9 @@ if(!xp[item.author.id]){
     xp: 0,
     level: 1,
     oxp: 0,
-    cafe: 0
-    //coins: 0
+    cafe: 0,
+    coins: 0,
+    cpm: 1
 };
 }
 
@@ -631,7 +632,7 @@ let hiddenxp = xp[item.author.id].oxp;
 let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 120;
 let dispLvl = xp[item.author.id].level + 1;
-//let curcoins = xp[item.author.id].coins;
+let curcoins = xp[item.author.id].coins;
 
 talkedRecently.add(item.author.id);
 setTimeout(() => {
@@ -701,7 +702,7 @@ if (item.content === prefix + "cafe") {
   if (xp[item.author.id].cafe === 1) {
     const embed = new Discord.RichEmbed()
     .setImage("https://cdn.discordapp.com/attachments/464447104488833024/465162817381728276/cafe1-u.png")
-    .addField(msg.author.id + "'s cafe", "CPM : " + xp[item.author.id].cpm + ".\nCoins : " + xp[item.author.id].coins)
+    .addField(msg.author.username + "'s cafe", "💸 CPM : " + xp[item.author.id].cpm + ".\n💰 Coins : " + xp[item.author.id].coins)
     .setFooter("Your first cafe! Yeah... Not the most appealing cafe but atleast you got one for free!")
     msg.channel.send({embed});
   }
