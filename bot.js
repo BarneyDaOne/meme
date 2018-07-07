@@ -571,10 +571,10 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   client.user.setUsername("Espresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: ' coffee. (d.help | WIP)', type: 3 } });
+  client.user.setPresence({ game: { name: ' people. (;help)', type: 3 } });
 });
 
-let prefix = "d."
+let prefix = ";"
 
 client.on('message', msg => {
 
@@ -584,7 +584,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Esppresso give you a help manual!")
-  .addField("Info Commands", "• d.help - Displays old man Esppresso's handy guide.\n• d.avatar - Displays the avatar of a user.\n• d.invite - Invite old man Esppresso to a server.\n• d.points - Display your Espresso points.\n• d.rent-cafe - Rent a cafe to earn some Espre-coins\n• d.cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)\n• d.buy - Take a look or buy products to boost your earnings!")
+  .addField("Info Commands", "• ;help - Displays old man Esppresso's handy guide.\n• ;avatar - Displays the avatar of a user.\n• ;invite - Invite old man Esppresso to a server.\n• ;points - Display your Espresso points.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks. (Only usable after renting a cafe)\n• ;buy - Take a look or buy products to boost your earnings!")
  
   msg.channel.send({embed});
 }
@@ -700,7 +700,7 @@ if (item.content === prefix + "points") {
 if (item.content === prefix + "rent-cafe") {
    if (xp[item.author.id].cafe === 0) {
     xp[item.author.id].cafe = 1;
-    msg.channel.send("Congrats " + msg.author.username + ", You've just bought a cafe! (d.cafe to check out your new cafe)")
+    msg.channel.send("Congrats " + msg.author.username + ", You've just bought a cafe! (;cafe to check out your new cafe)")
    }
 }
 
@@ -742,7 +742,7 @@ if (item.content.startsWith(prefix + "buy")) {
       .setDescription("The **Electronic Coffee Maker** has been added to your cafe.")
       msg.channel.send({embed});
     } else if (xp[item.author.id].coins < 50) {
-      msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 50 coins to purchase this item! ⛔")
+      msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 50 coins to purchase this item!")
     }
   } else if (item.content === prefix + "buy 2") {
     if (xp[item.author.id].coins > 100) {
@@ -754,7 +754,7 @@ if (item.content.startsWith(prefix + "buy")) {
       .setDescription("Your items are now **Clean Items** in your cafe.")
       msg.channel.send({embed});
     } else if (xp[item.author.id].coins < 100) {
-      msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 100 coins to purchase this item! ⛔")
+      msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 100 coins to purchase this item!")
     }
   }
 }
