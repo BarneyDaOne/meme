@@ -792,6 +792,7 @@ if (msg.content.startsWith(prefix + "warn")) {
   .setTitle("⚠ **Member Warned** ⚠")
   .addField('Violater', warned, true)
   .addField('Reason', reason, true)
+  .addField('Warn Giver', msg.author.username)
   msg.channel.send({embed});
 }
 
