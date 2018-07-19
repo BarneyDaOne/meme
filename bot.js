@@ -774,7 +774,7 @@ if (msg.content === prefix + "announce") {
   const embed = new Discord.RichEmbed()
   .setColor(0xffe494)
   .setTitle("Semi-Announcement")
-  .addField("Just incase yer wondering who made me. It's ye own boss, Potapo! So y'all gonna praise him for making me alright?", "Don't praise me plz")
+  .addField("I was made by yer boss, Potapo.", "Just letting you know.")
   msg.channel.send({embed});
 }
 
