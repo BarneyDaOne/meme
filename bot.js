@@ -790,9 +790,9 @@ if (msg.content.startsWith(prefix + "warn")) {
   const embed = new Discord.RichEmbed()
   .setColor(0xff4d4f)
   .setTitle("⚠ **Member Warned** ⚠")
-  .addField('Violater', warned, true)
-  .addField('Reason', reason, true)
-  .addField('Warn Placer', msg.author.username, true)
+  .addField('Violater', warned)
+  .addField('Reason', reason)
+  .addField('Warn Placer', msg.author.username)
   msg.channel.send({embed});
 }
 
