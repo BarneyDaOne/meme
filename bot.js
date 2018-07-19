@@ -1,4 +1,4 @@
-w/* const Discord = require("discord.js");
+/* const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs")
 let xp = require("./xp.json");
@@ -792,7 +792,7 @@ if (msg.content.startsWith(prefix + "warn")) {
   .setTitle("⚠ **Member Warned** ⚠")
   .addField('Violater', warned, true)
   .addField('Reason', reason, true)
-  //.addField('Warn Placer', msg.author.username, true)
+  .addField('Warn Placer', msg.author.username, true)
   msg.channel.send({embed});
 }
 
