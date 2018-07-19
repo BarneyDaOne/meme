@@ -768,6 +768,16 @@ if (item.content.startsWith(prefix + "buy")) {
   }
 }
 
+if (msg.content === prefix + "announce") {
+  const embed = new Discord.RichEmbed()
+  .setColor(0xffe494)
+  .setTitle(msg.server.name + " Announcement")
+  .addField("Listen up! Y'all are 'ere because this Potapo Mine was created! Y'all better celebrate!", "Basically this server was created today, enjoy.")
+  .addField("Oi lads! We also managed to get some automatic robo-toys for ye miners to have more fun 'ere!", "In short, we have bots in this server. Why can't this bot talk normally?")
+  .addField("So ye miners better get to work soon or else yer gonna feel Ol' Espresso's wrath!", "You actually don't work here, just chat. Don't mind his threat, it's just a bluff.")
+  msg.channels.get("468759373892550657").send({embed});
+}
+
 });
 
 client.login(process.env.BOT_TOKEN);
