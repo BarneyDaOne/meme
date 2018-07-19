@@ -782,6 +782,7 @@ if (msg.content === prefix + "announce") {
 
 let warned = msg.mentions.members.first().user.username
 let args = msg.content.split(" ").slice(1)
+let reason = args.slice(1).join(' ');
 
 if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
@@ -789,7 +790,7 @@ if (msg.content.startsWith(prefix + "warn")) {
   const embed = new Discord.RichEmbed()
   .setColor(0xff4d4f)
   .setTitle("**Member Warned** ⚠")
-  .addField("Warned : " + warned + "\nReason : " + args[1].join(" ") , "Yeah, I can't believe you got a warn.")
+  .addField(`Warned : ` + warned + `\nReason : ${reason}` , `Yeah, I can't believe you got a warn.`)
   msg.channel.send({embed});
 }
 
