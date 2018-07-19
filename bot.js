@@ -778,8 +778,8 @@ if (msg.content === prefix + "announce") {
   msg.channel.send({embed});
 }
 
-let warned = msg.mentions.members.first().user.username
-let args = msg.content.split(" ").slice(1)
+let warned = msg.mentions.members.first().user.username;
+let args = msg.content.split(" ").slice(1);
 let reason = args.slice(1).join(' ');
 
 if (msg.content.startsWith(prefix + "warn")) {
