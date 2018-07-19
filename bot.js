@@ -768,7 +768,7 @@ if (item.content.startsWith(prefix + "buy")) {
   }
 }
 
-if (msg.content === prefix + "announce") {
+/*if (msg.content === prefix + "announce") {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
@@ -776,7 +776,7 @@ if (msg.content === prefix + "announce") {
   .setTitle("Semi-Announcement")
   .addField("Just incase yer wondering who made me. It's ye own boss, Potapo! So y'all gonna praise him for making me alright?", "You don't actually have to praise me, and the person doing the things you're reading right now is me, Potapo.")
   msg.channel.send({embed});
-}
+}*/
 
 let warned = msg.mentions.members.first().user.username
 let args = msg.content.split(" ").slice(1)
