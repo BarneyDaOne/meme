@@ -786,7 +786,7 @@ if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
-  .setColor(0xff4d4)
+  .setColor(0xff4d4f)
   .setTitle("**Member Warn** ⚠")
   .addField("Listen up! One of ye maggots got a warning from a staff member this ol' server! That maggot is... " + warned ,"normie")
   msg.channel.send({embed});
