@@ -781,14 +781,15 @@ if (msg.content === prefix + "announce") {
 }
 
 let warned = msg.mentions.members.first().user.username
+let args = msg.content.split(" ").slice(1)
 
 if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
   .setColor(0xff4d4f)
-  .setTitle("**Member Warn** ⚠")
-  .addField("Listen up! One of ye maggots got a warning from a staff member this ol' server! That maggot is, " + warned + " yer gonna feel my wrath!" , "Actually, he can't harm you so you're ok but you now have a warning role.")
+  .setTitle("**Member Warned** ⚠")
+  .addField("Warned : " + warned + "\nReason : " + args[1].join(" ") , "Yeah, I can't believe you got a warn.")
   msg.channel.send({embed});
 }
 
