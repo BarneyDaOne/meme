@@ -791,7 +791,6 @@ if (msg.content.startsWith(prefix + "warn")) {
   .setColor(0xff4d4f)
   .setTitle("⚠ **Member Warned** ⚠")
   .addField('Violater', warned)
-  .addField('Warn Giver', msg.author.username)
   .addField('Reason', reason)
   msg.channel.send({embed});
 }
