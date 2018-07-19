@@ -780,7 +780,7 @@ if (msg.content === prefix + "announce") {
   msg.channel.send({embed});
 }
 
-if (msg.content.startsWith(prefix + "warn") {
+if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
