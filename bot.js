@@ -780,13 +780,15 @@ if (msg.content === prefix + "announce") {
   msg.channel.send({embed});
 }
 
+let warned = msg.mentions.members.first()
+
 if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
-  .setColor(0xffe494)
+  .setColor(0xff4d4)
   .setTitle("**Member Warn** ⚠")
-  .addField("Listen up! One of ye maggots got a warning from a staff member this ol' server! That maggot is... " + item.mentions.members.first() ,"normie")
+  .addField("Listen up! One of ye maggots got a warning from a staff member this ol' server! That maggot is... " + warned ,"normie")
   msg.channel.send({embed});
 }
 
