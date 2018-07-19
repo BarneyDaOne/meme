@@ -571,7 +571,7 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   client.user.setUsername("Espresso"); 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: ' people. ( ;help )', type: 3 } });
+  client.user.setPresence({ game: { name: ' only Potapo', type: 3 } });
 });
 
 let prefix = ";"
@@ -580,14 +580,14 @@ client.on('message', msg => {
 
 let item = msg;
   
-if (msg.content === prefix + "help") {
+/*if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0xa7ffab)
   .setDescription("Woah! You somehow managed to make old man Esppresso give you a help manual!")
   .addField("General Cafe Commands", "• ;xp - Check your cafe's xp.\n• ;rent-cafe - Rent a cafe to earn some Espre-coins\n• ;cafe - Take a look at your current cafe's stats and how it looks.\n• ;buy - Take a look or buy products to boost your earnings!")
   .addField("Other Commands", "• ;invite - Invite old man Esppresso to a server.")
   msg.channel.send({embed});
-}
+}*/
 
 /*if (msg.content.startsWith(prefix + "avatar")) {
   if (msg.mentions.users.size === 1) {
