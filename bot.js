@@ -780,7 +780,7 @@ if (msg.content === prefix + "announce") {
   msg.channel.send({embed});
 }
 
-let warned = msg.mentions.members.first()
+let warned = msg.mentions.members.first().username
 
 if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
