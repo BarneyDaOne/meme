@@ -233,20 +233,22 @@ if (msg.content.startsWith(prefix + "warn")) {
 }
 
 if (item.content.startsWith(prefix + "kick")) {
+  msg.delete();
+  
   if (!item.member.hasPermissions('KICK_MEMBERS')) return item.reply("You dont have the Permission <KICK-MEMBERS>");
   if (!item.guild.member(client.user).hasPermissions('KICK_MEMBERS')) return item.reply("I dont have the Permission to kick Members");
   let toKick = item.mentions.members.first() || item.guild.members.get(args[0]);
   if (!toKick) return item.reply("Please mention a Member to Kick, or provide their Client ID");
   let reason = args.slice(1).join(' ');
   if (!reason) reason = 'No reason provided';
-  if (!toKick.kickable) return item.reply('This Member isnt kickable');
+  if (!toKick.kickable) return item.reply('This member isnt kickable');
 
   toKick.kick({reason: reason});
 
   const embed = new Discord.RichEmbed()
-  .setDescription("User has been kicked on " + item.createdAt)
-  .setColor(0x9dff4e)
-  .addField(`${toKick.user.username} got kicked by ${item.author.username}`, `User was kicked for : ${reason}`)
+  .setColor(0xa23d3d)
+  .setTitle("⛔ **User Kicked** ⛔")
+  .setDescription("User : " + toKick.user.username + " \nKick Placer : " + msg.author.username + " \nReason : " + args2.join(" "))
   item.channel.send({embed});
 }
 
@@ -258,14 +260,14 @@ if (item.content.startsWith(prefix + "ban")) {
   if (!toBan) return item.reply("Please mention a Member to Ban, or provide their Client ID");
   let reason = args.slice(1).join(' ');
   if (!reason) reason = 'No reason provided';
-  if (!toBan.bannable) return item.reply('This Member isnt bannable');
+  if (!toBan.bannable) return item.reply('This member isnt bannable');
 
   toBan.ban({reason: reason});
 
   const embed = new Discord.RichEmbed()
-  .setDescription("User has been banned on " + item.createdAt)
-  .setColor(0x9dff4e)
-  .addField(`${toBan.user.username} got banned by ${item.author.username}`, `User was banned for : ${reason}`)
+  .setColor(0x501111)
+  .setTitle("‼ **User Banned** ‼")
+  .setDescription("User : " + toBan.user.username + " \nBan Placer : " + msg.author.username + " \nReason : " + args2.join(" "))
   item.channel.send({embed});
 }
 
