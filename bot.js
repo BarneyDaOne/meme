@@ -216,7 +216,11 @@ if (item.content.startsWith(prefix + "buy")) {
 }*/
 
 if (msg.content === prefix + "help") {
-  
+  const embed = new Discord.RichEmbed()
+  .setColor(0x8b3cff)
+  .setTitle("📨 **Help list has been sent**! 📨")
+  .setDescription("Check your DM's to see the help manual.")
+  msg.channel.send({embed})
 }
 
 let args = msg.content.split(" ").slice(1);
@@ -248,7 +252,7 @@ if (item.content.startsWith(prefix + "kick")) {
   const embed = new Discord.RichEmbed()
   .setColor(0xa23d3d)
   .setTitle("⛔ **User Kicked** ⛔")
-  .setDescription("User : " + toKick.user.username + " \nKick Placer : " + msg.author.username + " \nReason : " + args2.join(" "))
+  .setDescription("User : " + toKick.user.username + " \nKick Placer : " + msg.author.username + " \nReason : " + reason)
   item.channel.send({embed});
 }
 
@@ -269,7 +273,7 @@ if (item.content.startsWith(prefix + "ban")) {
   const embed = new Discord.RichEmbed()
   .setColor(0x501111)
   .setTitle("‼ **User Banned** ‼")
-  .setDescription("User : " + toBan.user.username + " \nBan Placer : " + msg.author.username + " \nReason : " + args2.join(" "))
+  .setDescription("User : " + toBan.user.username + " \nBan Placer : " + msg.author.username + " \nReason : " + reason)
   item.channel.send({embed});
 }
 
