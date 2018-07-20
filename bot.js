@@ -221,7 +221,7 @@ if (msg.content === prefix + "announce") {
 let warned = msg.mentions.members.first().user.username;
 let args = msg.content.split(" ").slice(1);
 
-if (msg.content.startsWith(prefix + "warn")) {
+/*if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
@@ -229,6 +229,16 @@ if (msg.content.startsWith(prefix + "warn")) {
   .setTitle("⚠ **Member Warned** ⚠")
   .addField(`Warn Reciever : ${warned}\nWarn Placer : ${msg.author.username}\nReason : ${args.slice(1).join(" ")}`)
   msg.channel.send({embed});
+}*/
+
+if (msg.content.startsWith(prefix + "warn")) {
+  msg.delete();
+
+  const embed = new Discord.RichEmbed()
+  .setColor(0xff4d4f)
+  .setTitle("⚠ **User Warned** ⚠")
+  .setDescription("User : " + msg.mentions.members.first().user.username + " \nWarn Giver : " + msg.author.username + " \nReason : " + args.join(" "))
+
 }
 
 });
