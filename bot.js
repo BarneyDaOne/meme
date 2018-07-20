@@ -203,7 +203,7 @@ if (item.content.startsWith(prefix + "buy")) {
   }
 }*/
 
-if (msg.content === prefix + "announce") {
+/*if (msg.content === prefix + "announce") {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
@@ -213,6 +213,47 @@ if (msg.content === prefix + "announce") {
   .addField("Oi maties! We imported some of those ''robo-toys'' from Antartica, so ye can enjoy yer time in this ol' mine.", "In short, we have bots. Ignore the imported from Antartica part.")
   .addField("More announcements coming soon.", "Bye fellow member!")
   msg.channel.send({embed});
+}*/
+
+if (item.content.startsWith(prefix + "kick")) {
+  if (!item.member.hasPermissions('KICK_MEMBERS')) return item.reply("You dont have the Permission <KICK-MEMBERS>");
+  if (!item.guild.member(client.user).hasPermissions('KICK_MEMBERS')) return item.reply("I dont have the Permission to kick Members");
+  let toKick = item.mentions.members.first() || item.guild.members.get(args[0]);
+  if (!toKick) return item.reply("Please mention a Member to Kick, or provide their Client ID");
+  let reason = args.slice(1).join(' ');
+  if (!reason) reason = 'No reason provided';
+  if (!toKick.kickable) return item.reply('This Member isnt kickable');
+
+  toKick.kick({reason: reason});
+
+  const embed = new Discord.RichEmbed()
+  .setDescription("User has been kicked on " + item.createdAt)
+  .setColor(0x9dff4e)
+  .addField(`${toKick.user.username} got kicked by ${item.author.username}`, `User was kicked for : ${reason}`)
+  item.channel.send({embed});
+}
+
+// Ban
+if (item.content.startsWith(prefix + "ban")) {
+  if (!item.member.hasPermissions('BAN_MEMBERS')) return item.reply("You dont have the Permission <BAN-MEMBERS>");
+  if (!item.guild.member(client.user).hasPermissions('BAN_MEMBERS')) return item.reply("I dont have the Permission to Ban Members");
+  let toBan = item.mentions.members.first() || item.guild.members.get(args[0]);
+  if (!toBan) return item.reply("Please mention a Member to Ban, or provide their Client ID");
+  let reason = args.slice(1).join(' ');
+  if (!reason) reason = 'No reason provided';
+  if (!toBan.bannable) return item.reply('This Member isnt bannable');
+
+  toBan.ban({reason: reason});
+
+  const embed = new Discord.RichEmbed()
+  .setDescription("User has been banned on " + item.createdAt)
+  .setColor(0x9dff4e)
+  .addField(`${toBan.user.username} got banned by ${item.author.username}`, `User was banned for : ${reason}`)
+  item.channel.send({embed});
+}
+
+if (msg.content === prefix + "help") {
+  
 }
 
 let args = msg.content.split(" ").slice(1);
