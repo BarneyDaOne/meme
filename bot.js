@@ -217,14 +217,14 @@ if (item.content.startsWith(prefix + "buy")) {
 
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
-  .setColor(0x8a7cff)
+  .setColor(0x8b3cff)
   .setTitle("📨 **Help list has been sent**!")
   .setDescription("Check your DM's to see the help manual.")
   msg.channel.send({embed})
 }
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
-  .setColor(0x8b1cff)
+  .setColor(0x8a1cff)
   .addField("Moderation", ";warn | Usage : ;warn @<user> <reason>\n;kick | Usage : ;kick @<user> <reason>\n;ban | Usage : ;ban @<user> <reason>")
   .addField("Informantion", ";help | Usage : ;help")
   .addField("Fun", "*none yet*")
