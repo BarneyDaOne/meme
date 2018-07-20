@@ -218,7 +218,7 @@ if (msg.content === prefix + "announce") {
   msg.channel.send({embed});
 }
 
-let warned = msg.mentions.members.first().user.username;
+/*let warned = msg.mentions.members.first().user.username;
 let args = msg.content.split(" ").slice(1);
 let reason = args.slice(1).join(' ');
 
@@ -230,7 +230,7 @@ if (msg.content.startsWith(prefix + "warn")) {
   .setTitle("⚠ **Member Warned** ⚠")
   .addField(`Warn Reciever : ${warned}\nWarn Placer : pot\nReason : ${reason}`)
   msg.channel.send({embed});
-}
+}*/
 
 });
 
