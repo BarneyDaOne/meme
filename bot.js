@@ -224,7 +224,7 @@ if (msg.content === prefix + "help") {
 }
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
-  .setColor(0x8a1caa)
+  .setColor(0x8b3cff)
   .addField("Moderation", ";warn | Usage : ;warn @<user> <reason>\n;kick | Usage : ;kick @<user> <reason>\n;ban | Usage : ;ban @<user> <reason>")
   .addField("Informantion", ";help | Usage : ;help")
   .addField("Fun", "*none yet*")
@@ -284,6 +284,22 @@ if (item.content.startsWith(prefix + "ban")) {
   .setTitle("‼ **User Banned** ‼")
   .setDescription("User : " + toBan.user.username + " \nBan Placer : " + msg.author.username + " \nReason : " + reason)
   item.channel.send({embed});
+}
+
+if (item.content.startsWith(prefix + "avatar")) {
+  if (item.mentions.users.size === mentioned) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0xc7a1ff)
+    .addField(item.mentions.members.first().user.username, "This is their avatar.")
+    .setImage(item.mentions.members.first().user.avatarURL)
+    item.channel.send({embed})
+  } else if (item.mentions.users.size === nomention) {
+    const embed = new Discord.RichEmbed()
+    .setColor(0xc7a1ff)
+    .addField(msg.author.username, "This is your avatar.")
+    .setImage(item.author.avatarURL)
+    item.channel.send({embed})
+  }
 }
 
 });
