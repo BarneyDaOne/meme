@@ -232,7 +232,7 @@ let args2 = msg.content.split(" ").slice(2);
   msg.channel.send({embed});
 }*/
 
-if (msg.content.startsWith(prefix + "warn")) {
+/*if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
@@ -240,7 +240,7 @@ if (msg.content.startsWith(prefix + "warn")) {
   .setTitle("⚠ **User Warned** ⚠")
   .setDescription("User : " + msg.mentions.members.first().user.username + " \nWarn Giver : " + msg.author.username + " \nReason : " + args2.join(" "))
   msg.channel.send({embed});
-}
+}*/
 
 });
 
