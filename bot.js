@@ -221,7 +221,8 @@ if (msg.content === prefix + "help") {
   .setTitle("📨 **Help list has been sent**!")
   .setDescription("Check your DM's to see the help manual.")
   msg.channel.send({embed})
-
+}
+if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b9ccc)
   .addField("Moderation", ";warn | Usage : ;warn @<user> <reason>\n;kick | Usage : ;kick @<user> <reason>\n;ban | Usage : ;ban @<user> <reason>")
