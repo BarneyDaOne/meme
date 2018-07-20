@@ -224,7 +224,7 @@ if (msg.content === prefix + "help") {
 }
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
-  .setColor(0x8b9ccc)
+  .setColor(0x8b1cff)
   .addField("Moderation", ";warn | Usage : ;warn @<user> <reason>\n;kick | Usage : ;kick @<user> <reason>\n;ban | Usage : ;ban @<user> <reason>")
   .addField("Informantion", ";help | Usage : ;help")
   .addField("Fun", "*none yet*")
