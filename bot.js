@@ -254,6 +254,8 @@ if (item.content.startsWith(prefix + "kick")) {
 
 // Ban
 if (item.content.startsWith(prefix + "ban")) {
+  msg.delete()
+
   if (!item.member.hasPermissions('BAN_MEMBERS')) return item.reply("You dont have the Permission <BAN-MEMBERS>");
   if (!item.guild.member(client.user).hasPermissions('BAN_MEMBERS')) return item.reply("I dont have the Permission to Ban Members");
   let toBan = item.mentions.members.first() || item.guild.members.get(args[0]);
