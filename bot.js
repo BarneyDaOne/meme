@@ -215,6 +215,23 @@ if (item.content.startsWith(prefix + "buy")) {
   msg.channel.send({embed});
 }*/
 
+if (msg.content === prefix + "help") {
+  
+}
+
+let args = msg.content.split(" ").slice(1);
+let args2 = msg.content.split(" ").slice(2);
+
+if (msg.content.startsWith(prefix + "warn")) {
+  msg.delete();
+
+  const embed = new Discord.RichEmbed()
+  .setColor(0xff4d4f)
+  .setTitle("⚠ **User Warned** ⚠")
+  .setDescription("User : " + msg.mentions.members.first().user.username + " \nWarn Giver : " + msg.author.username + " \nReason : " + args2.join(" "))
+  msg.channel.send({embed});
+}
+
 if (item.content.startsWith(prefix + "kick")) {
   if (!item.member.hasPermissions('KICK_MEMBERS')) return item.reply("You dont have the Permission <KICK-MEMBERS>");
   if (!item.guild.member(client.user).hasPermissions('KICK_MEMBERS')) return item.reply("I dont have the Permission to kick Members");
@@ -250,23 +267,6 @@ if (item.content.startsWith(prefix + "ban")) {
   .setColor(0x9dff4e)
   .addField(`${toBan.user.username} got banned by ${item.author.username}`, `User was banned for : ${reason}`)
   item.channel.send({embed});
-}
-
-if (msg.content === prefix + "help") {
-  
-}
-
-let args = msg.content.split(" ").slice(1);
-let args2 = msg.content.split(" ").slice(2);
-
-if (msg.content.startsWith(prefix + "warn")) {
-  msg.delete();
-
-  const embed = new Discord.RichEmbed()
-  .setColor(0xff4d4f)
-  .setTitle("⚠ **User Warned** ⚠")
-  .setDescription("User : " + msg.mentions.members.first().user.username + " \nWarn Giver : " + msg.author.username + " \nReason : " + args2.join(" "))
-  msg.channel.send({embed});
 }
 
 });
