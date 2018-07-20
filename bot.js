@@ -217,7 +217,7 @@ if (item.content.startsWith(prefix + "buy")) {
 
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
-  .setColor(0x8b3cff)
+  .setColor(0x8a7cff)
   .setTitle("📨 **Help list has been sent**!")
   .setDescription("Check your DM's to see the help manual.")
   msg.channel.send({embed})
