@@ -44,11 +44,7 @@ let item = msg;
     msg.channel.send({embed})
   }
 }*/
-
-if (msg.content === prefix + "invite") {
-  msg.channel.send("https://discordapp.com/api/oauth2/authorize?client_id=419229555857817601&permissions=8&scope=bot");
-}
-
+/*
 let xpAdd = 13;
 console.log(xpAdd);
 let xpAd = 13;
@@ -94,7 +90,7 @@ setTimeout(() => {
    xp[item.author.id].xp = curxp += xpRandom;
    talkedRecently.delete(item.author.id);
   }, 86400000);
-}*/
+}
 
 if (nxtLvl < xp[item.author.id].oxp) {
   xp[item.author.id].oxp -= hiddenxp;
@@ -140,7 +136,7 @@ if (item.content === prefix + "xp") {
   .setColor(0x481faf1)
   .addField(msg.author.username + "'s coins", "**CPM (Coins per message) : " + xp[item.author.id].cpm)
   msg.channel.send({embed})
-}*/
+}
 
 if (item.content === prefix + "rent-cafe") {
    if (xp[item.author.id].cafe === 0) {
@@ -206,30 +202,22 @@ if (item.content.startsWith(prefix + "buy")) {
       msg.channel.send("⛔ **Insufficient funds!** You currently have " + xp[item.author.id].coins + " and you need 100 coins to purchase this item!")
     }
   }
-}
+}*/
 
 if (msg.content === prefix + "announce") {
   msg.delete();
 
   const embed = new Discord.RichEmbed()
   .setColor(0xffe494)
-  .setTitle("Semi-Announcement")
-  .addField("I was made by yer boss, Potapo.", "Just letting you know.")
+  .setTitle("Important Announcement")
+  .addField("Listen up! Yer 'ere because of yer boss, Potapo. If I see one of ye **not** celebratin'... Yer gonna feel my **wrath**!", "You don't actually need to celebrate and you can't feel his wrath, He's a bot after all.")
+  .addField("Oi maties! We imported some of those ''robo-toys'' from Antartica, so ye can enjoy yer time in this ol' mine.", "In short, we have bots. Ignore the imported from Antartica part.")
+  .addField("More announcements coming soon.", "Bye fellow member!")
   msg.channel.send({embed});
 }
 
 let args = msg.content.split(" ").slice(1);
 let args2 = msg.content.split(" ").slice(2);
-
-/*if (msg.content.startsWith(prefix + "warn")) {
-  msg.delete();
-
-  const embed = new Discord.RichEmbed()
-  .setColor(0xff4d4f)
-  .setTitle("⚠ **Member Warned** ⚠")
-  .addField(`Warn Reciever : ${warned}\nWarn Placer : ${msg.author.username}\nReason : ${args.slice(1).join(" ")}`)
-  msg.channel.send({embed});
-}*/
 
 if (msg.content.startsWith(prefix + "warn")) {
   msg.delete();
