@@ -9,7 +9,7 @@ let purple = 0xF291F9
 const talkedRecently = new Set();
 
 client.on('ready', () => {
-  client.user.setUsername("Espresso"); 
+  client.user.setUsername("Potapo Moderation"); 
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: ' only Potapo', type: 3 } });
 });
