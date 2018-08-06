@@ -225,8 +225,8 @@ if (msg.content === prefix + "help") {
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .addField("Moderation", ";warn | Usage : ;warn @<user> <reason>\n;kick | Usage : ;kick @<user> <reason>\n;ban | Usage : ;ban @<user> <reason>")
-  .addField("Informantion", ";help | Usage : ;help\n;avatar | Usage : ;avatar @<user> (Leave it blank to see your avatar)")
+  .addField("Moderation", ";warn | ;warn @<user> <reason>\n;kick | ;kick @<user> <reason>\n;ban | ;ban @<user> <reason>")
+  .addField("Informantion", ";help | ;help\n;avatar | ;avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   msg.author.send({embed})
