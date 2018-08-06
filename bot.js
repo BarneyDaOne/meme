@@ -223,6 +223,11 @@ if (msg.content === prefix + "help") {
   msg.channel.send({embed})
 }
 
+if (msg.content === prefix + "*Where* should the help list be sent?") {
+  msg.react("🗣")
+  msg.react("📨")
+}
+
 /*if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
