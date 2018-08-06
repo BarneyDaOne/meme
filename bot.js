@@ -218,10 +218,10 @@ if (item.content.startsWith(prefix + "buy")) {
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .setTitle("📨 **Help list has been sent**!")
-  .setDescription("Check your DM's to see the help manual.")
+  .setTitle("*Where* should the help list be sent?")
+  .setDescription("🗣 Here **|** 📨 DM")
   msg.channel.send({embed})
-}
+}.then(msg => {msg.react(🗣)})
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
