@@ -221,12 +221,12 @@ if (msg.content === prefix + "help") {
   .setTitle("*Where* should the help list be sent?")
   .setDescription("🗣 Here **|** 📨 DM")
   msg.channel.send({embed})
-
+} else {
   msg.react("🗣")
   msg.react("📨")
 }
 
-if (msg.content === prefix + "help") {
+/*if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
   .addField("Moderation", ";warn | ;warn @<user> <reason>\n;kick | ;kick @<user> <reason>\n;ban | ;ban @<user> <reason>")
@@ -234,7 +234,7 @@ if (msg.content === prefix + "help") {
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   msg.author.send({embed})
-}
+}*/
 
 let args = msg.content.split(" ").slice(1);
 let args2 = msg.content.split(" ").slice(2);
