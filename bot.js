@@ -220,8 +220,8 @@ if (msg.content === prefix + "help") {
   .setColor(0x8b3cff)
   .setTitle("*Where* should the help list be sent?")
   .setDescription("🗣 Here **|** 📨 DM")
-  msg.channel.send({embed})
   msg.channel.send("** **")
+  msg.channel.send({embed})
 }
 
 if (msg.content === "** **") {
