@@ -223,7 +223,7 @@ if (msg.content === prefix + "help") {
   msg.channel.send({embed})
 }
 
-if (msg.content === prefix + "*Where* should the help list be sent?") {
+if (msg.content === "*Where* should the help list be sent?") {
   msg.react("🗣")
   msg.react("📨")
 }
