@@ -220,7 +220,7 @@ if (msg.content === prefix + "help") {
   .setColor(0x8b3cff)
   .setTitle("*Where* should the help list be sent?")
   .setDescription("🗣 Here **|** 📨 DM")
-  msg.channel.send({embed}).then(msg => {msg.react("🗣") || msg.react("📨")})
+  msg.channel.send({embed}).then(msg => {msg.react("🗣", "📨")})
 }
 
 /*if (msg.content === prefix + "help") {
