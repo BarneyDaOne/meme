@@ -220,12 +220,12 @@ if (msg.content === prefix + "help") {
   .setColor(0x8b3cff)
   .setTitle("*Where* should the help list be sent?")
   .setDescription("🗣 Here **|** 📨 DM")
-  msg.channel.send({embed}).then(function (message) {
-              message.react("👍")
-              message.react("👎")
+  msg.channel.send({embed}).then(function (msg) {
+              msg.react("🗣")
+              msg.react("📨")
             }).catch(function() {
               //Something
-             });  // then(msg => {msg.react("🗣")})
+             });
 }
 
 /*if (msg.content === prefix + "help") {
