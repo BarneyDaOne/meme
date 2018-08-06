@@ -221,6 +221,7 @@ if (msg.content === prefix + "help") {
   .setTitle("*Where* should the help list be sent?")
   .setDescription("🗣 Here **|** 📨 DM")
   msg.channel.send({embed})
+  msg.channel.send("*Please react to this message for the help manual.*")
 }
 
 if (msg.content === "*Where* should the help list be sent?") {
