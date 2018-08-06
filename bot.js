@@ -224,9 +224,9 @@ if (msg.content === prefix + "help") {
   msg.channel.send("*Please react to this message for the help manual.*")
 }
 
-if (msg.content === "*Where* should the help list be sent?") {
-  msg.react("🗣")
-  msg.react("📨")
+if (msg.content === "*Please react to this message for the help manual.*") {
+    msg.react("🗣")
+    msg.react("📨")
 }
 
 /*if (msg.content === prefix + "help") {
