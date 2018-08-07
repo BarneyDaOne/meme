@@ -10,7 +10,7 @@ const talkedRecently = new Set();
 
 client.on('ready', () => { 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: client.guilds.size + " servers. (;help)", type: 3 } });
+  client.user.setPresence({ game: { name: client.members.size + " people. (;help)", type: 3 } });
 });
 
 let prefix = ";"
