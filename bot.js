@@ -219,25 +219,25 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
   .setTitle("Where shall the list to be sent?")
-  .setDescription("**c-help-here** or **c-help-dm**")
+  .setDescription("**c-help here** or **c-help dm**")
   msg.channel.send({embed})
 }
 
-if (msg.content === prefix + "help-dm") {
+if (msg.content === prefix + "help dm") {
   msg.react("🆗")
   
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
   .addField("Moderation", "c-warn | c-warn @<user> <reason>\nc-kick | c-kick @<user> <reason>\nc-ban | c-ban @<user> <reason>")
-  .addField("Informantion", "c-help | c-help-here or c-help-dm\nc-avatar | c-avatar @<user> (Leave it blank to see your avatar)")
+  .addField("Informantion", "c-help | c-help here or c-help dm\nc-avatar | c-avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   msg.author.send({embed})
-} else if (msg.content === prefix + "help-here") {
+} else if (msg.content === prefix + "help here") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .addField("Moderation", ";warn | ;warn @<user> <reason>\n;kick | ;kick @<user> <reason>\n;ban | ;ban @<user> <reason>")
-  .addField("Informantion", ";help | ;help\n;avatar | ;avatar @<user> (Leave it blank to see your avatar)")
+  .addField("Moderation", "c-warn | c-warn @<user> <reason>\nc-kick | c-kick @<user> <reason>\nc-ban | c-ban @<user> <reason>")
+  .addField("Informantion", "c-help | c-help here or c-help dm\nc-avatar | c-avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   .setFooter("This message will be deleted in 30 seconds after being sent to prevent spam.")
