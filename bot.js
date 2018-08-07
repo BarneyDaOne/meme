@@ -240,6 +240,7 @@ if (msg.content === prefix + "help-dm") {
   .addField("Informantion", ";help | ;help\n;avatar | ;avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
+  .setFooter("This message will be deleted in 30 seconds after being sent to prevent spam.")
   msg.channel.send({embed}).then(msg => {msg.delete(30000)})
 }
 
