@@ -218,17 +218,12 @@ if (item.content.startsWith(prefix + "buy")) {
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .setTitle("*Where* should the help list be sent?")
-  .setDescription("🗣 Here **|** 📨 DM")
-  msg.channel.send({embed}).then(function (msg) {
-              msg.react("🗣")
-              msg.react("📨")
-            }).catch(function() {
-              //Something
-             });
+  .setTitle("Please specify where you want your help manual to be sent.")
+  .setDescription("*;help-here* **|** *;help-dm*")
+  msg.channel.send({embed})
 }
 
-/*if (msg.content === prefix + "help") {
+if (msg.content === prefix + "help-dm") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
   .addField("Moderation", ";warn | ;warn @<user> <reason>\n;kick | ;kick @<user> <reason>\n;ban | ;ban @<user> <reason>")
@@ -236,7 +231,15 @@ if (msg.content === prefix + "help") {
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   msg.author.send({embed})
-}*/
+} else if (msg.content === prefix + "help-here") {
+  const embed = new Discord.RichEmbed()
+  .setColor(0x8b3cff)
+  .addField("Moderation", ";warn | ;warn @<user> <reason>\n;kick | ;kick @<user> <reason>\n;ban | ;ban @<user> <reason>")
+  .addField("Informantion", ";help | ;help\n;avatar | ;avatar @<user> (Leave it blank to see your avatar)")
+  .addField("Fun", "*none yet*")
+  .addField("Other", "*none yet*")
+  msg.channel.send({embed})
+}
 
 let args = msg.content.split(" ").slice(1);
 let args2 = msg.content.split(" ").slice(2);
@@ -309,5 +312,12 @@ if (item.content.startsWith(prefix + "avatar")) {
 }
 
 });
+
+/*.then(function (msg) {
+              msg.react("🗣")
+              msg.react("📨")
+            }).catch(function() {
+              //Something
+             });*/
 
 client.login(process.env.BOT_TOKEN);
