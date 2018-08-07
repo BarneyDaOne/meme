@@ -218,13 +218,13 @@ if (item.content.startsWith(prefix + "buy")) {
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .setTitle("Where you want the list to be sent?")
-  .setDescription("*;help-here* or *;help-dm*")
+  .setTitle("Where shall the list to be sent?")
+  .setDescription("**;help-here** or **;help-dm**")
   msg.channel.send({embed})
 }
 
 if (msg.content === prefix + "help-dm") {
-  msg.react("<475321348965531648>")
+  msg.react("🆗")
   
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
@@ -240,7 +240,7 @@ if (msg.content === prefix + "help-dm") {
   .addField("Informantion", ";help | ;help\n;avatar | ;avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
-  msg.channel.send({embed})
+  msg.channel.send({embed}).then(msg => {msg.delete(30000)})
 }
 
 let args = msg.content.split(" ").slice(1);
