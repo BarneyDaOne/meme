@@ -224,7 +224,7 @@ if (msg.content === prefix + "help") {
 }
 
 if (msg.content === prefix + "help-dm") {
-  msg.react("<:potapoOk:475321348965531648>")
+  msg.react("<475321348965531648>")
   
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
