@@ -299,13 +299,13 @@ if (item.content.startsWith(prefix + "ban")) {
 }
 
 if (item.content.startsWith(prefix + "avatar")) {
-  if (item.mentions.users.size === mentioned) {
+  if (item.mentions.users.size === 1) {
     const embed = new Discord.RichEmbed()
     .setColor(0xc7a1ff)
     .addField(item.mentions.members.first().user.username, "This is their avatar.")
     .setImage(item.mentions.members.first().user.avatarURL)
     item.channel.send({embed})
-  } else if (item.mentions.users.size === nomention) {
+  } else if (item.mentions.users.size === 0) {
     const embed = new Discord.RichEmbed()
     .setColor(0xc7a1ff)
     .addField(msg.author.username, "This is your avatar.")
