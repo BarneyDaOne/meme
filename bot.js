@@ -218,12 +218,14 @@ if (item.content.startsWith(prefix + "buy")) {
 if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .setTitle("Please specify where you want your help manual to be sent.")
-  .setDescription("*;help-here* **|** *;help-dm*")
+  .setTitle("Where you want the list to be sent?")
+  .setDescription("*;help-here* or *;help-dm*")
   msg.channel.send({embed})
 }
 
 if (msg.content === prefix + "help-dm") {
+  msg.react("<:potapoOk:475321348965531648>")
+  
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
   .addField("Moderation", ";warn | ;warn @<user> <reason>\n;kick | ;kick @<user> <reason>\n;ban | ;ban @<user> <reason>")
