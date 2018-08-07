@@ -10,10 +10,10 @@ const talkedRecently = new Set();
 
 client.on('ready', () => { 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: client.users.size + " people. (;help)", type: 3 } });
+  client.user.setPresence({ game: { name: client.guilds.size + " servers. (c-help)", type: 3 } });
 });
 
-let prefix = ";"
+let prefix = "c-"
 
 client.on('message', msg => {
 
@@ -219,7 +219,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
   .setTitle("Where shall the list to be sent?")
-  .setDescription("**;help-here** or **;help-dm**")
+  .setDescription("**c-help-here** or **c-help-dm**")
   msg.channel.send({embed})
 }
 
@@ -228,8 +228,8 @@ if (msg.content === prefix + "help-dm") {
   
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .addField("Moderation", ";warn | ;warn @<user> <reason>\n;kick | ;kick @<user> <reason>\n;ban | ;ban @<user> <reason>")
-  .addField("Informantion", ";help | ;help\n;avatar | ;avatar @<user> (Leave it blank to see your avatar)")
+  .addField("Moderation", "c-warn | c-warn @<user> <reason>\nc-kick | c-kick @<user> <reason>\nc-ban | c-ban @<user> <reason>")
+  .addField("Informantion", "c-help | c-help-here or c-help-dm\nc-avatar | c-avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   msg.author.send({embed})
