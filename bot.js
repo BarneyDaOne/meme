@@ -381,7 +381,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment = 1;
       xp[item.author.id].job = 3;
-      msg.reply(xp[item.author.id].employment + xp[item.author.id].job)
+      msg.reply(xp[item.author.id].employment + "Emp val. / " + xp[item.author.id].job + "Jb val.")
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
