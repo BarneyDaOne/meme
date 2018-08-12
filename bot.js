@@ -365,7 +365,8 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 1;
-      xp[item.author.id].xp = curxp -= 150;
+      xp[item.author.id].xp = curxp = 150;
+      msg.reply("!!!")
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
@@ -373,7 +374,8 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 2;
-      xp[item.author.id].xp = curxp -= 150;
+      xp[item.author.id].xp = curxp = 150;
+      msg.reply("!!!")   
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
@@ -381,7 +383,8 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 3;
-      xp[item.author.id].xp = curxp -= 150;
+      xp[item.author.id].xp = curxp - 150;
+      msg.reply("!!!")
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
