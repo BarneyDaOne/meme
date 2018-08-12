@@ -349,7 +349,7 @@ setTimeout(() => {
   //xp[item.author.id].oxp = hiddenxp += xpAd; 
 
   talkedRecently.delete(item.author.id);
-}, 60000);
+}, 600);
 }
 
 if (msg.content.startsWith(prefix + "buy")) {
