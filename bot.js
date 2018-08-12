@@ -365,7 +365,6 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 1;
-      xp[item.author.id].xp = curxp = 150;
       msg.reply("!!!")
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
@@ -374,7 +373,6 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 2;
-      xp[item.author.id].xp = curxp = 150;
       msg.reply("!!!")   
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
@@ -383,7 +381,6 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 3;
-      xp[item.author.id].xp = curxp - 150;
       msg.reply("!!!")
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
@@ -406,7 +403,7 @@ if (msg.content.startsWith(prefix + "bal")) {
       .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker\n• Job type : Food")
       msg.channel.send({embed})
     }
-  } else if (xp[item.author.id].employment === 2) {
+  } else if (xp[item.author.id].employment === 1) {
     if (xp[item.author.id].job === 2) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
@@ -414,7 +411,7 @@ if (msg.content.startsWith(prefix + "bal")) {
       .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Supermarket worker\n• Job type : Service")
       msg.channel.send({embed})
     }
-  } else if (xp[item.author.id].employment === 3) {
+  } else if (xp[item.author.id].employment === 1) {
     if (xp[item.author.id].job === 3) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
