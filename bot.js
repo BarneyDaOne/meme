@@ -339,7 +339,7 @@ let curlvl = xp[item.author.id].level;
 let nxtLvl = xp[item.author.id].level * 120;
 let dispLvl = xp[item.author.id].level + 1;
 
-if (xp[item.author.id].cafe !== 0) {
+if (xp[item.author.id].xp !== 0) {
 talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
@@ -347,11 +347,11 @@ setTimeout(() => {
   xp[item.author.id].oxp = hiddenxp += xpAd; 
 
   talkedRecently.delete(item.author.id);
-}, 25000);
+}, 60000);
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  msg.channel.send(xp[item.author.id].oxp + "/" + nxtLvl + " (" + xp[item.author.id].xp + ")")
+  msg.channel.send(xp[item.author.id].oxp + "/" + xp[item.author.id].xp)
 }
 
 });
