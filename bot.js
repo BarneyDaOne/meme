@@ -362,7 +362,7 @@ if (msg.content.startsWith(prefix + "buy")) {
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  if (xp[item.author.id].employment === 0) {
+  if (xp[item.author.id].employment === 1) {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
     .setTitle(msg.author.username + "'s account")
