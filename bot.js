@@ -329,7 +329,9 @@ if(!xp[item.author.id]){
   xp[item.author.id] = {
     xp: 100,
     level: 1,
-    oxp: 100
+    oxp: 100,
+    employment: 0,
+    job: 0
 };
 }
 
@@ -360,13 +362,13 @@ if (msg.content.startsWith(prefix + "buy")) {
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  if (xp[item.author.id].employed === 1) {
+  if (xp[item.author.id].employed = 1) {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
     .setTitle(msg.author.username + "'s account")
     .setDescription("💰 Current balance : £" + xp[item.author.id].xp + "\n💼 Current job : none")
     msg.channel.send({embed})
-  } else if (xp[item.author.id].employed === 1) {
+  } else if (xp[item.author.id].employed = 1) {
     if (xp[item.author.id].job === 1) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
