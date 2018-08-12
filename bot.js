@@ -365,7 +365,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment = 1;
       xp[item.author.id].job = 1;
-      msg.reply(xp[item.author.id].employment + xp[item.author.id].job)
+      msg.reply(xp[item.author.id].employment + "Emp val. / " + xp[item.author.id].job + "Jb val.")
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
@@ -373,7 +373,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment = 2;
       xp[item.author.id].job = 1;
-      msg.reply(xp[item.author.id].employment + xp[item.author.id].job)
+      msg.reply(xp[item.author.id].employment + "Emp val. / " + xp[item.author.id].job + "Jb val.")
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
@@ -389,7 +389,7 @@ if (msg.content.startsWith(prefix + "buy")) {
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  if (xp[item.author.id].employment !== 1) {
+  if (xp[item.author.id].employment === 0) {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
     .setTitle(msg.author.username + "'s account")
