@@ -344,14 +344,18 @@ talkedRecently.add(item.author.id);
 setTimeout(() => {
   // Removes the user from the set after 25 seconds
   xp[item.author.id].xp = curxp += xpAdd;
-  xp[item.author.id].oxp = hiddenxp += xpAd; 
+  //xp[item.author.id].oxp = hiddenxp += xpAd; 
 
   talkedRecently.delete(item.author.id);
 }, 60000);
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  msg.channel.send(xp[item.author.id].oxp + "/" + xp[item.author.id].xp)
+  const embed = new Discord.RichEmbed()
+  .setColor(0xbcffc3)
+  .setTitle(msg.author.username + "'s account")
+  .setDescription("Current balance : ±" + xp[item.author.id].xp)
+  msg.channel.send({embed})
 }
 
 });
