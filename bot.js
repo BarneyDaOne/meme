@@ -353,8 +353,9 @@ setTimeout(() => {
 if (msg.content.startsWith(prefix + "bal")) {
   const embed = new Discord.RichEmbed()
   .setColor(0xbcffc3)
+  .setAuthor(msg.author.username)
   .setTitle(msg.author.username + "'s account")
-  .setDescription("Current balance : ±" + xp[item.author.id].xp)
+  .setDescription("Current balance : £" + xp[item.author.id].xp + "Current job : none")
   msg.channel.send({embed})
 }
 
