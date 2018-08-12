@@ -361,6 +361,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     .setFooter("You can only choose 1 job unless you prestige")
     msg.channel.send({embed})
   }
+ if (xp[item.author.id].employment !== 1) {
   if (msg.content === prefix + "buy 1") {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment = 1;
@@ -386,6 +387,9 @@ if (msg.content.startsWith(prefix + "buy")) {
       msg.reply("You need at least £150 to get this job.")
     }
   }
+ } else if (xp[item.author.id].employment === 1) {
+    msg.reply("You must prestige to change your job, do `y-prestige info` to see the details")
+ }
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
