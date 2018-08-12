@@ -368,14 +368,14 @@ if (msg.content.startsWith(prefix + "bal")) {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
     .setTitle(msg.author.username + "'s account")
-    .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : none")
+    .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : none\n• Current job type : none")
     msg.channel.send({embed})
   } else if (xp[item.author.id].employment === 1) {
     if (xp[item.author.id].job === 1) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
-      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker")
+      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker\n• Current job type : Food worker [Lvl 1]")
       msg.channel.send({embed})
     }
   }
