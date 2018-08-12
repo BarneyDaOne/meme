@@ -354,10 +354,12 @@ setTimeout(() => {
 
 if (msg.content.startsWith(prefix + "buy")) {
   if (msg.content === prefix + "buy employment") {
-    if (xp[item.author.id].xp === 100) {
+    if (xp[item.author.id].xp +== 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 1;
-    } 
+    } else if (xp[item.author.id].xp -== 150) {
+      msg.reply("You need atleast £150 to buy this item")
+    }
   }
 }
 
