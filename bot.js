@@ -351,7 +351,7 @@ setTimeout(() => {
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  msg.content.send(xp[item.author.id].xp + " hi")
+  msg.channel.send(xp[item.author.id].xp + " hi")
 }
 
 });
