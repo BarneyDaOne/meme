@@ -10,10 +10,10 @@ const talkedRecently = new Set();
 
 client.on('ready', () => { 
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: client.guilds.size + " servers. (c-help)", type: 3 } });
+  client.user.setPresence({ game: { name: client.users.size + " users. (y-help)", type: 3 } });
 });
 
-let prefix = "c-"
+let prefix = "y-"
 
 client.on('message', msg => {
 
@@ -312,6 +312,46 @@ if (item.content.startsWith(prefix + "avatar")) {
     .setImage(item.author.avatarURL)
     item.channel.send({embed})
   }
+}
+
+// xp stuff
+
+fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+  if(err) console.log(err)
+});
+
+let xpAdd = 13;
+console.log(xpAdd);
+let xpAd = 13;
+console.log(xpAdd);
+
+if(!xp[item.author.id]){
+  xp[item.author.id] = {
+    xp: 0,
+    level: 1,
+    oxp: 0
+};
+}
+
+let curxp = xp[item.author.id].xp;
+let hiddenxp = xp[item.author.id].oxp;
+let curlvl = xp[item.author.id].level;
+let nxtLvl = xp[item.author.id].level * 120;
+let dispLvl = xp[item.author.id].level + 1;
+
+if (xp[item.author.id].cafe !== 0) {
+talkedRecently.add(item.author.id);
+setTimeout(() => {
+  // Removes the user from the set after 25 seconds
+  xp[item.author.id].xp = curxp += xpAdd;
+  xp[item.author.id].oxp = hiddenxp += xpAd; 
+
+  talkedRecently.delete(item.author.id);
+}, 25000);
+}
+
+if (msg.content.startsWith(prefix + "bal")) {
+  msg.content.send(xp[item.author.id].xp + " hi")
 }
 
 });
