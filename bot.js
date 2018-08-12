@@ -354,7 +354,7 @@ setTimeout(() => {
 
 if (msg.content.startsWith(prefix + "buy")) {
   if (msg.content === prefix + "buy employement") {
-    if (xp[item.author.id].xp ==+ 100) {
+    if (xp[item.author.id].xp === 100) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 1;
     } 
