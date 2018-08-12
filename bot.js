@@ -357,11 +357,11 @@ if (msg.content.startsWith(prefix + "buy")) {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
     .setTitle("Job list")
-    .setDescription("`1` : Fast food worker\n`2` : Supermarket worker\n `3` Nursery worker")
+    .setDescription("`1` : Fast food worker\n`2` : Supermarket worker\n `3` : Nursery worker")
     .setFooter("You can only choose 1 job unless you prestige")
     msg.channel.send({embed})
   }
-  if (msg.content === prefix + "buy food-worker") {
+  if (msg.content === prefix + "buy 1") {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 1;
@@ -369,7 +369,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
-  } else if (msg.content === prefix + "buy supermarket-worker") {
+  } else if (msg.content === prefix + "buy 2") {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 2;
@@ -377,7 +377,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     } else if (!xp[item.author.id].xp > 100) {
       msg.reply("You need at least £150 to get this job.")
     }
-  } else if (msg.content === prefix + "buy nursery-worker") {
+  } else if (msg.content === prefix + "buy 3") {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 3;
@@ -404,7 +404,7 @@ if (msg.content.startsWith(prefix + "bal")) {
       msg.channel.send({embed})
     }
   } else if (xp[item.author.id].employment === 2) {
-    if (xp[item.author.id].job === 1) {
+    if (xp[item.author.id].job === 2) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
@@ -412,7 +412,7 @@ if (msg.content.startsWith(prefix + "bal")) {
       msg.channel.send({embed})
     }
   } else if (xp[item.author.id].employment === 3) {
-    if (xp[item.author.id].job === 1) {
+    if (xp[item.author.id].job === 3) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
