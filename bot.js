@@ -353,12 +353,29 @@ setTimeout(() => {
 }
 
 if (msg.content.startsWith(prefix + "buy")) {
-  if (msg.content === prefix + "buy employment") {
+  if (msg.content === prefix + "buy food-worker") {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment += 1;
-      xp[item.author.id].job += 1;
+      xp[item.author.id].job = 1;
+      xp[item.author.id].xp -= 150;
     } else if (!xp[item.author.id].xp > 100) {
-      msg.reply("You need atleast £150 to buy this item")
+      msg.reply("You need at least £150 to get this job.")
+    }
+  } else if (msg.content === prefix + "buy supermarket-worker") {
+    if (xp[item.author.id].xp > 150) {
+      xp[item.author.id].employment += 1;
+      xp[item.author.id].job = 2;
+      xp[item.author.id].xp -= 150;
+    } else if (!xp[item.author.id].xp > 100) {
+      msg.reply("You need at least £150 to get this job.")
+    }
+  } else if (msg.content === prefix + "buy nursery-worker") {
+    if (xp[item.author.id].xp > 150) {
+      xp[item.author.id].employment += 1;
+      xp[item.author.id].job = 3;
+      xp[item.author.id].xp -= 150;
+    } else if (!xp[item.author.id].xp > 100) {
+      msg.reply("You need at least £150 to get this job.")
     }
   }
 }
@@ -375,7 +392,23 @@ if (msg.content.startsWith(prefix + "bal")) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
-      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker\n• Job type : Food worker [Lvl 1]")
+      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker\n• Job type : Food")
+      msg.channel.send({embed})
+    }
+  } else if (xp[item.author.id].employment === 2) {
+    if (xp[item.author.id].job === 1) {
+      const embed = new Discord.RichEmbed()
+      .setColor(0xbcffc3)
+      .setTitle(msg.author.username + "'s account")
+      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Supermarket worker\n• Job type : Service")
+      msg.channel.send({embed})
+    }
+  } else if (xp[item.author.id].employment === 3) {
+    if (xp[item.author.id].job === 1) {
+      const embed = new Discord.RichEmbed()
+      .setColor(0xbcffc3)
+      .setTitle(msg.author.username + "'s account")
+      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Nursery worker\n• Job type : Health")
       msg.channel.send({embed})
     }
   }
