@@ -352,7 +352,7 @@ setTimeout(() => {
 
 if (msg.content.startsWith(prefix + "buy")) {
   if (msg.content === prefix + "buy employement") {
-    if (xp[item.author.id].xp === 150) {
+    if (xp[item.author.id].xp ==+ 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 1;
     } 
@@ -360,7 +360,7 @@ if (msg.content.startsWith(prefix + "buy")) {
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  if (xp[item.author.id].employed ==+ 100) {
+  if (xp[item.author.id].employed === 1) {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
     .setTitle(msg.author.username + "'s account")
