@@ -354,7 +354,7 @@ setTimeout(() => {
 
 if (msg.content.startsWith(prefix + "buy")) {
   if (msg.content === prefix + "buy employment") {
-    if (xp[item.author.id].xp === 100) {
+    if (xp[item.author.id].xp ==+ 150) {
       xp[item.author.id].employment += 1;
       xp[item.author.id].job += 1;
     } else if (xp[item.author.id].xp !== 100) {
@@ -368,14 +368,14 @@ if (msg.content.startsWith(prefix + "bal")) {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
     .setTitle(msg.author.username + "'s account")
-    .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : none\n• Current job type : none")
+    .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : none\n• Job type : none")
     msg.channel.send({embed})
   } else if (xp[item.author.id].employment === 1) {
     if (xp[item.author.id].job === 1) {
       const embed = new Discord.RichEmbed()
       .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
-      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker\n• Current job type : Food worker [Lvl 1]")
+      .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker\n• Job type : Food worker [Lvl 1]")
       msg.channel.send({embed})
     }
   }
