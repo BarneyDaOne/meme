@@ -219,7 +219,7 @@ if (msg.content === prefix + "help") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
   .setTitle("Where shall the list to be sent?")
-  .setDescription("**c-help here** or **c-help dm**")
+  .setDescription("**y-help here** or **y-help dm**")
   msg.channel.send({embed})
 }
 
@@ -228,16 +228,16 @@ if (msg.content === prefix + "help dm") {
   
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .addField("Moderation", "c-warn, c-warn @<user> <reason>\nc-kick, c-kick @<user> <reason>\nc-ban, c-ban @<user> <reason>")
-  .addField("Informantion", "c-help, c-help here or c-help dm\nc-avatar, c-avatar @<user> (Leave it blank to see your avatar)")
+  .addField("Moderation", "y-warn, y-warn @<user> <reason>\ny-kick, y-kick @<user> <reason>\ny-ban, y-ban @<user> <reason>")
+  .addField("Informantion", "y-help, y-help here or y-help dm\ny-avatar, y-avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   msg.author.send({embed})
 } else if (msg.content === prefix + "help here") {
   const embed = new Discord.RichEmbed()
   .setColor(0x8b3cff)
-  .addField("Moderation", "c-warn, c-warn @<user> <reason>\nc-kick, c-kick @<user> <reason>\nc-ban, c-ban @<user> <reason>")
-  .addField("Informantion", "c-help, c-help here or c-help dm\nc-avatar, c-avatar @<user> (Leave it blank to see your avatar)")
+  .addField("Moderation", "y-warn, y-warn @<user> <reason>\ny-kick, y-kick @<user> <reason>\ny-ban, y-ban @<user> <reason>")
+  .addField("Informantion", "y-help, y-help here or y-help dm\ny-avatar, y-avatar @<user> (Leave it blank to see your avatar)")
   .addField("Fun", "*none yet*")
   .addField("Other", "*none yet*")
   .setFooter("This message will be deleted in 30 seconds after being sent to prevent spam.")
@@ -327,9 +327,9 @@ console.log(xpAdd);
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
-    xp: 0,
+    xp: 100,
     level: 1,
-    oxp: 0
+    oxp: 100
 };
 }
 
@@ -351,7 +351,7 @@ setTimeout(() => {
 }
 
 if (msg.content.startsWith(prefix + "bal")) {
-  msg.channel.send(xp[item.author.id].xp + " hi")
+  msg.channel.send(xp[item.author.id].oxp + "/" + nxtLvl + " (" + xp[item.author.id].xp + ")")
 }
 
 });
