@@ -352,8 +352,20 @@ setTimeout(() => {
 }, 600);
 }
 
+if (msg.content.startsWith(prefix + "prestige")) {
+  if (msg.content === prefix + "prestige info") {
+    const embed = new Discord.RichEmbed()
+    .setColor(0xbcffc3)
+    .setTitle("About Prestige")
+    .setDescription("Doing a prestige will multiply your income and add more jobs. But you must gain a high amount of money to prestige, you can't simply breeze through a prestige.")
+    .addField("Income Boosts", "Prestige 1 : 0.5x\nPrestige 1.25 : 2x\nPrestige 3.0 : 2x\nPrestige 4 : 5.0x")
+    .addField("Cost", "Prestige 1 : 50,000\nPrestige 2 : 175,000\nPrestige 3 : 500,000\nPrestige 4 : 1,000,000")
+    .addField("Jobs","Prestige 1 : 1 new job\nPrestige 2 : 2 new jobs\nPrestige 3 : 3 new jobs\nPrestige 4 : 4 new jobs")
+    msg.channel.send({embed})
+  }
+}
+
 if (msg.content.startsWith(prefix + "buy")) {
- if (xp[item.author.id].employment === 0) {
   if (msg.content === prefix + "buy") {
     const embed = new Discord.RichEmbed()
     .setColor(0xbcffc3)
@@ -362,6 +374,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     .setFooter("You can only choose 1 job unless you prestige")
     msg.channel.send({embed})
   }
+ if (xp[item.author.id].employment === 0) {
   if (msg.content === prefix + "buy 1") {
     if (xp[item.author.id].xp > 150) {
       xp[item.author.id].employment = 1;
@@ -388,7 +401,7 @@ if (msg.content.startsWith(prefix + "buy")) {
     }
   }
  } else if (xp[item.author.id].employment !== 0) {
-    msg.channel.send("You must prestige to change your job, do **y-prestige info** to see the details")
+    msg.channel.send("Remember, You have to prestige in order change your job, do **y-prestige info** to see the details.")
  }
 }
 
