@@ -358,7 +358,7 @@ if (msg.content.startsWith(prefix + "prestige")) {
     .setColor(0xbcffc3)
     .setTitle("About Prestige")
     .setDescription("Doing a prestige will multiply your income and add more jobs. But you must gain a high amount of money to prestige, you can't simply breeze through a prestige.")
-    .addField("Income Boosts", "Prestige 1 : 0.5x\nPrestige 1.25 : 2x\nPrestige 3.0 : 2x\nPrestige 4 : 5.0x")
+    .addField("Income Boosts", "Prestige 1 : 0.5x\nPrestige 2 : 2x\nPrestige 3 : 2x\nPrestige 4 : 5.0x")
     .addField("Cost", "Prestige 1 : 50,000\nPrestige 2 : 175,000\nPrestige 3 : 500,000\nPrestige 4 : 1,000,000")
     .addField("Jobs","Prestige 1 : 1 new job\nPrestige 2 : 2 new jobs\nPrestige 3 : 3 new jobs\nPrestige 4 : 4 new jobs")
     msg.channel.send({embed})
