@@ -408,14 +408,14 @@ if (msg.content.startsWith(prefix + "buy")) {
 if (msg.content.startsWith(prefix + "bal")) {
   if (xp[item.author.id].employment === 0) {
     const embed = new Discord.RichEmbed()
-    // .setColor(0xbcffc3)
+    .setColor(0xbcffc3)
     .setTitle(msg.author.username + "'s account")
     .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : none\n• Job type : none")
     msg.channel.send({embed})
   } else if (xp[item.author.id].employment === 1) {
     if (xp[item.author.id].job === 1) {
       const embed = new Discord.RichEmbed()
-      // .setColor(0xbcffc3)
+      .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
       .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Fast food worker\n• Job type : Food")
       msg.channel.send({embed})
@@ -423,7 +423,7 @@ if (msg.content.startsWith(prefix + "bal")) {
   } else if (xp[item.author.id].employment === 2) {
     if (xp[item.author.id].job === 1) {
       const embed = new Discord.RichEmbed()
-      // .setColor(0xbcffc3)
+      .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
       .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Supermarket worker\n• Job type : Service")
       msg.channel.send({embed})
@@ -431,7 +431,7 @@ if (msg.content.startsWith(prefix + "bal")) {
   } else if (xp[item.author.id].employment === 3) {
     if (xp[item.author.id].job === 1) {
       const embed = new Discord.RichEmbed()
-      // .setColor(0xbcffc3)
+      .setColor(0xbcffc3)
       .setTitle(msg.author.username + "'s account")
       .setDescription("• Current balance : £" + xp[item.author.id].xp + "\n• Current job : Nursery worker\n• Job type : Health")
       msg.channel.send({embed})
