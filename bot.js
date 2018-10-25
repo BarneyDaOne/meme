@@ -326,14 +326,14 @@ console.log(xpAdd);
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
-    level: 1;
+    level: 1
 };
 }
 
-const 1 = "Black Stick (C)"
-const 2 = "Carved Stone (C)"
-const 3 = "Blunt Arrow (C)"
-const 4 = "Rusty Metal (C)"
+var 1 = "Black Stick (C)"
+var 2 = "Carved Stone (C)"
+var 3 = "Blunt Arrow (C)"
+var 4 = "Rusty Metal (C)"
 
 if (msg.content === "y-inv") {
   const embed = new Discord.RichEmbed()
