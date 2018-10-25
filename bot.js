@@ -391,7 +391,17 @@ if (msg.content === "y-item") {
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + ItemGVNC)
 
-  msg.reply(ItemGVNC)
+  if (ItemGVNC.includes("Stone")) {
+    xp[item.author.id].Stone += 1;
+  } else if (ItemGVNC.includes("Jagged Rock")) {
+    xp[item.author.id].Jagged__Rock += 1;
+  } else if (ItemGVNC.includes("Mud Ball")) {
+    xp[item.author.id].Mud__Ball += 1;
+  } else if (ItemGVNC.includes("Carved Stone")) {
+    xp[item.author.id].Carved__Stone += 1;
+  } else if (ItemGVNC.includes("Stick")) {
+    xp[item.author.id].Stick += 1;
+  }
   } else if (ItemRTY === "UC") {
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
