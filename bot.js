@@ -316,7 +316,7 @@ if (item.content.startsWith(prefix + "avatar")) {
 
 // xp stuff
 
-/*fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
@@ -325,21 +325,23 @@ console.log(xpAdd);
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
-    bal: 100;
+    bal: 100,
+    level: 1;
 };
 }
 
-let 1 = "Black Stick (C)"
-let 2 = "Carved Stone (C)"
-let 3 = "Blunt Arrow (C)"
-let 4 = "Rusty Metal (C)"
+const 1 = "Black Stick (C)"
+const 2 = "Carved Stone (C)"
+const 3 = "Blunt Arrow (C)"
+const 4 = "Rusty Metal (C)"
 
 if (msg.content === "y-inv") {
   const embed = new Discord.RichEmbed()
   .setColor(0x481f7f)
-  .setTitle(1 + 2 + 3 + 4)
+  .setTitle("You have a " + 1)
+  .setDescription("And a " + 2)
   msg.channel.send({embed});
-}*/
+}
 
 });
 
