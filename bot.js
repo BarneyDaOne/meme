@@ -391,7 +391,7 @@ if (msg.content === "y-item") {
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
 
-    if (ItemGVNC === "Stone")) {
+    /*if (ItemGVNC === "Stone")) {
        xp[item.author.id].Stone += 1;
     } else if (ItemGVNC === "Stone (C)")) {
        xp[item.author.id].Stone += 1;
@@ -403,7 +403,7 @@ if (msg.content === "y-item") {
        xp[item.author.id].Carved__Plate += 1;
     } else if (ItemGVNC === "Stick (C)")) {
        xp[item.author.id].Stick += 1;
-    }
+    }*/
   } else if (ItemRTY === "UC") {
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
