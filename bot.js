@@ -389,7 +389,7 @@ if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "C") {
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
-  msg.reply("You found an item of barely any value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  msg.reply("You found an item of barely any value : " + ItemGVNC)
 
   msg.reply(ItemGVNC)
   } else if (ItemRTY === "UC") {
