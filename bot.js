@@ -369,6 +369,10 @@ const rarity = [
 ]
 
 var ItemRTY = 'C'
+var ItemGVNC = 'None'
+var ItemGVNU = 'None'
+var ItemGVNR = 'None'
+var ItemGVNE = 'None'
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
@@ -384,12 +388,30 @@ if(!xp[item.author.id]){
 if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "C") {
+  ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+
+    if (ItemGVNC === "Stone")) {
+       xp[item.author.id].Stone += 1;
+    } else if (ItemGVNC === "Stone (C)")) {
+       xp[item.author.id].Stone += 1;
+    } else if (ItemGVNC === "Jagged Rock (C)")) {
+       xp[item.author.id].Jagged__Rock += 1;
+    } else if (ItemGVNC === "Mud Ball (C)")) {
+       xp[item.author.id].Mud__Ball += 1;
+    } else if (ItemGVNC === "Carved Plate (C)")) {
+       xp[item.author.id].Carved__Plate += 1;
+    } else if (ItemGVNC === "Stick (C)")) {
+       xp[item.author.id].Stick += 1;
+    }
   } else if (ItemRTY === "UC") {
+  ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
   } else if (ItemRTY === "R") {
+  ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
   } else if (ItemRTY === "E") {
+  ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
   }
 }
