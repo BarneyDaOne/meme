@@ -329,7 +329,7 @@ if(!xp[item.author.id]){
 };
 }
 
-let 1 = "Black Stick (C)"
+/*let 1 = "Black Stick (C)"
 let 2 = "Carved Stone (C)"
 let 3 = "Blunt Arrow (C)"
 let 4 = "Rusty Metal (C)"
@@ -339,7 +339,9 @@ if (msg.content === "y-inv") {
   .setColor(0x481f7f)
   .setTitle(1 + 2 + 3 + 4)
   msg.channel.send({embed});
-}
+}*/
+
+});
 
 /*
 
@@ -446,8 +448,6 @@ if (msg.content.startsWith(prefix + "bal")) {
     }
   }
 }*/
-
-});
 
 /*.then(function (msg) {
               msg.react("🗣")
