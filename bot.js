@@ -474,7 +474,7 @@ if (msg.content === "y-inv") {
   .addField("(C) Mud Ball : " + xp[item.author.id].Mud__Ball, "_ _")
   .addField("(C) Broken Plate : " + xp[item.author.id].Broken__Plate, "_ _")
   .addField("(C) Stick : " + xp[item.author.id].Stick, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username + " | Page 0)
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 0")
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 1") {
   const embed = new Discord.RichEmbed()
@@ -485,7 +485,7 @@ if (msg.content === "y-inv") {
   .addField("(UC) Broken Sword : " + xp[item.author.id].Broken__Sword, "_ _")
   .addField("(UC) Ancient Plate : " + xp[item.author.id].Ancient__Plate, "_ _")
   .addField("(UC) Shining Rock : " + xp[item.author.id].Shining__Rock, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username + " | Page 1)
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 1")
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 2") {
   const embed = new Discord.RichEmbed()
@@ -496,7 +496,7 @@ if (msg.content === "y-inv") {
   .addField("(R) Live Shroom : " + xp[item.author.id].Live__Shroom, "_ _")
   .addField("(R) Barney Fossils : " + xp[item.author.id].Barney__Fossils, "_ _")
   .addField("(R) Shooms Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username + " | Page 2)
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 2")
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 3") {
   const embed = new Discord.RichEmbed()
@@ -507,7 +507,7 @@ if (msg.content === "y-inv") {
   .addField("(E) Shooms Bedsheet : " + xp[item.author.id].Shooms__Bedsheet, "_ _")
   .addField("(E) Shooms Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
   .addField("(E) Shroom0 Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username + " | Page 3)
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 3")
   msg.channel.send({embed});
 }
 
