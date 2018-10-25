@@ -343,9 +343,7 @@ if(!xp[item.author.id]){
 }
 
 if (msg.content === "y-item") {
-  msg.reply("You found an item of unknown value"), {
-    file: itemsC[Math.floor(Math.random() * itemsC.length)]
-  }
+  msg.reply("You found an item of unknown value" + itemsC[Math.floor(Math.random() * itemsC.length)])
 }
 
 if (msg.content === "y-inv") {
