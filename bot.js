@@ -328,6 +328,30 @@ const itemsC = [
  'Stick (C)'
 ]
 
+const itemsUC = [
+ 'Old Vase (UC)',
+ 'Fossil (UC)',
+ 'Broken Sword (UC)',
+ 'Ancient Plate (UC)',
+ 'Shining Rock (UC)'
+]
+
+const itemsR = [
+ 'Golden Pot (R)',
+ 'Shooms Towel (R)',
+ 'Live Shroom (R)',
+ 'Barney Fossils (R)',
+ 'Shooms Pillow (R)'
+]
+
+const itemsE = [
+ 'Shroom4 (E)',
+ 'Shroom11 (E)',
+ 'Shooms Bedsheet (E)',
+ 'Shooms Pillow (E)',
+ 'Shroom0 Cane (E)'
+]
+
 const rarity = [
   'C',
   'C',
@@ -338,6 +362,7 @@ const rarity = [
   'UC',
   'UC',
   'UC',
+  'R',
   'R',
   'R',
   'E'
@@ -361,11 +386,11 @@ if (msg.content === "y-item") {
   if (ItemRTY === "C") {
   msg.reply("You found an item of barely any value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
   } else if (ItemRTY === "UC") {
-  msg.reply("You found an item of little value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
   } else if (ItemRTY === "R") {
-  msg.reply("You found an item of some value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
   } else if (ItemRTY === "E") {
-  msg.reply("You found an item of high value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
   }
 }
 
