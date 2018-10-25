@@ -335,7 +335,16 @@ if(!xp[item.author.id]){
 }
 
 if (msg.content === "y-inv") {
-  msg.channel.send(xp[item.author.id].bal + "\n" + xp[item.author.id].Stone + xp[item.author.id].Soft__Rock + xp[item.author.id].Mud__Ball + xp[item.author.id].Carved__Plate + xp[item.author.id].Stick);
+  const embed = new Discord.RichEmbed()
+  .setColor(purple)
+  .setTitle("Balance : " + xp[item.author.id].bal)
+  .addField("(C) Stone" + xp[item.author.id].Stone)
+  .addField("(C) Soft Rock" + xp[item.author.id].Soft__Rock)
+  .addField("(C) Mud Ball" + xp[item.author.id].Mud__Ball)
+  .addField("(C) Carved Plate" + xp[item.author.id].Carved__Plate)
+  .addField("(C) Stick" + xp[item.author.id].Stick)
+  .setFooter("Inventory belonging to " + msg.author.username)
+  msg.channel.send({embed});
 }
 
 });
