@@ -343,7 +343,7 @@ const rarity = [
   'E'
 ]
 
-const ItemRTY = 'C'
+var ItemRTY = 'C'
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
