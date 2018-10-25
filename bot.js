@@ -316,7 +316,7 @@ if (item.content.startsWith(prefix + "avatar")) {
 
 // xp stuff
 
-fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+/*fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
@@ -329,7 +329,7 @@ if(!xp[item.author.id]){
 };
 }
 
-/*let 1 = "Black Stick (C)"
+let 1 = "Black Stick (C)"
 let 2 = "Carved Stone (C)"
 let 3 = "Blunt Arrow (C)"
 let 4 = "Rusty Metal (C)"
