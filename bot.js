@@ -377,11 +377,30 @@ var ItemGVNE = 'None'
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
+// Com
     Stone : 0,
     Jagged__Rock : 0,
     Mud__Ball : 0,
-    Carved__Plate : 0,
-    Stick : 0
+    Broken__Plate : 0,
+    Stick : 0,
+// UCom
+    Old__Vase,
+    Fossil,
+    Broken__Sword,
+    Ancient__Plate,
+    Shining__Rock,
+// Rar
+    Golden__Pot,
+    Shooms__Towel,
+    Live__Shroom,
+    Barney__Fossils,
+    Shooms__Pillow,
+// Epi
+    Shroom4,
+    Shroom11,
+    Shooms__Bedsheet,
+    Shooms__Pillow,
+    Shroom0__Cane
 };
 }
 
@@ -397,20 +416,56 @@ if (msg.content === "y-item") {
     xp[item.author.id].Jagged__Rock += 1;
   } else if (ItemGVNC.includes("Mud Ball")) {
     xp[item.author.id].Mud__Ball += 1;
-  } else if (ItemGVNC.includes("Carved Stone")) {
-    xp[item.author.id].Carved__Stone += 1;
+  } else if (ItemGVNC.includes("Broken Plate")) {
+    xp[item.author.id].Broken__Plate += 1;
   } else if (ItemGVNC.includes("Stick")) {
     xp[item.author.id].Stick += 1;
   }
   } else if (ItemRTY === "UC") {
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
+
+  if (ItemGVNC.includes("Old Vase")) {
+    xp[item.author.id].Old__Vase += 1;
+  } else if (ItemGVNC.includes("Fossil")) {
+    xp[item.author.id].Fossil += 1;
+  } else if (ItemGVNC.includes("Broken Sword")) {
+    xp[item.author.id].Broken__Sword += 1;
+  } else if (ItemGVNC.includes("Ancient Plate")) {
+    xp[item.author.id].Ancient__Plate += 1;
+  } else if (ItemGVNC.includes("Shining Rock")) {
+    xp[item.author.id].Shining__Rock += 1;
+  }
   } else if (ItemRTY === "R") {
   ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
+
+  if (ItemGVNC.includes("Live Shroom")) {
+    xp[item.author.id].Live__Shroom += 1;
+  } else if (ItemGVNC.includes("Golden Pot")) {
+    xp[item.author.id].Golden__Pot += 1;
+  } else if (ItemGVNC.includes("Shooms Towel")) {
+    xp[item.author.id].Shooms__Towel += 1;
+  } else if (ItemGVNC.includes("Barney Fossils")) {
+    xp[item.author.id].Barney__Fossils += 1;
+  } else if (ItemGVNC.includes("ShoomsPillow")) {
+    xp[item.author.id].Shooms__Pillow += 1;
+  }
   } else if (ItemRTY === "E") {
   ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
+
+  if (ItemGVNC.includes("Shroom4")) {
+    xp[item.author.id].Shroom4 += 1;
+  } else if (ItemGVNC.includes("Shroom11")) {
+    xp[item.author.id].Shroom11 += 1;
+  } else if (ItemGVNC.includes("Shooms__Bedsheet")) {
+    xp[item.author.id].Shooms__Bedsheet += 1;
+  } else if (ItemGVNC.includes("Shooms__Pillow")) {
+    xp[item.author.id].Shooms__Pillow += 1;
+  } else if (ItemGVNC.includes("Shroom0 Cane")) {
+    xp[item.author.id].Shroom0__Cane += 1;
+  }
   }
 }
 
@@ -421,8 +476,41 @@ if (msg.content === "y-inv") {
   .addField("(C) Stone : " + xp[item.author.id].Stone, "_ _")
   .addField("(C) Jagged Rock : " + xp[item.author.id].Jagged__Rock, "_ _")
   .addField("(C) Mud Ball : " + xp[item.author.id].Mud__Ball, "_ _")
-  .addField("(C) Carved Plate : " + xp[item.author.id].Carved__Plate, "_ _")
+  .addField("(C) Broken Plate : " + xp[item.author.id].Broken__Plate, "_ _")
   .addField("(C) Stick : " + xp[item.author.id].Stick, "_ _")
+  .setFooter("Inventory belonging to " + msg.author.username)
+  msg.channel.send({embed});
+} else if (msg.content === "y-inv 1") {
+  const embed = new Discord.RichEmbed()
+  .setColor(purple)
+  .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
+  .addField("(UC) Old Vase : " + xp[item.author.id].Old__Vase, "_ _")
+  .addField("(UC) Fossil : " + xp[item.author.id].Fossil, "_ _")
+  .addField("(UC) Broken__Sword : " + xp[item.author.id].Broken__Sword, "_ _")
+  .addField("(UC) Ancient__Plate : " + xp[item.author.id].Ancient__Plate, "_ _")
+  .addField("(UC) Shining__Rock : " + xp[item.author.id].Shining__Rock, "_ _")
+  .setFooter("Inventory belonging to " + msg.author.username)
+  msg.channel.send({embed});
+} else if (msg.content === "y-inv 2") {
+  const embed = new Discord.RichEmbed()
+  .setColor(purple)
+  .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
+  .addField("(R) Golden__Pot : " + xp[item.author.id].Golden__Pot, "_ _")
+  .addField("(R) Shooms__Towel : " + xp[item.author.id].Shooms__Towel, "_ _")
+  .addField("(R) Live__Shroom : " + xp[item.author.id].Live__Shroom, "_ _")
+  .addField("(R) Barney__Fossils : " + xp[item.author.id].Barney__Fossils, "_ _")
+  .addField("(R) Shooms__Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
+  .setFooter("Inventory belonging to " + msg.author.username)
+  msg.channel.send({embed});
+} else if (msg.content === "y-inv 3") {
+  const embed = new Discord.RichEmbed()
+  .setColor(purple)
+  .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
+  .addField("(E) Shroom4 : " + xp[item.author.id].Shroom4, "_ _")
+  .addField("(E) Shroom11 : " + xp[item.author.id].Shroom11, "_ _")
+  .addField("(E) Shooms__Bedsheet : " + xp[item.author.id].Shooms__Bedsheet, "_ _")
+  .addField("(E) Shooms__Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
+  .addField("(E) Shroom0__Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
   .setFooter("Inventory belonging to " + msg.author.username)
   msg.channel.send({embed});
 }
