@@ -384,23 +384,23 @@ if(!xp[item.author.id]){
     Broken__Plate : 0,
     Stick : 0,
 // UCom
-    Old__Vase,
-    Fossil,
-    Broken__Sword,
-    Ancient__Plate,
-    Shining__Rock,
+    Old__Vase : 0,
+    Fossil : 0,
+    Broken__Sword : 0,
+    Ancient__Plate : 0,
+    Shining__Rock : 0,
 // Rar
-    Golden__Pot,
-    Shooms__Towel,
-    Live__Shroom,
-    Barney__Fossils,
-    Shooms__Pillow,
+    Golden__Pot : 0,
+    Shooms__Towel : 0,
+    Live__Shroom : 0,
+    Barney__Fossils : 0,
+    Shooms__Pillow : 0,
 // Epi
-    Shroom4,
-    Shroom11,
-    Shooms__Bedsheet,
-    Shooms__Pillow,
-    Shroom0__Cane
+    Shroom4 : 0,
+    Shroom11 : 0,
+    Shooms__Bedsheet : 0,
+    Shooms__Pillow : 0,
+    Shroom0__Cane : 0
 };
 }
 
