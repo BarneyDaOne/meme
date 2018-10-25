@@ -330,10 +330,10 @@ if(!xp[item.author.id]){
 };
 }
 
-var 1 = "Black Stick (C)"
-var 2 = "Carved Stone (C)"
-var 3 = "Blunt Arrow (C)"
-var 4 = "Rusty Metal (C)"
+let 1 = "Black Stick (C)"
+let 2 = "Carved Stone (C)"
+let 3 = "Blunt Arrow (C)"
+let 4 = "Rusty Metal (C)"
 
 if (msg.content === "y-inv") {
   const embed = new Discord.RichEmbed()
