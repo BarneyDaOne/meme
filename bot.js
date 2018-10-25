@@ -320,16 +320,30 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
-let xpAdd = 13;
-console.log(xpAdd);
-
 const itemsC = [
-  'stone',
-  'jagged rock',
-  'mud ball',
-  'carved plate',
-  'stick'
+ 'Stone (C)',
+ 'Jagged Rock (C)',
+ 'Mud Ball (C)',
+ 'Broken Plate (C)',
+ 'Stick (C)'
 ]
+
+const rarity = [
+  'C',
+  'C',
+  'C',
+  'C',
+  'C',
+  'UC',
+  'UC',
+  'UC',
+  'UC',
+  'R',
+  'R',
+  'E'
+]
+
+const ItemRTY = 'C'
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
@@ -343,7 +357,16 @@ if(!xp[item.author.id]){
 }
 
 if (msg.content === "y-item") {
-  msg.reply("You found an item of unknown value" + itemsC[Math.floor(Math.random() * itemsC.length)])
+  ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
+  if (ItemRTY === "C") {
+  msg.reply("You found an item of barely any value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  } else if (ItemRTY === "UC") {
+  msg.reply("You found an item of little value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  } else if (ItemRTY === "R") {
+  msg.reply("You found an item of some value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  } else if (ItemRTY === "E") {
+  msg.reply("You found an item of high value : " + itemsC[Math.floor(Math.random() * itemsC.length)])
+  }
 }
 
 if (msg.content === "y-inv") {
