@@ -322,18 +322,26 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
 
 let xpAdd = 13;
 console.log(xpAdd);
-let xpAd = 13;
-console.log(xpAdd);
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
-    xp: 100,
-    level: 1,
-    oxp: 100,
-    employment: 0,
-    job: 0
+    bal: 100;
 };
 }
+
+var 1 = "Black Stick (C)"
+var 2 = "Carved Stone (C)"
+var 3 = "Blunt Arrow (C)"
+var 4 = "Rusty Metal (C)"
+
+if (msg.content === "y-inv") {
+  const embed = new Discord.RichEmbed()
+  .setColor(0x481f7f)
+  .setTitle(1 + 2 + 3 + 4)
+  msg.channel.send({embed});
+}
+
+/*
 
 let curxp = xp[item.author.id].xp;
 let hiddenxp = xp[item.author.id].oxp;
@@ -437,7 +445,7 @@ if (msg.content.startsWith(prefix + "bal")) {
       msg.channel.send({embed})
     }
   }
-}
+}*/
 
 });
 
