@@ -330,17 +330,8 @@ if(!xp[item.author.id]){
 };
 }
 
-let 1 = "Black Stick (C)"
-let 2 = "Carved Stone (C)"
-let 3 = "Blunt Arrow (C)"
-let 4 = "Rusty Metal (C)"
-
 if (msg.content === "y-inv") {
-  const embed = new Discord.RichEmbed()
-  .setColor(0x481f7f)
-  .setTitle("You have a " + 1)
-  .setDescription("And a " + 2)
-  msg.channel.send({embed});
+  msg.channel.send("Hi");
 }
 
 });
