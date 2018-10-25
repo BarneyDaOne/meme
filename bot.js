@@ -330,8 +330,10 @@ if(!xp[item.author.id]){
 };
 }
 
+const 4 = "name"
+
 if (msg.content === "y-inv") {
-  msg.channel.send("Hi");
+  msg.channel.send("hi" + 4);
 }
 
 });
