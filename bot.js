@@ -326,13 +326,16 @@ console.log(xpAdd);
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
-    1: "stone",
-    2: "rock"
+    Stone : 0,
+    Soft__Rock : 0,
+    Mud__Ball : 0,
+    Carved__Plate : 0,
+    Stick : 0
 };
 }
 
 if (msg.content === "y-inv") {
-  msg.channel.send(xp[item.author.id].bal + "\n" + xp[item.author.id].1);
+  msg.channel.send(xp[item.author.id].bal + "\n" + xp[item.author.id].Stone + xp[item.author.id].Soft__Rock + xp[item.author.id].Mud__Ball + xp[item.author.id].Carved__Plate + xp[item.author.id].Stick);
 }
 
 });
