@@ -326,14 +326,13 @@ console.log(xpAdd);
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
-    level: 1
+    1: "stone",
+    2: "rock"
 };
 }
 
-let 4 = "name"
-
 if (msg.content === "y-inv") {
-  msg.channel.send("hi" + 4);
+  msg.channel.send(xp[item.author.id].bal + "\n" + xp[item.author.id].1);
 }
 
 });
