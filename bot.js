@@ -323,15 +323,29 @@ fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
 let xpAdd = 13;
 console.log(xpAdd);
 
+const itemsC = [
+  'stone',
+  'jagged rock',
+  'mud ball',
+  'carved plate',
+  'stick'
+]
+
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
     Stone : 0,
-    Soft__Rock : 0,
+    Jagged__Rock : 0,
     Mud__Ball : 0,
     Carved__Plate : 0,
     Stick : 0
 };
+}
+
+if (msg.content === "y-item") {
+  msg.reply("You found an item of unknown value"), {
+    file: itemsC[Math.floor(Math.random() * itemsC.length)]
+  }
 }
 
 if (msg.content === "y-inv") {
@@ -339,7 +353,7 @@ if (msg.content === "y-inv") {
   .setColor(purple)
   .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
   .addField("(C) Stone : " + xp[item.author.id].Stone, "_ _")
-  .addField("(C) Soft Rock : " + xp[item.author.id].Soft__Rock, "_ _")
+  .addField("(C) Jagged Rock : " + xp[item.author.id].Jagged__Rock, "_ _")
   .addField("(C) Mud Ball : " + xp[item.author.id].Mud__Ball, "_ _")
   .addField("(C) Carved Plate : " + xp[item.author.id].Carved__Plate, "_ _")
   .addField("(C) Stick : " + xp[item.author.id].Stick, "_ _")
