@@ -377,26 +377,22 @@ var ItemGVNE = 'None'
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
-// Com
     Stone : 0,
     Jagged__Rock : 0,
     Mud__Ball : 0,
     Broken__Plate : 0,
     Stick : 0,
-// UCom
-    Old__Vase : 0,
+    Old__Vase : 0, // UC
     Fossil : 0,
     Broken__Sword : 0,
     Ancient__Plate : 0,
     Shining__Rock : 0,
-// Rar
-    Golden__Pot : 0,
+    Golden__Pot : 0, // R
     Shooms__Towel : 0,
     Live__Shroom : 0,
     Barney__Fossils : 0,
     Shooms__Pillow : 0,
-// Epi
-    Shroom4 : 0,
+    Shroom4 : 0, // E
     Shroom11 : 0,
     Shooms__Bedsheet : 0,
     Shooms__Pillow : 0,
@@ -425,45 +421,45 @@ if (msg.content === "y-item") {
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
 
-  if (ItemGVNC.includes("Old Vase")) {
+  if (ItemGVNU.includes("Old Vase")) {
     xp[item.author.id].Old__Vase += 1;
-  } else if (ItemGVNC.includes("Fossil")) {
+  } else if (ItemGVNU.includes("Fossil")) {
     xp[item.author.id].Fossil += 1;
-  } else if (ItemGVNC.includes("Broken Sword")) {
+  } else if (ItemGVNU.includes("Broken Sword")) {
     xp[item.author.id].Broken__Sword += 1;
-  } else if (ItemGVNC.includes("Ancient Plate")) {
+  } else if (ItemGVNU.includes("Ancient Plate")) {
     xp[item.author.id].Ancient__Plate += 1;
-  } else if (ItemGVNC.includes("Shining Rock")) {
+  } else if (ItemGVNU.includes("Shining Rock")) {
     xp[item.author.id].Shining__Rock += 1;
   }
   } else if (ItemRTY === "R") {
   ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
 
-  if (ItemGVNC.includes("Live Shroom")) {
+  if (ItemGVNR.includes("Live Shroom")) {
     xp[item.author.id].Live__Shroom += 1;
-  } else if (ItemGVNC.includes("Golden Pot")) {
+  } else if (ItemGVNR.includes("Golden Pot")) {
     xp[item.author.id].Golden__Pot += 1;
-  } else if (ItemGVNC.includes("Shooms Towel")) {
+  } else if (ItemGVNR.includes("Shooms Towel")) {
     xp[item.author.id].Shooms__Towel += 1;
-  } else if (ItemGVNC.includes("Barney Fossils")) {
+  } else if (ItemGVNR.includes("Barney Fossils")) {
     xp[item.author.id].Barney__Fossils += 1;
-  } else if (ItemGVNC.includes("ShoomsPillow")) {
+  } else if (ItemGVNR.includes("ShoomsPillow")) {
     xp[item.author.id].Shooms__Pillow += 1;
   }
   } else if (ItemRTY === "E") {
   ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
 
-  if (ItemGVNC.includes("Shroom4")) {
+  if (ItemGVNE.includes("Shroom4")) {
     xp[item.author.id].Shroom4 += 1;
-  } else if (ItemGVNC.includes("Shroom11")) {
+  } else if (ItemGVNE.includes("Shroom11")) {
     xp[item.author.id].Shroom11 += 1;
-  } else if (ItemGVNC.includes("Shooms__Bedsheet")) {
+  } else if (ItemGVNE.includes("Shooms__Bedsheet")) {
     xp[item.author.id].Shooms__Bedsheet += 1;
-  } else if (ItemGVNC.includes("Shooms__Pillow")) {
+  } else if (ItemGVNE.includes("Shooms__Pillow")) {
     xp[item.author.id].Shooms__Pillow += 1;
-  } else if (ItemGVNC.includes("Shroom0 Cane")) {
+  } else if (ItemGVNE.includes("Shroom0 Cane")) {
     xp[item.author.id].Shroom0__Cane += 1;
   }
   }
