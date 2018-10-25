@@ -444,7 +444,7 @@ if (msg.content === "y-item") {
     xp[item.author.id].Shooms__Towel += 1;
   } else if (ItemGVNR.includes("Barney Fossils")) {
     xp[item.author.id].Barney__Fossils += 1;
-  } else if (ItemGVNR.includes("ShoomsPillow")) {
+  } else if (ItemGVNR.includes("Shooms Pillow")) {
     xp[item.author.id].Shooms__Pillow += 1;
   }
   } else if (ItemRTY === "E") {
@@ -455,9 +455,9 @@ if (msg.content === "y-item") {
     xp[item.author.id].Shroom4 += 1;
   } else if (ItemGVNE.includes("Shroom11")) {
     xp[item.author.id].Shroom11 += 1;
-  } else if (ItemGVNE.includes("Shooms__Bedsheet")) {
+  } else if (ItemGVNE.includes("Shooms Bedsheet")) {
     xp[item.author.id].Shooms__Bedsheet += 1;
-  } else if (ItemGVNE.includes("Shooms__Pillow")) {
+  } else if (ItemGVNE.includes("Shooms Pillow")) {
     xp[item.author.id].Shooms__Pillow += 1;
   } else if (ItemGVNE.includes("Shroom0 Cane")) {
     xp[item.author.id].Shroom0__Cane += 1;
@@ -474,7 +474,7 @@ if (msg.content === "y-inv") {
   .addField("(C) Mud Ball : " + xp[item.author.id].Mud__Ball, "_ _")
   .addField("(C) Broken Plate : " + xp[item.author.id].Broken__Plate, "_ _")
   .addField("(C) Stick : " + xp[item.author.id].Stick, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username)
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 0)
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 1") {
   const embed = new Discord.RichEmbed()
@@ -482,21 +482,21 @@ if (msg.content === "y-inv") {
   .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
   .addField("(UC) Old Vase : " + xp[item.author.id].Old__Vase, "_ _")
   .addField("(UC) Fossil : " + xp[item.author.id].Fossil, "_ _")
-  .addField("(UC) Broken__Sword : " + xp[item.author.id].Broken__Sword, "_ _")
-  .addField("(UC) Ancient__Plate : " + xp[item.author.id].Ancient__Plate, "_ _")
-  .addField("(UC) Shining__Rock : " + xp[item.author.id].Shining__Rock, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username)
+  .addField("(UC) Broken Sword : " + xp[item.author.id].Broken__Sword, "_ _")
+  .addField("(UC) Ancient Plate : " + xp[item.author.id].Ancient__Plate, "_ _")
+  .addField("(UC) Shining Rock : " + xp[item.author.id].Shining__Rock, "_ _")
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 1)
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 2") {
   const embed = new Discord.RichEmbed()
   .setColor(purple)
   .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
-  .addField("(R) Golden__Pot : " + xp[item.author.id].Golden__Pot, "_ _")
-  .addField("(R) Shooms__Towel : " + xp[item.author.id].Shooms__Towel, "_ _")
-  .addField("(R) Live__Shroom : " + xp[item.author.id].Live__Shroom, "_ _")
-  .addField("(R) Barney__Fossils : " + xp[item.author.id].Barney__Fossils, "_ _")
-  .addField("(R) Shooms__Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username)
+  .addField("(R) Golden Pot : " + xp[item.author.id].Golden__Pot, "_ _")
+  .addField("(R) Shooms Towel : " + xp[item.author.id].Shooms__Towel, "_ _")
+  .addField("(R) Live Shroom : " + xp[item.author.id].Live__Shroom, "_ _")
+  .addField("(R) Barney Fossils : " + xp[item.author.id].Barney__Fossils, "_ _")
+  .addField("(R) Shooms Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 2)
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 3") {
   const embed = new Discord.RichEmbed()
@@ -504,10 +504,10 @@ if (msg.content === "y-inv") {
   .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
   .addField("(E) Shroom4 : " + xp[item.author.id].Shroom4, "_ _")
   .addField("(E) Shroom11 : " + xp[item.author.id].Shroom11, "_ _")
-  .addField("(E) Shooms__Bedsheet : " + xp[item.author.id].Shooms__Bedsheet, "_ _")
-  .addField("(E) Shooms__Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
-  .addField("(E) Shroom0__Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
-  .setFooter("Inventory belonging to " + msg.author.username)
+  .addField("(E) Shooms Bedsheet : " + xp[item.author.id].Shooms__Bedsheet, "_ _")
+  .addField("(E) Shooms Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
+  .addField("(E) Shroom0 Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
+  .setFooter("Inventory belonging to " + msg.author.username + " | Page 3)
   msg.channel.send({embed});
 }
 
