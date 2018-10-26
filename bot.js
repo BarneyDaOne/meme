@@ -422,13 +422,55 @@ if (msg.content === "y-item") {
   }
 }
 
+if (msg.content.startsWith("y-sell")) {
+  // Common
+   if (msg.content.includes("stone")) {
+     if (xp[item.author.id].Stone > 0) {
+      xp[item.author.id].bal += 5;
+      xp[item.author.id].Stone -= 1;
+
+      msg.reply("Item sold for 5ß");
+     }
+   } else if (msg.content.includes("jagged rock")) {
+     if (xp[item.author.id].Jagged__Rock > 0) {
+      xp[item.author.id].bal += 5;
+      xp[item.author.id].Jagged__Rock -= 1;
+
+      msg.reply("Item sold for 5ß");
+     }
+   } else if (msg.content.includes("mud ball")) {
+     if (xp[item.author.id].Mud__Ball > 0) {
+      xp[item.author.id].bal += 5;
+      xp[item.author.id].Mud__Ball -= 1;
+
+      msg.reply("Item sold for 5ß");
+     }
+   } else if (msg.content.includes("broken plate")) {
+     if (xp[item.author.id].Broken__Plate > 0) {
+      xp[item.author.id].bal += 5;
+      xp[item.author.id].Broken__Plate -= 1;
+
+      msg.reply("Item sold for 5ß");
+     }
+   } else if (msg.content.includes("stick")) {
+     if (xp[item.author.id].Stick > 0) {
+      xp[item.author.id].bal += 5;
+      xp[item.author.id].Stick -= 1;
+
+      msg.reply("Item sold for 5ß");
+     }
+   }
+  // Uncommon
+}
+
 if (xp[item.author.id].paydue === 1) {
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
 
  if (msg.content === "y-item ID") {
-  if (ItemRTY === "C") {
+  if (ItemRTY === "C" || xp[item.author.id].bal > 10) {
+  xp[item.author.id].bal -= 10;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + ItemGVNC)
 
@@ -443,7 +485,8 @@ if (xp[item.author.id].paydue === 1) {
   } else if (ItemGVNC.includes("Stick")) {
     xp[item.author.id].Stick += 1;
   }
-  } else if (ItemRTY === "UC") {
+  } else if (ItemRTY === "UC" || xp[item.author.id].bal > 50) {
+  xp[item.author.id].bal -= 50;
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
 
@@ -458,7 +501,8 @@ if (xp[item.author.id].paydue === 1) {
   } else if (ItemGVNU.includes("Shining Rock")) {
     xp[item.author.id].Shining__Rock += 1;
   }
-  } else if (ItemRTY === "R") {
+  } else if (ItemRTY === "R" || xp[item.author.id].bal > 120) {
+  xp[item.author.id].bal -= 120;
   ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
 
@@ -473,7 +517,8 @@ if (xp[item.author.id].paydue === 1) {
   } else if (ItemGVNR.includes("Shooms Pillow")) {
     xp[item.author.id].Shooms__Pillow += 1;
   }
-  } else if (ItemRTY === "E") {
+  } else if (ItemRTY === "E" || xp[item.author.id].bal > 250) {
+  xp[item.author.id].bal -= 250;
   ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
 
