@@ -413,10 +413,39 @@ if (msg.content === "y-item") {
     .setColor(0xc42d3c)
     .addField("You found an unidentified object. Care to pay 10ß to identify?", "y-item ID to identify / y-item cancel to cancel")
     msg.channel.send({embed});
+  } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
+  if (ItemRTY === "U") {
+    xp[item.author.id].payPS += 1;
+  
+    const embed = new Discord.RichEmbed()
+    .setColor(0xc42d3c)
+    .addField("You found an unidentified object. Care to pay 50ß to identify?", "y-item ID to identify / y-item cancel to cancel")
+    msg.channel.send({embed});
+  } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
+  if (ItemRTY === "R") {
+    xp[item.author.id].payPS += 1;
+  
+    const embed = new Discord.RichEmbed()
+    .setColor(0xc42d3c)
+    .addField("You found an unidentified object. Care to pay 120ß to identify?", "y-item ID to identify / y-item cancel to cancel")
+    msg.channel.send({embed});
+  } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
+  if (ItemRTY === "E") {
+    xp[item.author.id].payPS += 1;
+  
+    const embed = new Discord.RichEmbed()
+    .setColor(0xc42d3c)
+    .addField("You found an unidentified object. Care to pay 250ß to identify?", "y-item ID to identify / y-item cancel to cancel")
+    msg.channel.send({embed});
   }
 }
 
-if (xp[item.author.id].payPS === 1) {  
+if (xp[item.author.id].payPS === 1) {
+ if (msg.content === "y-item cancel") {
+  xp[item.author.id].payPS -= 1;
+  msg.reply("Identification canceled.");
+ }
+  
  if (msg.content === "y-item ID") {
   if (ItemRTY === "C") {
   xp[item.author.id].bal -= 10;
@@ -435,6 +464,7 @@ if (xp[item.author.id].payPS === 1) {
     xp[item.author.id].Stick += 1;
   }
   } else if (ItemRTY === "UC") {
+  xp[item.author.id].bal -= 50;
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
 
@@ -450,6 +480,7 @@ if (xp[item.author.id].payPS === 1) {
     xp[item.author.id].Shining__Rock += 1;
   }
   } else if (ItemRTY === "R") {
+  xp[item.author.id].bal -= 120;
   ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
 
@@ -465,6 +496,7 @@ if (xp[item.author.id].payPS === 1) {
     xp[item.author.id].Shooms__Pillow += 1;
   }
   } else if (ItemRTY === "E") {
+  xp[item.author.id].bal -= 250;
   ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
 
@@ -526,7 +558,6 @@ if (msg.content === "y-inv") {
   .addField("(E) Shroom0 Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
   .setFooter("Inventory belonging to " + msg.author.username + " | Page 3")
   msg.channel.send({embed});
- }
 }
 
 });
