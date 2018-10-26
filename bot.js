@@ -489,6 +489,8 @@ if (msg.content === "show me it") {
 }*/
 // ITEM ID
 if (xp[item.author.id].paydue !== 0) {
+  ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
+
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
