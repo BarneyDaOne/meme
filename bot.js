@@ -408,7 +408,7 @@ var minMon0 = 10;
 var minMon1 = 50;
 var minMon2 = 120;
 var minMon3 = 250;
-var Mon = xp[item.author.id].bal;
+//var Mon = xp[item.author.id].bal;
 
 /*if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
@@ -516,7 +516,6 @@ if (xp[item.author.id].payPS === 1) {
     xp[item.author.id].Shooms__Pillow += 1;
   } else if (ItemGVNE.includes("Shroom0 Cane")) {
     xp[item.author.id].Shroom0__Cane += 1;
-  }
   }
 }
 
