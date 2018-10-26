@@ -371,6 +371,24 @@ const rarity = [
   'E'
 ]
 
+const profitC = [
+  '2',
+  '4',
+  '7',
+  '11',
+  '14',
+  '17'
+]
+
+const profitUC = [
+  '48',
+  '59',
+  '73',
+  '82',
+  '61',
+  '54'
+]
+
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
@@ -398,6 +416,7 @@ if(!xp[item.author.id]){
 };
 }
 
+var ItmSldC = '0'
 var ItemRTY = 'C'
 var ItemGVNC = 'None'
 var ItemGVNU = 'None'
@@ -426,38 +445,43 @@ if (msg.content.startsWith("y-sell")) {
   // Common
    if (msg.content.includes("stone")) {
      if (xp[item.author.id].Stone > 0) {
-      xp[item.author.id].bal += 5;
+      ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
+      xp[item.author.id].bal += ItmSldC;
       xp[item.author.id].Stone -= 1;
 
-      msg.reply("Item sold for 5ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("jagged rock")) {
      if (xp[item.author.id].Jagged__Rock > 0) {
-      xp[item.author.id].bal += 5;
+      ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
+      xp[item.author.id].bal += ItmSldC;
       xp[item.author.id].Jagged__Rock -= 1;
 
-      msg.reply("Item sold for 5ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("mud ball")) {
      if (xp[item.author.id].Mud__Ball > 0) {
-      xp[item.author.id].bal += 5;
+      ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
+      xp[item.author.id].bal += ItmSldC;
       xp[item.author.id].Mud__Ball -= 1;
 
-      msg.reply("Item sold for 5ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("broken plate")) {
      if (xp[item.author.id].Broken__Plate > 0) {
-      xp[item.author.id].bal += 5;
+      ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
+      xp[item.author.id].bal += ItmSldC;
       xp[item.author.id].Broken__Plate -= 1;
 
-      msg.reply("Item sold for 5ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("stick")) {
      if (xp[item.author.id].Stick > 0) {
-      xp[item.author.id].bal += 5;
+      ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
+      xp[item.author.id].bal += ItmSldC;
       xp[item.author.id].Stick -= 1;
 
-      msg.reply("Item sold for 5ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    }
   // Uncommon
