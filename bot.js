@@ -486,13 +486,14 @@ if (msg.content.startsWith("y-sell")) {
    }
   // Uncommon
 }
-
+// ITEM ID
 if (xp[item.author.id].paydue === 1) {
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
 
  if (msg.content === "y-item ID") {
+  xp[item.author.id].paydue = 0;
   if (ItemRTY === "C" || xp[item.author.id].bal > 10) {
   xp[item.author.id].bal -= 10;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
