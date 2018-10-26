@@ -406,7 +406,17 @@ if(!xp[item.author.id]){
 if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "C") {
+    const embed = new Discord.RichEmbed()
+    .setColor(0xc42d3c)
+    .addField("You found an unidentified object. Care to pay 10ß to identify?", "y-item ID to identify / y-item cancel to cancel")
+    msg.channel.send({embed});
+  }
+}
+  
+if (msg.content === "y-item ID") {
+  if (ItemRTY === "C") {
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
+  xp.[item.author.id].bal -= 10;
   msg.reply("You found an item of barely any value : " + ItemGVNC)
 
   if (ItemGVNC.includes("Stone")) {
