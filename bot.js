@@ -426,18 +426,15 @@ var ItemGVNE = 'None'
 
 if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
+  xp[item.author.id].paydue = 1;
   if (ItemRTY === "C") {
     msg.reply("You found an unidentified object, pay 10ß to identify?\ny-item ID to identify | y-item cancel to cancel");
-    xp[item.author.id].paydue = 1;
   } else if (ItemRTY === "UC") {
     msg.reply("You found an unidentified object, pay 50ß to identify?\ny-item ID to identify | y-item cancel to cancel");
-    xp[item.author.id].paydue = 1;
   } else if (ItemRTY === "R") {
     msg.reply("You found an unidentified object, pay 120ß to identify?\ny-item ID to identify | y-item cancel to cancel");
-    xp[item.author.id].paydue = 1;
   } else if (ItemRTY === "E") {
     msg.reply("You found an unidentified object, pay 250ß to identify?\ny-item ID to identify | y-item cancel to cancel");
-    xp[item.author.id].paydue = 1;
   }
 }
 
