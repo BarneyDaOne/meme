@@ -438,7 +438,7 @@ if (msg.content === "y-item") {
   }
 }
 
-if (msg.content.startsWith("y-sell")) {
+/*if (msg.content.startsWith("y-sell")) {
   // Common
    if (msg.content.includes("stone")) {
      if (xp[item.author.id].Stone > 0) {
@@ -482,9 +482,9 @@ if (msg.content.startsWith("y-sell")) {
      }
    }
   // Uncommon
-}
+}*/
 // ITEM ID
-if (xp[item.author.id].paydue = 1) {
+if (xp[item.author.id].paydue !== 0) {
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
