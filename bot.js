@@ -371,12 +371,6 @@ const rarity = [
   'E'
 ]
 
-var ItemRTY = 'C'
-var ItemGVNC = 'None'
-var ItemGVNU = 'None'
-var ItemGVNR = 'None'
-var ItemGVNE = 'None'
-
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
@@ -403,6 +397,18 @@ if(!xp[item.author.id]){
     payPS : 0
 };
 }
+
+var ItemRTY = 'C'
+var ItemGVNC = 'None'
+var ItemGVNU = 'None'
+var ItemGVNR = 'None'
+var ItemGVNE = 'None'
+
+var minMon0 = 10;
+var minMon1 = 50;
+var minMon2 = 120;
+var minMon3 = 250;
+var Mon = xp[item.author.id].bal;
 
 if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
@@ -448,7 +454,7 @@ if (xp[item.author.id].payPS === 1) {
   
  if (msg.content === "y-item ID") {
   if (ItemRTY === "C") {
-  xp[item.author.id].bal -= 10;
+  xp[item.author.id].bal = minMon0 -= Mon;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + ItemGVNC)
 
@@ -464,7 +470,7 @@ if (xp[item.author.id].payPS === 1) {
     xp[item.author.id].Stick += 1;
   }
   } else if (ItemRTY === "UC") {
-  xp[item.author.id].bal -= 50;
+  xp[item.author.id].bal = minMon1 -= Mon;
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
 
@@ -480,7 +486,7 @@ if (xp[item.author.id].payPS === 1) {
     xp[item.author.id].Shining__Rock += 1;
   }
   } else if (ItemRTY === "R") {
-  xp[item.author.id].bal -= 120;
+  xp[item.author.id].bal = minMon2 -= Mon;
   ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
 
@@ -496,7 +502,7 @@ if (xp[item.author.id].payPS === 1) {
     xp[item.author.id].Shooms__Pillow += 1;
   }
   } else if (ItemRTY === "E") {
-  xp[item.author.id].bal -= 250;
+  xp[item.author.id].bal = minMon3 -= Mon;
   ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
 
