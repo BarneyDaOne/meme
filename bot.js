@@ -418,7 +418,6 @@ if (msg.content === "y-item") {
 
 if (xp[item.author.id].payPS === 1) {  
  if (msg.content === "y-item ID") {
-  xp[item.author.id].payPS -= 1;
   if (ItemRTY === "C") {
   xp[item.author.id].bal -= 10;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
