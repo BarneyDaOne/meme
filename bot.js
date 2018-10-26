@@ -417,7 +417,7 @@ if(!xp[item.author.id]){
 }
 
 var ItmSldC = '0'
-var ItemRTY = 'C'
+var ItemRTY = 'None'
 var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
@@ -493,7 +493,7 @@ if (xp[item.author.id].paydue === 1) {
  }
 
  if (msg.content === "y-item ID") {
-  xp[item.author.id].paydue = 0;
+    xp[item.author.id].paydue = 0;
   if (ItemRTY === "C" || xp[item.author.id].bal > 10) {
   xp[item.author.id].bal -= 10;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
