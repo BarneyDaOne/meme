@@ -5,10 +5,10 @@ const client = new Discord.Client();
 const fs = require("fs");
 let xp = require("./xp.json");
 let oxp = require("./oxp.json");
-let purple = 0x5b5b5b;
-let purple2 = 0xdbdbdb;
-let purple3 = 0xa580cc;
-let purple4 = 0x54ff76;
+let purple = 0x5b5b5b
+let purple2 = 0xdbdbdb
+let purple3 = 0xa580cc
+let purple4 = 0x54ff76
 const talkedRecently = new Set();
 
 client.on('ready', () => { 
@@ -393,8 +393,7 @@ if(!xp[item.author.id]){
     Shroom11 : 0,
     Shooms__Bedsheet : 0,
     Shooms__Pillow : 0,
-    Shroom0__Cane : 0,
-    payPS : 0
+    Shroom0__Cane : 0
 };
 }
 
@@ -468,6 +467,7 @@ var ItemGVNE = 'None'
     xp[item.author.id].Shooms__Pillow += 1;
   } else if (ItemGVNE.includes("Shroom0 Cane")) {
     xp[item.author.id].Shroom0__Cane += 1;
+  }
   }
 }
 
