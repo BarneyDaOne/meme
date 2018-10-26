@@ -1,4 +1,4 @@
-a// work tbh
+// work tbh
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
