@@ -416,7 +416,6 @@ if (msg.content === "y-item") {
 if (msg.content === "y-item ID") {
   if (ItemRTY === "C") {
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
-  xp.[item.author.id].bal -= 10;
   msg.reply("You found an item of barely any value : " + ItemGVNC)
 
   if (ItemGVNC.includes("Stone")) {
