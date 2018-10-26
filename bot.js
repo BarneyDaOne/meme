@@ -484,7 +484,7 @@ if (msg.content.startsWith("y-sell")) {
   // Uncommon
 }
 // ITEM ID
-if (xp[item.author.id].paydue === 1) {
+if (xp[item.author.id].paydue = 1) {
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
