@@ -418,7 +418,7 @@ if (msg.content === "y-item") {
     const embed = new Discord.RichEmbed()
     .setColor(0xc42d3c)
     .addField("You found an unidentified object. Care to pay 10ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed});
+    msg.channel.send({embed})
   } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "U") {
     xp[item.author.id].payPS += 1;
@@ -426,7 +426,7 @@ if (msg.content === "y-item") {
     const embed = new Discord.RichEmbed()
     .setColor(0xc42d3c)
     .addField("You found an unidentified object. Care to pay 50ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed});
+    msg.channel.send({embed})
   } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "R") {
     xp[item.author.id].payPS += 1;
@@ -434,7 +434,7 @@ if (msg.content === "y-item") {
     const embed = new Discord.RichEmbed()
     .setColor(0xc42d3c)
     .addField("You found an unidentified object. Care to pay 120ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed});
+    msg.channel.send({embed})
   } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "E") {
     xp[item.author.id].payPS += 1;
@@ -442,7 +442,7 @@ if (msg.content === "y-item") {
     const embed = new Discord.RichEmbed()
     .setColor(0xc42d3c)
     .addField("You found an unidentified object. Care to pay 250ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed});
+    msg.channel.send({embed})
   }
 }
 
