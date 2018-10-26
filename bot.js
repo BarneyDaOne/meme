@@ -410,7 +410,7 @@ var minMon2 = 120;
 var minMon3 = 250;
 var Mon = xp[item.author.id].bal;
 
-if (msg.content === "y-item") {
+/*if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "C") {
     xp[item.author.id].payPS += 1;
@@ -444,7 +444,7 @@ if (msg.content === "y-item") {
     .addField("You found an unidentified object. Care to pay 250ß to identify?", "y-item ID to identify / y-item cancel to cancel")
     msg.channel.send({embed})
   }
-}
+}*/
 
 if (xp[item.author.id].payPS === 1) {
  if (msg.content === "y-item cancel") {
