@@ -438,6 +438,10 @@ if (msg.content === "y-item") {
   }
 }
 
+if (msg.content === "show me it") {
+  msg.channel.send(xp[item.author.id].paydue);
+}
+
 /*if (msg.content.startsWith("y-sell")) {
   // Common
    if (msg.content.includes("stone")) {
