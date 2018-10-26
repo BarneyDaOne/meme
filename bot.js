@@ -399,22 +399,28 @@ if(!xp[item.author.id]){
     Shroom11 : 0,
     Shooms__Bedsheet : 0,
     Shooms__Pillow : 0,
-    Shroom0__Cane : 0
+    Shroom0__Cane : 0,
+    payPS : 0
 };
 }
 
 if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   if (ItemRTY === "C") {
+    xp[item.author.id].payPS += 1;
+  
     const embed = new Discord.RichEmbed()
     .setColor(0xc42d3c)
     .addField("You found an unidentified object. Care to pay 10ß to identify?", "y-item ID to identify / y-item cancel to cancel")
     msg.channel.send({embed});
   }
 }
-  
-if (msg.content === "y-item ID") {
+
+if (xp[item.author.id].payPS === 1) {  
+ if (msg.content === "y-item ID") {
+  xp[item.author.id].payPS -= 1;
   if (ItemRTY === "C") {
+  xp[item.author.id].bal -= 10;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + ItemGVNC)
 
@@ -521,6 +527,7 @@ if (msg.content === "y-inv") {
   .addField("(E) Shroom0 Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
   .setFooter("Inventory belonging to " + msg.author.username + " | Page 3")
   msg.channel.send({embed});
+ }
 }
 
 });
