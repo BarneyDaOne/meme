@@ -410,7 +410,7 @@ if (msg.content === "y-item") {
   if (ItemRTY === "C") {
     msg.reply("You found an unidentified object, pay 10ß to identify?\ny-item ID to identify | y-item cancel to cancel");
     xp[item.author.id].paydue = 1;
-  } else if (ItemRTY === "U") {
+  } else if (ItemRTY === "UC") {
     msg.reply("You found an unidentified object, pay 50ß to identify?\ny-item ID to identify | y-item cancel to cancel");
     xp[item.author.id].paydue = 1;
   } else if (ItemRTY === "R") {
@@ -423,6 +423,10 @@ if (msg.content === "y-item") {
 }
 
 if (xp[item.author.id].paydue === 1) {
+ if (msg.content === "y-item cancel") {
+  xp[item.author.id].paydue = 0;
+ }
+
  if (msg.content === "y-item ID") {
   if (ItemRTY === "C") {
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
