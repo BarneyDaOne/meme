@@ -5,7 +5,10 @@ const client = new Discord.Client();
 const fs = require("fs");
 let xp = require("./xp.json");
 let oxp = require("./oxp.json");
-let purple = 0xF291F9
+let purple = 0xa8a8a8;
+let purple2 = 0xdbdbdb;
+let purple3 = 0xa580cc;
+let purple4 = 0x54ff76;
 const talkedRecently = new Set();
 
 client.on('ready', () => { 
@@ -478,7 +481,7 @@ if (msg.content === "y-inv") {
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 1") {
   const embed = new Discord.RichEmbed()
-  .setColor(purple)
+  .setColor(purple2)
   .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
   .addField("(UC) Old Vase : " + xp[item.author.id].Old__Vase, "_ _")
   .addField("(UC) Fossil : " + xp[item.author.id].Fossil, "_ _")
@@ -489,7 +492,7 @@ if (msg.content === "y-inv") {
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 2") {
   const embed = new Discord.RichEmbed()
-  .setColor(purple)
+  .setColor(purple3)
   .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
   .addField("(R) Golden Pot : " + xp[item.author.id].Golden__Pot, "_ _")
   .addField("(R) Shooms Towel : " + xp[item.author.id].Shooms__Towel, "_ _")
@@ -500,7 +503,7 @@ if (msg.content === "y-inv") {
   msg.channel.send({embed});
 } else if (msg.content === "y-inv 3") {
   const embed = new Discord.RichEmbed()
-  .setColor(purple)
+  .setColor(purple4)
   .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
   .addField("(E) Shroom4 : " + xp[item.author.id].Shroom4, "_ _")
   .addField("(E) Shroom11 : " + xp[item.author.id].Shroom11, "_ _")
