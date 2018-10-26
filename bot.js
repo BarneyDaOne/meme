@@ -403,54 +403,6 @@ var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
 var ItemGVNE = 'None'
-
-var minMon0 = 10;
-var minMon1 = 50;
-var minMon2 = 120;
-var minMon3 = 250;
-//var Mon = xp[item.author.id].bal;
-
-/*if (msg.content === "y-item") {
-  ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
-  if (ItemRTY === "C") {
-    xp[item.author.id].payPS += 1;
-  
-    const embed = new Discord.RichEmbed()
-    .setColor(0xc42d3c)
-    .addField("You found an unidentified object. Care to pay 10ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed})
-  } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
-  if (ItemRTY === "U") {
-    xp[item.author.id].payPS += 1;
-  
-    const embed = new Discord.RichEmbed()
-    .setColor(0xc42d3c)
-    .addField("You found an unidentified object. Care to pay 50ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed})
-  } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
-  if (ItemRTY === "R") {
-    xp[item.author.id].payPS += 1;
-  
-    const embed = new Discord.RichEmbed()
-    .setColor(0xc42d3c)
-    .addField("You found an unidentified object. Care to pay 120ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed})
-  } else ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
-  if (ItemRTY === "E") {
-    xp[item.author.id].payPS += 1;
-  
-    const embed = new Discord.RichEmbed()
-    .setColor(0xc42d3c)
-    .addField("You found an unidentified object. Care to pay 250ß to identify?", "y-item ID to identify / y-item cancel to cancel")
-    msg.channel.send({embed})
-  }
-}*/
-
-if (xp[item.author.id].payPS === 1) {
- if (msg.content === "y-item cancel") {
-  xp[item.author.id].payPS -= 1;
-  msg.reply("Identification canceled.");
- }
   
  if (msg.content === "y-item ID") {
   if (ItemRTY === "C") {
