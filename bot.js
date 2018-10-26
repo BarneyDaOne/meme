@@ -423,9 +423,9 @@ var ItemGVNU = 'None'
 var ItemGVNR = 'None'
 var ItemGVNE = 'None'
  
+ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
+
 if (msg.content === "y-item") {
-  ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
-  
   if (ItemRTY === "C") {
     msg.reply("You found an unidentified object, pay 10ß to identify?\ny-item ID to identify | y-item cancel to cancel");
     xp[item.author.id].paydue = 1;
