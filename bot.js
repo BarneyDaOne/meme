@@ -393,7 +393,8 @@ if(!xp[item.author.id]){
     Shroom11 : 0,
     Shooms__Bedsheet : 0,
     Shooms__Pillow : 0,
-    Shroom0__Cane : 0
+    Shroom0__Cane : 0,
+    paydue : 0
 };
 }
 
@@ -402,10 +403,28 @@ var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
 var ItemGVNE = 'None'
+ 
+if (msg.content === "y-item") {
+  ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
   
+  if (ItemRTY === "C") {
+    msg.reply("You found an unidentified object, pay 10ß to identify?\ny-item ID to identify | y-item cancel to cancel");
+    xp[item.author.id].paydue = 1;
+  } else if (ItemRTY === "U") {
+    msg.reply("You found an unidentified object, pay 50ß to identify?\ny-item ID to identify | y-item cancel to cancel");
+    xp[item.author.id].paydue = 1;
+  } else if (ItemRTY === "R") {
+    msg.reply("You found an unidentified object, pay 120ß to identify?\ny-item ID to identify | y-item cancel to cancel");
+    xp[item.author.id].paydue = 1;
+  } else if (ItemRTY === "E") {
+    msg.reply("You found an unidentified object, pay 250ß to identify?\ny-item ID to identify | y-item cancel to cancel");
+    xp[item.author.id].paydue = 1;
+  }
+}
+
+if (xp[item.author.id].paydue === 1) {
  if (msg.content === "y-item ID") {
   if (ItemRTY === "C") {
-  //xp[item.author.id].bal = minMon0 -= Mon;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + ItemGVNC)
 
@@ -421,7 +440,6 @@ var ItemGVNE = 'None'
     xp[item.author.id].Stick += 1;
   }
   } else if (ItemRTY === "UC") {
-  //xp[item.author.id].bal = minMon1 -= Mon;
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
 
@@ -437,7 +455,6 @@ var ItemGVNE = 'None'
     xp[item.author.id].Shining__Rock += 1;
   }
   } else if (ItemRTY === "R") {
-  //xp[item.author.id].bal = minMon2 -= Mon;
   ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
 
@@ -453,7 +470,6 @@ var ItemGVNE = 'None'
     xp[item.author.id].Shooms__Pillow += 1;
   }
   } else if (ItemRTY === "E") {
-  //xp[item.author.id].bal = minMon3 -= Mon;
   ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
 
@@ -469,6 +485,7 @@ var ItemGVNE = 'None'
     xp[item.author.id].Shroom0__Cane += 1;
   }
   }
+}
 }
 
 if (msg.content === "y-inv") {
