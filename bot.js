@@ -422,7 +422,7 @@ var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
 var ItemGVNE = 'None'
-
+var ItemRTY2 = ItemRTY;
 
 if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
@@ -497,7 +497,7 @@ if (xp[item.author.id].paydue !== 0) {
 
  if (msg.content === "y-item ID") {
     xp[item.author.id].paydue = 0;
-  if (ItemRTY === "C") {
+  if (ItemRTY22 === "C") {
   xp[item.author.id].bal -= 10;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + ItemGVNC)
@@ -513,7 +513,7 @@ if (xp[item.author.id].paydue !== 0) {
   } else if (ItemGVNC.includes("Stick")) {
     xp[item.author.id].Stick += 1;
   }
-  } else if (ItemRTY === "UC") {
+  } else if (ItemRTY2 === "UC") {
   xp[item.author.id].bal -= 50;
   ItemGVNU = itemsUC[Math.floor(Math.random() * itemsUC.length)]
   msg.reply("You found an item of little value : " + itemsUC[Math.floor(Math.random() * itemsUC.length)])
@@ -529,7 +529,7 @@ if (xp[item.author.id].paydue !== 0) {
   } else if (ItemGVNU.includes("Shining Rock")) {
     xp[item.author.id].Shining__Rock += 1;
   }
-  } else if (ItemRTY === "R") {
+  } else if (ItemRTY2 === "R") {
   xp[item.author.id].bal -= 120;
   ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
   msg.reply("You found an item of some value : " + itemsR[Math.floor(Math.random() * itemsR.length)])
@@ -545,7 +545,7 @@ if (xp[item.author.id].paydue !== 0) {
   } else if (ItemGVNR.includes("Shooms Pillow")) {
     xp[item.author.id].Shooms__Pillow += 1;
   }
-  } else if (ItemRTY === "E") {
+  } else if (ItemRTY2 === "E") {
   xp[item.author.id].bal -= 250;
   ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
   msg.reply("You found an item of high value : " + itemsE[Math.floor(Math.random() * itemsE.length)])
