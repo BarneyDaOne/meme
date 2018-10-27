@@ -390,6 +390,24 @@ const profitUC = [
   '54'
 ]
 
+const profitR = [
+  '100',
+  '133',
+  '169',
+  '182',
+  '114',
+  '126'
+]
+
+const profitE = [
+  '199',
+  '243',
+  '284',
+  '338',
+  '367',
+  '269'
+]
+
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: 100,
@@ -487,6 +505,7 @@ if (msg.content === "show me it") {
   // Uncommon
 }*/
 // ITEM ID
+if (xp[item.author.id].paydue !== 0) {
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
@@ -558,6 +577,7 @@ if (msg.content === "show me it") {
     xp[item.author.id].Shroom0__Cane += 1;
   }
   }
+ }
 }
 
 if (msg.content === "y-inv") {
