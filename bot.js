@@ -10,6 +10,7 @@ let purple2 = 0xdbdbdb
 let purple3 = 0xa580cc
 let purple4 = 0x54ff76
 const talkedRecently = new Set();
+var ItemRTY = 'None'
 
 client.on('ready', () => { 
   console.log(`Logged in as ${client.user.tag}!`);
@@ -417,7 +418,6 @@ if(!xp[item.author.id]){
 }
 
 var ItmSldC = '0'
-var ItemRTY = 'C'
 var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
