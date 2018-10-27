@@ -422,7 +422,6 @@ var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
 var ItemGVNE = 'None'
-var ItemRTY2 = ItemRTY;
 
 if (msg.content === "y-item") {
   ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
@@ -488,7 +487,7 @@ if (msg.content === "show me it") {
   // Uncommon
 }*/
 // ITEM ID
-//if (xp[item.author.id].paydue !== 0) {
+if (xp[item.author.id].paydue > 0) {
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
@@ -560,7 +559,7 @@ if (msg.content === "show me it") {
     xp[item.author.id].Shroom0__Cane += 1;
   }
   }
-//}
+}
 }
 
 if (msg.content === "y-inv") {
