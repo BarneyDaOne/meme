@@ -489,15 +489,13 @@ if (msg.content === "show me it") {
 }*/
 // ITEM ID
 if (xp[item.author.id].paydue !== 0) {
-  ItemRTY = rarity[Math.floor(Math.random() * rarity.length)]
-
  if (msg.content === "y-item cancel") {
   xp[item.author.id].paydue = 0;
  }
 
  if (msg.content === "y-item ID") {
     xp[item.author.id].paydue = 0;
-  if (ItemRTY22 === "C") {
+  if (ItemRTY2 === "C") {
   xp[item.author.id].bal -= 10;
   ItemGVNC = itemsC[Math.floor(Math.random() * itemsC.length)]
   msg.reply("You found an item of barely any value : " + ItemGVNC)
