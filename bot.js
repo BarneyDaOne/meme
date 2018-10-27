@@ -417,7 +417,7 @@ if(!xp[item.author.id]){
 }
 
 var ItmSldC = '0'
-var ItemRTY = 'None'
+var ItemRTY = 'C'
 var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
