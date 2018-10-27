@@ -429,13 +429,16 @@ if(!xp[item.author.id]){
     Shroom4 : 0, // E
     Shroom11 : 0,
     Shooms__Bedsheet : 0,
-    Shooms__Pillow : 0,
+    Shooms__Blanket : 0,
     Shroom0__Cane : 0,
     paydue : 0
 };
 }
 
 var ItmSldC = '0'
+var ItmSldU = '0'
+var ItmSldR = '0'
+var ItmSldE = '0'
 var ItemGVNC = 'None'
 var ItemGVNU = 'None'
 var ItemGVNR = 'None'
@@ -459,7 +462,7 @@ if (msg.content === "show me it") {
   msg.channel.send(xp[item.author.id].paydue);
 }
 
-/*if (msg.content.startsWith("y-sell")) {
+if (msg.content.startsWith("y-sell")) {
   // Common
    if (msg.content.includes("stone")) {
      if (xp[item.author.id].Stone > 0) {
@@ -501,9 +504,134 @@ if (msg.content === "show me it") {
 
       msg.reply("Item sold for " + ItmSldC + "ß");
      }
+   } else
+ // Uncommon
+   if (msg.content.includes("old vase")) {
+     if (xp[item.author.id].Old__Vase > 0) {
+      ItmSldU = profitUC[Math.floor(Math.random() * profitUC.length)]
+      xp[item.author.id].bal += ItmSldU;
+      xp[item.author.id].Old__Vase -= 1;
+
+      msg.reply("Item sold for " + ItmSldU + "ß");
+     }
+   } else if (msg.content.includes("fossil")) {
+     if (xp[item.author.id].Fossil > 0) {
+      ItmSldU = profitUC[Math.floor(Math.random() * profitUC.length)]
+      xp[item.author.id].bal += ItmSldU;
+      xp[item.author.id].Fossil -= 1;
+
+      msg.reply("Item sold for " + ItmSldU + "ß");
+     }
+   } else if (msg.content.includes("broken sword")) {
+     if (xp[item.author.id].Broken__Sword > 0) {
+      ItmSldU = profitUC[Math.floor(Math.random() * profitUC.length)]
+      xp[item.author.id].bal += ItmSldU;
+      xp[item.author.id].Broken__Sword -= 1;
+
+      msg.reply("Item sold for " + ItmSldU + "ß");
+     }
+   } else if (msg.content.includes("ancient plate")) {
+     if (xp[item.author.id].Ancient__Plate > 0) {
+      ItmSldU = profitUC[Math.floor(Math.random() * profitUC.length)]
+      xp[item.author.id].bal += ItmSldU;
+      xp[item.author.id].Ancient__Plate -= 1;
+
+      msg.reply("Item sold for " + ItmSldU + "ß");
+     }
+   } else if (msg.content.includes("shining rock")) {
+     if (xp[item.author.id].Shining__Rock > 0) {
+      ItmSldU = profitUC[Math.floor(Math.random() * profitUC.length)]
+      xp[item.author.id].bal += ItmSldU;
+      xp[item.author.id].Shining__Rock -= 1;
+
+      msg.reply("Item sold for " + ItmSldU + "ß");
+     }
+   } else 
+// Rare
+   if (msg.content.includes("golden pot")) {
+     if (xp[item.author.id].Golden__Pot > 0) {
+      ItmSldR = profitR[Math.floor(Math.random() * profitR.length)]
+      xp[item.author.id].bal += ItmSldR;
+      xp[item.author.id].Golden__Pot -= 1;
+
+      msg.reply("Item sold for " + ItmSldR + "ß");
+     }
+   } else if (msg.content.includes("shooms towel")) {
+     if (xp[item.author.id].Shooms__Towel > 0) {
+      ItmSldR = profitR[Math.floor(Math.random() * profitR.length)]
+      xp[item.author.id].bal += ItmSldR;
+      xp[item.author.id].Shooms__Towel -= 1;
+
+      msg.reply("Item sold for " + ItmSldR + "ß");
+     }
+   } else if (msg.content.includes("live shroom")) {
+     if (xp[item.author.id].Live__Shroom > 0) {
+      ItmSldR = profitR[Math.floor(Math.random() * profitR.length)]
+      xp[item.author.id].bal += ItmSldR;
+      xp[item.author.id].Live__Shroom -= 1;
+
+      msg.reply("Item sold for " + ItmSldR + "ß");
+     }
+   } else if (msg.content.includes("barney fossils")) {
+     if (xp[item.author.id].Barney__Fossils > 0) {
+      ItmSldR = profitR[Math.floor(Math.random() * profitR.length)]
+      xp[item.author.id].bal += ItmSldR;
+      xp[item.author.id].Barney__Fossils -= 1;
+
+      msg.reply("Item sold for " + ItmSldR + "ß");
+     }
+   } else if (msg.content.includes("shooms pillow")) {
+     if (xp[item.author.id].Shooms__Pillow > 0) {
+      ItmSldR = profitR[Math.floor(Math.random() * profitR.length)]
+      xp[item.author.id].bal += ItmSldR;
+      xp[item.author.id].Shooms__Pillow -= 1;
+
+      msg.reply("Item sold for " + ItmSldR + "ß");
+     }
+   } else
+// Epic
+   if (msg.content.includes("Shroom4")) {
+     if (xp[item.author.id].Shroom4 > 0) {
+      ItmSldE = profitE[Math.floor(Math.random() * profitE.length)]
+      xp[item.author.id].bal += ItmSldE;
+      xp[item.author.id].Shroom4 -= 1;
+
+      msg.reply("Item sold for " + ItmSldE + "ß");
+     }
+   } else if (msg.content.includes("Shroom11")) {
+     if (xp[item.author.id].Shroom11 > 0) {
+      ItmSldE = profitE[Math.floor(Math.random() * profitE.length)]
+      xp[item.author.id].bal += ItmSldE;
+      xp[item.author.id].Shroom11 -= 1;
+
+      msg.reply("Item sold for " + ItmSldE + "ß");
+     }
+   } else if (msg.content.includes("shooms bedsheet")) {
+     if (xp[item.author.id].Shooms__Bedsheet > 0) {
+      ItmSldE = profitE[Math.floor(Math.random() * profitE.length)]
+      xp[item.author.id].bal += ItmSldE;
+      xp[item.author.id].Shooms__Bedsheet -= 1;
+
+      msg.reply("Item sold for " + ItmSldE + "ß");
+     }
+   } else if (msg.content.includes("shooms blanket")) {
+     if (xp[item.author.id].Shooms__Blanket > 0) {
+      ItmSldE = profitE[Math.floor(Math.random() * profitE.length)]
+      xp[item.author.id].bal += ItmSldE;
+      xp[item.author.id].Shooms__Blanket -= 1;
+
+      msg.reply("Item sold for " + ItmSldE + "ß");
+     }
+   } else if (msg.content.includes("shroom0 cane")) {
+     if (xp[item.author.id].Shroom0__Cane > 0) {
+      ItmSldE = profitE[Math.floor(Math.random() * profitE.length)]
+      xp[item.author.id].bal += ItmSldE;
+      xp[item.author.id].Shroom0__Cane -= 1;
+
+      msg.reply("Item sold for " + ItmSldE + "ß");
+     }
    }
-  // Uncommon
-}*/
+}
 // ITEM ID
 if (xp[item.author.id].paydue !== 0) {
  if (msg.content === "y-item cancel") {
@@ -571,7 +699,7 @@ if (xp[item.author.id].paydue !== 0) {
     xp[item.author.id].Shroom11 += 1;
   } else if (ItemGVNE.includes("Shooms Bedsheet")) {
     xp[item.author.id].Shooms__Bedsheet += 1;
-  } else if (ItemGVNE.includes("Shooms Pillow")) {
+  } else if (ItemGVNE.includes("Shooms Blanket")) {
     xp[item.author.id].Shooms__Pillow += 1;
   } else if (ItemGVNE.includes("Shroom0 Cane")) {
     xp[item.author.id].Shroom0__Cane += 1;
@@ -620,7 +748,7 @@ if (msg.content === "y-inv") {
   .addField("(E) Shroom4 : " + xp[item.author.id].Shroom4, "_ _")
   .addField("(E) Shroom11 : " + xp[item.author.id].Shroom11, "_ _")
   .addField("(E) Shooms Bedsheet : " + xp[item.author.id].Shooms__Bedsheet, "_ _")
-  .addField("(E) Shooms Pillow : " + xp[item.author.id].Shooms__Pillow, "_ _")
+  .addField("(E) Shooms Pillow : " + xp[item.author.id].Shooms__Blanket, "_ _")
   .addField("(E) Shroom0 Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
   .setFooter("Inventory belonging to " + msg.author.username + " | Page 3")
   msg.channel.send({embed});
