@@ -410,6 +410,7 @@ const profitE = [
 if(!xp[item.author.id]){
   xp[item.author.id] = {
     bal: '{"bal":"100"}',
+    val: JSON.parse(xp[item.author.id].bal),
     Stone : 0,
     Jagged__Rock : 0,
     Mud__Ball : 0,
