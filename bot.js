@@ -468,7 +468,7 @@ if (msg.content.startsWith("y-sell")) {
    if (msg.content.includes("stone")) {
      if (xp[item.author.id].Stone > 0) {
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
-      xp[item.author.id].bal = xp[item.author.id].bal += parseInt(ItmSldC);
+      xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Stone -= 1;
 
       msg.reply("Item sold for " + ItmSldC + "ß");
@@ -476,7 +476,7 @@ if (msg.content.startsWith("y-sell")) {
    } else if (msg.content.includes("jagged rock")) {
      if (xp[item.author.id].Jagged__Rock > 0) {
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
-      xp[item.author.id].bal = xp[item.author.id].bal += parseInt(ItmSldC);
+      xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Jagged__Rock -= 1;
 
       msg.reply("Item sold for " + ItmSldC + "ß");
@@ -484,7 +484,7 @@ if (msg.content.startsWith("y-sell")) {
    } else if (msg.content.includes("mud ball")) {
      if (xp[item.author.id].Mud__Ball > 0) {
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
-      xp[item.author.id].bal = xp[item.author.id].bal += parseInt(ItmSldC);
+      xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Mud__Ball -= 1;
 
       msg.reply("Item sold for " + ItmSldC + "ß");
@@ -492,7 +492,7 @@ if (msg.content.startsWith("y-sell")) {
    } else if (msg.content.includes("broken plate")) {
      if (xp[item.author.id].Broken__Plate > 0) {
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
-      xp[item.author.id].bal = xp[item.author.id].bal += parseInt(ItmSldC);
+      xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Broken__Plate -= 1;
 
       msg.reply("Item sold for " + ItmSldC + "ß");
@@ -500,7 +500,7 @@ if (msg.content.startsWith("y-sell")) {
    } else if (msg.content.includes("stick")) {
      if (xp[item.author.id].Stick > 0) {
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
-      xp[item.author.id].bal = xp[item.author.id].bal += parseInt(ItmSldC);
+      xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Stick -= 1;
 
       msg.reply("Item sold for " + ItmSldC + "ß");
