@@ -573,7 +573,7 @@ if (msg.content.startsWith("y-sell")) {
 
       msg.reply("Item sold for " + ItmSldR + "ß");
      }
-   } else if (msg.content.includes("barney fossils")) {
+   } else if (msg.content.includes("Barney__Fossils")) {
      if (xp[item.author.id].Barney__Fossils > 0) {
       ItmSldR = profitR[Math.floor(Math.random() * profitR.length)]
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldR;
