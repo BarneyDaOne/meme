@@ -351,7 +351,7 @@ const itemsE = [
  'Shroom4 (E)',
  'Shroom11 (E)',
  'Shooms Bedsheet (E)',
- 'Shooms Pillow (E)',
+ 'Shooms Blanket (E)',
  'Shroom0 Cane (E)'
 ]
 
@@ -702,7 +702,7 @@ if (xp[item.author.id].paydue !== 0) {
   } else if (ItemGVNE.includes("Shooms Bedsheet")) {
     xp[item.author.id].Shooms__Bedsheet += 1;
   } else if (ItemGVNE.includes("Shooms Blanket")) {
-    xp[item.author.id].Shooms__Pillow += 1;
+    xp[item.author.id].Shooms__Blanket += 1;
   } else if (ItemGVNE.includes("Shroom0 Cane")) {
     xp[item.author.id].Shroom0__Cane += 1;
   }
@@ -750,7 +750,7 @@ if (msg.content === "y-inv") {
   .addField("(E) Shroom4 : " + xp[item.author.id].Shroom4, "_ _")
   .addField("(E) Shroom11 : " + xp[item.author.id].Shroom11, "_ _")
   .addField("(E) Shooms Bedsheet : " + xp[item.author.id].Shooms__Bedsheet, "_ _")
-  .addField("(E) Shooms Pillow : " + xp[item.author.id].Shooms__Blanket, "_ _")
+  .addField("(E) Shooms Blanket : " + xp[item.author.id].Shooms__Blanket, "_ _")
   .addField("(E) Shroom0 Cane : " + xp[item.author.id].Shroom0__Cane, "_ _")
   .setFooter("Inventory belonging to " + msg.author.username + " | Page 3")
   msg.channel.send({embed});
