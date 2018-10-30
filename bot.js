@@ -213,7 +213,7 @@ const profitE = [
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
-    bal: 1000,
+    bal: 10000000,
     Stone : 0,
     Jagged__Rock : 0,
     Mud__Ball : 0,
@@ -237,7 +237,9 @@ if(!xp[item.author.id]){
     paydue : 0,
     ItemRTY : 'None',
     booster1 : 0,
-    booster2 : 0
+    booster2 : 0,
+    booster3 : 0,
+    booster4 : 0	
 };
 }
 
@@ -263,6 +265,45 @@ if (xp[item.author.id].booster1 === 1) {
   }
  for(var i=0; i<profitE.length; i++) {
 	  profitE[i] = profitE[i] * 1.1;
+  }
+} else if (xp[item.author.id].booster2 === 1) {
+ for(var i=0; i<profitC.length; i++) {
+	  profitC[i] = profitC[i] * 1.2;
+  }
+ for(var i=0; i<profitUC.length; i++) {
+	  profitUC[i] = profitUC[i] * 1.2;
+  }
+ for(var i=0; i<profitR.length; i++) {
+	  profitR[i] = profitR[i] * 1.2;
+  }
+ for(var i=0; i<profitE.length; i++) {
+	  profitE[i] = profitE[i] * 1.2;
+  }
+}else if (xp[item.author.id].booster3 === 1) {
+ for(var i=0; i<profitC.length; i++) {
+	  profitC[i] = profitC[i] * 1.3;
+  }
+ for(var i=0; i<profitUC.length; i++) {
+	  profitUC[i] = profitUC[i] * 1.3;
+  }
+ for(var i=0; i<profitR.length; i++) {
+	  profitR[i] = profitR[i] * 1.3;
+  }
+ for(var i=0; i<profitE.length; i++) {
+	  profitE[i] = profitE[i] * 1.3;
+  }
+} else if (xp[item.author.id].booster4 === 1) {
+ for(var i=0; i<profitC.length; i++) {
+	  profitC[i] = profitC[i] * 1.5;
+  }
+ for(var i=0; i<profitUC.length; i++) {
+	  profitUC[i] = profitUC[i] * 1.5;
+  }
+ for(var i=0; i<profitR.length; i++) {
+	  profitR[i] = profitR[i] * 1.5;
+  }
+ for(var i=0; i<profitE.length; i++) {
+	  profitE[i] = profitE[i] * 1.5;
   }
 }
 
@@ -353,6 +394,24 @@ if (msg.content.startsWith("y-buy")) {
         xp[item.author.id].bal -= 500;
         xp[item.author.id].booster1 = 1;
         msg.reply("Movere has been linked into your income.")
+     }
+   } else if (msg.content === "y-buy B") {
+    if (xp[item.author.id].bal > 500) {
+        xp[item.author.id].bal -= 1500;
+        xp[item.author.id].booster2 = 1;
+        msg.reply("Vagari has been linked into your income.")
+     }
+   } else if (msg.content === "y-buy C") {
+    if (xp[item.author.id].bal > 500) {
+        xp[item.author.id].bal -= 600;
+        xp[item.author.id].booster3 = 1;
+        msg.reply("Lavere has been linked into your income.")
+     }
+   } else if (msg.content === "y-buy D") {
+    if (xp[item.author.id].bal > 500) {
+        xp[item.author.id].bal -= 12000;
+        xp[item.author.id].booster4 = 1;
+        msg.reply("Purus has been linked into your income.")
      }
    }
 }
