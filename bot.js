@@ -251,6 +251,10 @@ var ItemGVNR = 'None'
 var ItemGVNE = 'None'
 var totbal = xp[item.author.id].bal;
 
+if (xp[item.author.id].booster1 === 1) {
+  profitC * 50%;
+}
+
 if (msg.content === "y-item") {
   xp[item.author.id].ItemRTY = rarity[Math.floor(Math.random() * rarity.length)];
   xp[item.author.id].paydue = 1;
@@ -347,12 +351,6 @@ if (msg.content.startsWith("y-sell")) {
   // Common
    if (msg.content.includes("stone")) {
      if (xp[item.author.id].Stone > 0) {
-      if (xp[item.author.id].booster1 === 1) {
-       ItmSldC * +xp[item.author.id].booster1;
-       ItmSldU * +xp[item.author.id].booster1;
-       ItmSldR * +xp[item.author.id].booster1;
-       ItmSldE * +xp[item.author.id].booster1;
-      }
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Stone -= 1;
@@ -361,12 +359,6 @@ if (msg.content.startsWith("y-sell")) {
      }
    } else if (msg.content.includes("jagged rock")) {
      if (xp[item.author.id].Jagged__Rock > 0) {
-      if (xp[item.author.id].booster1 === 1) {
-       ItmSldC * +xp[item.author.id].booster1;
-       ItmSldU * +xp[item.author.id].booster1;
-       ItmSldR * +xp[item.author.id].booster1;
-       ItmSldE * +xp[item.author.id].booster1;
-      }
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Jagged__Rock -= 1;
@@ -375,12 +367,6 @@ if (msg.content.startsWith("y-sell")) {
      }
    } else if (msg.content.includes("mud ball")) {
      if (xp[item.author.id].Mud__Ball > 0) {
-      if (xp[item.author.id].booster1 === 1) {
-       ItmSldC * +xp[item.author.id].booster1;
-       ItmSldU * +xp[item.author.id].booster1;
-       ItmSldR * +xp[item.author.id].booster1;
-       ItmSldE * +xp[item.author.id].booster1;
-      }
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Mud__Ball -= 1;
@@ -389,12 +375,6 @@ if (msg.content.startsWith("y-sell")) {
      }
    } else if (msg.content.includes("broken plate")) {
      if (xp[item.author.id].Broken__Plate > 0) {
-      if (xp[item.author.id].booster1 === 1) {
-       ItmSldC * +xp[item.author.id].booster1;
-       ItmSldU * +xp[item.author.id].booster1;
-       ItmSldR * +xp[item.author.id].booster1;
-       ItmSldE * +xp[item.author.id].booster1;
-      }
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Broken__Plate -= 1;
@@ -403,12 +383,6 @@ if (msg.content.startsWith("y-sell")) {
      }
    } else if (msg.content.includes("stick")) {
      if (xp[item.author.id].Stick > 0) {
-      if (xp[item.author.id].booster1 === 1) {
-       ItmSldC * +xp[item.author.id].booster1;
-       ItmSldU * +xp[item.author.id].booster1;
-       ItmSldR * +xp[item.author.id].booster1;
-       ItmSldE * +xp[item.author.id].booster1;
-      }
       ItmSldC = profitC[Math.floor(Math.random() * profitC.length)]
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Stick -= 1;
