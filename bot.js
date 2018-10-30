@@ -213,7 +213,7 @@ const profitE = [
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
-    bal: 100,
+    bal: 1000,
     Stone : 0,
     Jagged__Rock : 0,
     Mud__Ball : 0,
@@ -235,7 +235,9 @@ if(!xp[item.author.id]){
     Shooms__Blanket : 0,
     Shroom0__Cane : 0,
     paydue : 0,
-    ItemRTY : 'None'
+    ItemRTY : 'None',
+    booster1 : 0,
+    booster2 : 0
 };
 }
 
@@ -248,6 +250,13 @@ var ItemGVNU = 'None'
 var ItemGVNR = 'None'
 var ItemGVNE = 'None'
 var totbal = xp[item.author.id].bal;
+
+if (xp[item.author.id].booster1 === 1) {
+  ItmSldC * +xp[item.author.id].booster1;
+  ItmSldU * +xp[item.author.id].booster1;
+  ItmSldR * +xp[item.author.id].booster1;
+  ItmSldE * +xp[item.author.id].booster1;
+}
 
 if (msg.content === "y-item") {
   xp[item.author.id].ItemRTY = rarity[Math.floor(Math.random() * rarity.length)];
@@ -283,11 +292,11 @@ if (msg.content === "y-shop 1") {
   .setColor(0x49ffbc)
   .setTitle("The Booster Shoomster")
   .setDescription("Income comes easy with these one of kind boosters! 1 type of booster only, get more boosters by buying different types!")
-  .addField("Movere (0.5x / 50% Income Booster) : 500ß", "This one is weighted due to it's plating, it has enough *momentum* to swing around in your pocket. 10ß will become 15ß.")
-  .addField("Vagari (1.2x / 120% Income Booster) : 980ß", "*Extravagant* how these boosters work, multiplying the money you recieve can prove useful. 10ß will become 22ß.")
-  .addField("Lavere (2.2x / 220% Income Booster) : 1500ß", "Expensive indeed, but to live *lavish*ly would cost a few pennies, am I wrong? 10ß will become 32ß.")
-  .addField("Purus (3.5x / 350% Income Booster) : 3000ß", "This is Purus, a *pure* booster like this one holds great power. 10ß will become 45ß.")
-  .addField("Ainos (4.8x / 480% Income Booster) : 5000ß", "Ainos, *enigma*tic how much power it has. 10ß will become 58ß.")
+  .addField("`A` Movere (0.5x / 50% Income Booster) : 500ß", "This one is weighted due to it's plating, it has enough *momentum* to swing around in your pocket. 10ß will become 15ß.")
+  .addField("`B` Vagari (1.2x / 120% Income Booster) : 980ß", "*Extravagant* how these boosters work, multiplying the money you recieve can prove useful. 10ß will become 22ß.")
+  .addField("`C` Lavere (2.2x / 220% Income Booster) : 1500ß", "Expensive indeed, but to live *lavish*ly would cost a few pennies, am I wrong? 10ß will become 32ß.")
+  .addField("`D` Purus (3.5x / 350% Income Booster) : 3000ß", "This is Purus, a *pure* booster like this one holds great power. 10ß will become 45ß.")
+  .addField("`E` Ainos (4.8x / 480% Income Booster) : 5000ß", "Ainos, *enigma*tic how much power it has. 10ß will become 58ß.")
   msg.channel.send({embed});
 }
 
@@ -329,6 +338,16 @@ if (msg.content.startsWith("y-buy")) {
         }
       }
   }
+
+  // Booster shop
+
+  if (msg.content === "y-buy A") {
+    if (xp[item.author.id].bal > 500) {
+        xp[item.author.id].bal -= 500;
+        xp[item.author.id].booster1 = 1;
+        msg.reply("Movere has been linked into your income.")
+     }
+   }
 }
 
 if (msg.content.startsWith("y-sell")) {
