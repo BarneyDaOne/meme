@@ -253,7 +253,7 @@ var ItemGVNR = 'None'
 var ItemGVNE = 'None'
 var totbal = xp[item.author.id].bal;
 
-xp[item.author.id].bal.toFixed(3);
+// xp[item.author.id].bal.toFixed(3);
 
 if (xp[item.author.id].booster1 === 1) {
  for(var i=0; i<profitC.length; i++) {
@@ -668,7 +668,7 @@ if (xp[item.author.id].paydue !== 0) {
 if (msg.content === "y-inv") {
   const embed = new Discord.RichEmbed()
   .setColor(purple)
-  .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
+  .setTitle("Balance : " + xp[item.author.id].bal.toFixed(3), "_ _")
   .addField("(C) Stone : " + xp[item.author.id].Stone, "_ _")
   .addField("(C) Jagged Rock : " + xp[item.author.id].Jagged__Rock, "_ _")
   .addField("(C) Mud Ball : " + xp[item.author.id].Mud__Ball, "_ _")
@@ -679,7 +679,7 @@ if (msg.content === "y-inv") {
 } else if (msg.content === "y-inv 1") {
   const embed = new Discord.RichEmbed()
   .setColor(purple2)
-  .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
+  .setTitle("Balance : " + xp[item.author.id].bal.toFixed(3), "_ _")
   .addField("(UC) Old Vase : " + xp[item.author.id].Old__Vase, "_ _")
   .addField("(UC) Fossil : " + xp[item.author.id].Fossil, "_ _")
   .addField("(UC) Broken Sword : " + xp[item.author.id].Broken__Sword, "_ _")
@@ -690,7 +690,7 @@ if (msg.content === "y-inv") {
 } else if (msg.content === "y-inv 2") {
   const embed = new Discord.RichEmbed()
   .setColor(purple3)
-  .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
+  .setTitle("Balance : " + xp[item.author.id].bal.toFixed(3), "_ _")
   .addField("(R) Golden Pot : " + xp[item.author.id].Golden__Pot, "_ _")
   .addField("(R) Shooms Towel : " + xp[item.author.id].Shooms__Towel, "_ _")
   .addField("(R) Live Shroom : " + xp[item.author.id].Live__Shroom, "_ _")
@@ -701,7 +701,7 @@ if (msg.content === "y-inv") {
 } else if (msg.content === "y-inv 3") {
   const embed = new Discord.RichEmbed()
   .setColor(purple4)
-  .setTitle("Balance : " + xp[item.author.id].bal, "_ _")
+  .setTitle("Balance : " + xp[item.author.id].bal.toFixed(3), "_ _")
   .addField("(E) Shroom4 : " + xp[item.author.id].Shroom4, "_ _")
   .addField("(E) Shroom11 : " + xp[item.author.id].Shroom11, "_ _")
   .addField("(E) Shooms Bedsheet : " + xp[item.author.id].Shooms__Bedsheet, "_ _")
