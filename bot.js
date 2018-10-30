@@ -268,13 +268,13 @@ if (msg.content === "y-shop") {
   .setColor(0x49ffbc)
   .setTitle("The Shroomshop")
   .setDescription("The shop for all of your item needs, for the lowest price!")
-  .addField("Random Rare item : 140ß", "_ _")
-  .addField("Random Epic item : 280ß", "_ _")
-  .addField("The Key of Legends : 1100ß", "Amazing right? This unlocks items called Legendary items (LND).")
-  .addField("Fragment of the Omega : 1500ß", "I'm not sure about where this item comes from, but it has an suspicious aura.")
-  .addField("Shard of the Omega : 1500ß", "This is a bigger part of that Omega fragment, they look like a key when put together.")
-  .addField("Key of the Omega : Fragment and Shard of the Omega", "The price you pay for this is well spent, this key unlocks Omega items (OMEGA).")
-  .addField("World Crest : 5200ß", "A beauty this item is, I heard that there 3 World items and they seek the bearer of this crest. I'm not sure how I got it though, or even any item I have here that I comment about.")
+  .addField("`1` Random Rare item : 140ß", "_ _")
+  .addField("`2` Random Epic item : 280ß", "_ _")
+  .addField("`3` The Key of Legends : 1100ß", "Amazing right? This unlocks items called Legendary items (LND).")
+  .addField("`4` Fragment of the Omega : 1500ß", "I'm not sure about where this item comes from, but it has an suspicious aura.")
+  .addField("`5` Shard of the Omega : 1500ß", "This is a bigger part of that Omega fragment, they look like a key when put together.")
+  .addField("`6` Key of the Omega : Fragment and Shard of the Omega", "The price you pay for this is well spent, this key unlocks Omega items (OMEGA).")
+  .addField("`7` World Crest : 5200ß", "A beauty this item is, I heard that there 3 World items and they seek the bearer of this crest. I'm not sure how I got it though, or even any item I have here that I comment about.")
   msg.channel.send({embed});
 }
 
@@ -289,6 +289,46 @@ if (msg.content === "y-shop 1") {
   .addField("Purus (3.5x / 350% Income Booster) : 3000ß", "This is Purus, a *pure* booster like this one holds great power. 10ß will become 45ß.")
   .addField("Ainos (4.8x / 480% Income Booster) : 5000ß", "Ainos, *enigma*tic how much power it has. 10ß will become 58ß.")
   msg.channel.send({embed});
+}
+
+if (msg.content.startsWith("y-buy")) {
+  if (msg.content === "y-buy 1") {
+    if (xp[item.author.id].bal > 140) {
+        xp[item.author.id].bal -= 140;
+        ItemGVNR = itemsR[Math.floor(Math.random() * itemsR.length)]
+        msg.reply("Item added to inventory : " + ItemGVNR)
+
+      if (ItemGVNR.includes("Live Shroom")) {
+         xp[item.author.id].Live__Shroom += 1;
+        } else if (ItemGVNR.includes("Golden Pot")) {
+         xp[item.author.id].Golden__Pot += 1;
+        } else if (ItemGVNR.includes("Shooms Towel")) {
+         xp[item.author.id].Shooms__Towel += 1;
+        } else if (ItemGVNR.includes("Barney Fossils")) {
+         xp[item.author.id].Barney__Fossils += 1;
+        } else if (ItemGVNR.includes("Shooms Pillow")) {
+         xp[item.author.id].Shooms__Pillow += 1;
+        }
+      }
+  } else if (msg.content === "y-buy 2") {
+    if (xp[item.author.id].bal > 280) {
+        xp[item.author.id].bal -= 280;
+        ItemGVNE = itemsE[Math.floor(Math.random() * itemsE.length)]
+        msg.reply("Item added to inventory : " + ItemGVNE)
+
+      if (ItemGVNE.includes("Shroom4")) {
+         xp[item.author.id].Shroom4 += 1;
+        } else if (ItemGVNE.includes("Shroom11")) {
+         xp[item.author.id].Shroom11 += 1;
+        } else if (ItemGVNE.includes("Shooms Bedsheet")) {
+         xp[item.author.id].Shooms__Bedsheet += 1;
+        } else if (ItemGVNE.includes("Shooms Blanket")) {
+         xp[item.author.id].Shooms__Blanket += 1;
+        } else if (ItemGVNE.includes("Shroom0 Cane")) {
+         xp[item.author.id].Shroom0__Cane += 1;
+        }
+      }
+  }
 }
 
 if (msg.content.startsWith("y-sell")) {
