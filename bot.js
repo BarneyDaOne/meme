@@ -251,13 +251,6 @@ var ItemGVNR = 'None'
 var ItemGVNE = 'None'
 var totbal = xp[item.author.id].bal;
 
-if (xp[item.author.id].booster1 === 1) {
-  ItmSldC * +xp[item.author.id].booster1;
-  ItmSldU * +xp[item.author.id].booster1;
-  ItmSldR * +xp[item.author.id].booster1;
-  ItmSldE * +xp[item.author.id].booster1;
-}
-
 if (msg.content === "y-item") {
   xp[item.author.id].ItemRTY = rarity[Math.floor(Math.random() * rarity.length)];
   xp[item.author.id].paydue = 1;
@@ -351,6 +344,13 @@ if (msg.content.startsWith("y-buy")) {
 }
 
 if (msg.content.startsWith("y-sell")) {
+  if (xp[item.author.id].booster1 === 1) {
+  ItmSldC * +xp[item.author.id].booster1;
+  ItmSldU * +xp[item.author.id].booster1;
+  ItmSldR * +xp[item.author.id].booster1;
+  ItmSldE * +xp[item.author.id].booster1;
+}
+
   // Common
    if (msg.content.includes("stone")) {
      if (xp[item.author.id].Stone > 0) {
