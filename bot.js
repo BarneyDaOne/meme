@@ -213,7 +213,7 @@ const profitE = [
 
 if(!xp[item.author.id]){
   xp[item.author.id] = {
-    bal: 10000000,
+    bal: 100,
     Stone : 0,
     Jagged__Rock : 0,
     Mud__Ball : 0,
