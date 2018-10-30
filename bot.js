@@ -253,16 +253,16 @@ var totbal = xp[item.author.id].bal;
 
 if (xp[item.author.id].booster1 === 1) {
  for(var i=0; i<profitC.length; i++) {
-	  profitC[i] = profitC[i] * 2;
+	  profitC[i] = profitC[i] * 1.1;
   }
  for(var i=0; i<profitUC.length; i++) {
-	  profitUC[i] = profitUC[i] * 2;
+	  profitUC[i] = profitUC[i] * 1.1;
   }
  for(var i=0; i<profitR.length; i++) {
-	  profitR[i] = profitR[i] * 2;
+	  profitR[i] = profitR[i] * 1.1;
   }
  for(var i=0; i<profitE.length; i++) {
-	  profitE[i] = profitE[i] * 2;
+	  profitE[i] = profitE[i] * 1.1;
   }
 }
 
@@ -300,11 +300,10 @@ if (msg.content === "y-shop 1") {
   .setColor(0x49ffbc)
   .setTitle("The Booster Shoomster")
   .setDescription("Income comes easy with these one of kind boosters! 1 type of booster only, get more boosters by buying different types!")
-  .addField("`A` Movere (0.5x / 50% Income Booster) : 500ß", "This one is weighted due to it's plating, it has enough *momentum* to swing around in your pocket. 10ß will become 15ß.")
-  .addField("`B` Vagari (1.2x / 120% Income Booster) : 980ß", "*Extravagant* how these boosters work, multiplying the money you recieve can prove useful. 10ß will become 22ß.")
-  .addField("`C` Lavere (2.2x / 220% Income Booster) : 1500ß", "Expensive indeed, but to live *lavish*ly would cost a few pennies, am I wrong? 10ß will become 32ß.")
-  .addField("`D` Purus (3.5x / 350% Income Booster) : 3000ß", "This is Purus, a *pure* booster like this one holds great power. 10ß will become 45ß.")
-  .addField("`E` Ainos (4.8x / 480% Income Booster) : 5000ß", "Ainos, *enigma*tic how much power it has. 10ß will become 58ß.")
+  .addField("`A` Movere (10% Income Booster) : 500ß", "This one is weighted due to it's plating, it has enough *momentum* to swing around in your pocket. 10ß will become 15ß.")
+  .addField("`B` Vagari (20% Income Booster) : 1,500ß", "*Extravagant* how these boosters work, multiplying the money you recieve can prove useful. 10ß will become 22ß.")
+  .addField("`C` Lavere (30% Income Booster) : 6,000ß", "This is Lavere, created from *lavish* metals.")
+  .addField("`D` Purus (50% Income Booster) : 12,000ß", "This is Purus, a *pure* metallic booster made from the finest of metals.")
   msg.channel.send({embed});
 }
 
