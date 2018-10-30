@@ -243,6 +243,8 @@ if(!xp[item.author.id]){
 };
 }
 
+xp[item.author.id].bal.toFixed(2);
+
 var ItmSldC = '0'
 var ItmSldU = '0'
 var ItmSldR = '0'
