@@ -279,8 +279,8 @@ if (msg.content === "y-shop") {
   .addField("Vagari (1.2x Income Booster) : 980", "_ _")
   msg.channel.send({embed});
 }
-ff4988
-if (msg.content === "y-shop") {
+
+if (msg.content === "y-shop 1") {
   const embed = new Discord.RichEmbed()
   .setColor(0x49ffbc)
   .setTitle("The Booster Shoomster")
