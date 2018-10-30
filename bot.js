@@ -252,7 +252,7 @@ var ItemGVNE = 'None'
 var totbal = xp[item.author.id].bal;
 
 if (xp[item.author.id].booster1 === 1) {
-  profitC * 50%;
+  +profitC * 50%;
 }
 
 if (msg.content === "y-item") {
