@@ -243,8 +243,6 @@ if(!xp[item.author.id]){
 };
 }
 
-xp[item.author.id].bal.toFixed(2);
-
 var ItmSldC = '0'
 var ItmSldU = '0'
 var ItmSldR = '0'
@@ -254,6 +252,12 @@ var ItemGVNU = 'None'
 var ItemGVNR = 'None'
 var ItemGVNE = 'None'
 var totbal = xp[item.author.id].bal;
+
+xp[item.author.id].bal.toFixed(3);
+ItmSldC.toFixed(3);
+ItmSldU.toFixed(3);
+ItmSldR.toFixed(3);
+ItmSldE.toFixed(3);
 
 if (xp[item.author.id].booster1 === 1) {
  for(var i=0; i<profitC.length; i++) {
