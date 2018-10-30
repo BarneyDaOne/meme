@@ -253,13 +253,13 @@ var totbal = xp[item.author.id].bal;
 
 if (xp[item.author.id].booster1 === 1) {
   for(var i=0; i<profitC.length; i++) {
-	  profitC[i] = profitC[i] * 0.5 + profitC[i];
+	  profitC[i] = profitC[i] * 1.5;
   } else for(var i=0; i<profitUC.length; i++) {
-	  profitUC[i] = profitUC[i] * 0.5 + profitUC[i];
+	  profitUC[i] = profitUC[i] * 1.5;
   } else for(var i=0; i<profitR.length; i++) {
-	  profitR[i] = profitR[i] * 0.5 + profitR[i];
+	  profitR[i] = profitR[i] * 1.5;
   } else for(var i=0; i<profitE.length; i++) {
-	  profitE[i] = profitE[i] * 0.5 + profitE[i];
+	  profitE[i] = profitE[i] * 1.5];
   }
 }
 
