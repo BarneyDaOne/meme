@@ -279,6 +279,19 @@ if (msg.content === "y-shop") {
   .addField("Vagari (1.2x Income Booster) : 980", "_ _")
   msg.channel.send({embed});
 }
+ff4988
+if (msg.content === "y-shop") {
+  const embed = new Discord.RichEmbed()
+  .setColor(0x49ffbc)
+  .setTitle("The Booster Shoomster")
+  .setDescription("Income comes easy with these one of kind boosters! 1 type of booster only, get more boosters by buying different types!")
+  .addField("Movere (0.5x Income Booster) : 500", "Pretty cool, right? 10ß will become 15ß!")
+  .addField("Vagari (1.2x Income Booster) : 980", "I like this one, 10ß will become 22ß!")
+  .addField("Lavere (2.2x Income Booster) : 1500", "Pretty expensive, I agree but, 10ß will become 32ß!")
+  .addField("Purus (3.5x Income Booster) : 3000", "This is Purus, Purely amazing. 10ß will become 45ß!")
+  .addField("Ainos (4.8x Income Booster) : 5000", "Enigmatic how this one works, 480% income boost. 10ß will become 58ß.")
+  msg.channel.send({embed});
+}
 
 if (msg.content.startsWith("y-sell")) {
   // Common
