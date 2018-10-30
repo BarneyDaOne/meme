@@ -274,9 +274,7 @@ if (msg.content === "y-shop") {
   .addField("Fragment of the Omega : 1500ß", "I'm not sure about where this item comes from, but it has an suspicious aura.")
   .addField("Shard of the Omega : 1500ß", "This is a bigger part of that Omega fragment, they look like a key when put together.")
   .addField("Key of the Omega : Fragment and Shard of the Omega", "The price you pay for this is well spent, this key unlocks Omega items (OMEGA).")
-  .addField("World Crest : 5200", "A beauty this item is, I heard that there 3 World items and they seek the bearer of this crest. I'm not sure how I got it though, or even any item I have here that I comment about.")
-  .addField("Movere (0.5x Income Booster) : 500", "_ _")
-  .addField("Vagari (1.2x Income Booster) : 980", "_ _")
+  .addField("World Crest : 5200ß", "A beauty this item is, I heard that there 3 World items and they seek the bearer of this crest. I'm not sure how I got it though, or even any item I have here that I comment about.")
   msg.channel.send({embed});
 }
 
@@ -285,11 +283,11 @@ if (msg.content === "y-shop 1") {
   .setColor(0x49ffbc)
   .setTitle("The Booster Shoomster")
   .setDescription("Income comes easy with these one of kind boosters! 1 type of booster only, get more boosters by buying different types!")
-  .addField("Movere (0.5x Income Booster) : 500", "Pretty cool, right? 10ß will become 15ß!")
-  .addField("Vagari (1.2x Income Booster) : 980", "I like this one, 10ß will become 22ß!")
-  .addField("Lavere (2.2x Income Booster) : 1500", "Pretty expensive, I agree but, 10ß will become 32ß!")
-  .addField("Purus (3.5x Income Booster) : 3000", "This is Purus, Purely amazing. 10ß will become 45ß!")
-  .addField("Ainos (4.8x Income Booster) : 5000", "Enigmatic how this one works, 480% income boost. 10ß will become 58ß.")
+  .addField("Movere (0.5x / 50% Income Booster) : 500ß", "This one is weighted due to it's plating, it has enough *momentum* to swing around in your pocket. 10ß will become 15ß.")
+  .addField("Vagari (1.2x / 120% Income Booster) : 980ß", "*Extravagant* how these boosters work, multiplying the money you recieve can prove useful. 10ß will become 22ß.")
+  .addField("Lavere (2.2x / 220% Income Booster) : 1500ß", "Expensive indeed, but to live *lavish*ly would cost a few pennies, am I wrong? 10ß will become 32ß.")
+  .addField("Purus (3.5x / 350% Income Booster) : 3000ß", "This is Purus, a *pure* booster like this one holds great power. 10ß will become 45ß.")
+  .addField("Ainos (4.8x / 480% Income Booster) : 5000ß", "Ainos, *enigma*tic how much power it has. 10ß will become 58ß.")
   msg.channel.send({embed});
 }
 
