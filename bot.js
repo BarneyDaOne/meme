@@ -176,39 +176,39 @@ const rarity = [
 ]
 
 const profitC = [
-  '2',
-  '4',
-  '7',
-  '11',
-  '14',
-  '17'
+  '2.000',
+  '4.000',
+  '7.000',
+  '11.000',
+  '14.000',
+  '17.000'
 ]
 
 const profitUC = [
-  '48',
-  '59',
-  '73',
-  '82',
-  '61',
-  '54'
+  '48.000',
+  '59.000',
+  '73.000',
+  '82.000',
+  '61.000',
+  '54.000'
 ]
 
 const profitR = [
-  '100',
-  '133',
-  '169',
-  '182',
-  '114',
-  '126'
+  '100.000',
+  '133.000',
+  '169.000',
+  '182.000',
+  '114.000',
+  '126.000'
 ]
 
 const profitE = [
-  '199',
-  '243',
-  '284',
-  '338',
-  '367',
-  '269'
+  '199.000',
+  '243.000',
+  '284.000',
+  '338.000',
+  '367.000',
+  '269.000'
 ]
 
 if(!xp[item.author.id]){
@@ -255,7 +255,7 @@ var totbal = xp[item.author.id].bal;
 
 // xp[item.author.id].bal.toFixed(3);
 
-/*if (xp[item.author.id].booster1 === 1) {
+if (xp[item.author.id].booster1 === 1) {
  for(var i=0; i<profitC.length; i++) {
 	  profitC[i] = profitC[i] * 1.1;
   }
@@ -307,7 +307,7 @@ var totbal = xp[item.author.id].bal;
  for(var i=0; i<profitE.length; i++) {
 	  profitE[i] = profitE[i] * 1.5;
   }
-}*/
+}
 
 if (msg.content === "y-item") {
   xp[item.author.id].ItemRTY = rarity[Math.floor(Math.random() * rarity.length)];
