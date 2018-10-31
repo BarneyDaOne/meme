@@ -255,7 +255,7 @@ var totbal = xp[item.author.id].bal;
 
 // xp[item.author.id].bal.toFixed(3);
 
-if (xp[item.author.id].booster1 === 1) {
+/*if (xp[item.author.id].booster1 === 1) {
  for(var i=0; i<profitC.length; i++) {
 	  profitC[i] = profitC[i] * 1.1;
   }
@@ -307,7 +307,7 @@ if (xp[item.author.id].booster1 === 1) {
  for(var i=0; i<profitE.length; i++) {
 	  profitE[i] = profitE[i] * 1.5;
   }
-}
+}*/
 
 if (msg.content === "y-item") {
   xp[item.author.id].ItemRTY = rarity[Math.floor(Math.random() * rarity.length)];
