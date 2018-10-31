@@ -426,7 +426,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Stone -= 1;
 
-      msg.reply("Item sold for " + ItmSldC.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("jagged rock")) {
      if (xp[item.author.id].Jagged__Rock > 0) {
@@ -434,7 +434,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Jagged__Rock -= 1;
 
-      msg.reply("Item sold for " + ItmSldC.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("mud ball")) {
      if (xp[item.author.id].Mud__Ball > 0) {
@@ -442,7 +442,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Mud__Ball -= 1;
 
-      msg.reply("Item sold for " + ItmSldC.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("broken plate")) {
      if (xp[item.author.id].Broken__Plate > 0) {
@@ -450,7 +450,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Broken__Plate -= 1;
 
-      msg.reply("Item sold for " + ItmSldC.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else if (msg.content.includes("stick")) {
      if (xp[item.author.id].Stick > 0) {
@@ -458,7 +458,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldC;
       xp[item.author.id].Stick -= 1;
 
-      msg.reply("Item sold for " + ItmSldC.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldC + "ß");
      }
    } else
  // Uncommon
@@ -468,7 +468,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldU;
       xp[item.author.id].Old__Vase -= 1;
 
-      msg.reply("Item sold for " + ItmSldU.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldU + "ß");
      }
    } else if (msg.content.includes("fossil")) {
      if (xp[item.author.id].Fossil > 0) {
@@ -476,7 +476,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldU;
       xp[item.author.id].Fossil -= 1;
 
-      msg.reply("Item sold for " + ItmSldU.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldU + "ß");
      }
    } else if (msg.content.includes("broken sword")) {
      if (xp[item.author.id].Broken__Sword > 0) {
@@ -484,7 +484,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldU;
       xp[item.author.id].Broken__Sword -= 1;
 
-      msg.reply("Item sold for " + ItmSldU.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldU + "ß");
      }
    } else if (msg.content.includes("ancient plate")) {
      if (xp[item.author.id].Ancient__Plate > 0) {
@@ -492,7 +492,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldU;
       xp[item.author.id].Ancient__Plate -= 1;
 
-      msg.reply("Item sold for " + ItmSldU.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldU + "ß");
      }
    } else if (msg.content.includes("shining rock")) {
      if (xp[item.author.id].Shining__Rock > 0) {
@@ -500,7 +500,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldU;
       xp[item.author.id].Shining__Rock -= 1;
 
-      msg.reply("Item sold for " + ItmSldU.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldU + "ß");
      }
    } else 
 // Rare
@@ -510,7 +510,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldR;
       xp[item.author.id].Golden__Pot -= 1;
 
-      msg.reply("Item sold for " + ItmSldR.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldR + "ß");
      }
    } else if (msg.content.includes("shooms towel")) {
      if (xp[item.author.id].Shooms__Towel > 0) {
@@ -518,7 +518,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldR;
       xp[item.author.id].Shooms__Towel -= 1;
 
-      msg.reply("Item sold for " + ItmSldR.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldR + "ß");
      }
    } else if (msg.content.includes("live shroom")) {
      if (xp[item.author.id].Live__Shroom > 0) {
@@ -526,7 +526,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldR;
       xp[item.author.id].Live__Shroom -= 1;
 
-      msg.reply("Item sold for " + ItmSldR.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldR + "ß");
      }
    } else if (msg.content.includes("Barney__Fossils")) {
      if (xp[item.author.id].Barney__Fossils > 0) {
@@ -534,7 +534,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldR;
       xp[item.author.id].Barney__Fossils -= 1;
 
-      msg.reply("Item sold for " + ItmSldR.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldR + "ß");
      }
    } else if (msg.content.includes("shooms pillow")) {
      if (xp[item.author.id].Shooms__Pillow > 0) {
@@ -542,7 +542,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldR;
       xp[item.author.id].Shooms__Pillow -= 1;
 
-      msg.reply("Item sold for " + ItmSldR.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldR + "ß");
      }
    } else
 // Epic
@@ -552,7 +552,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldE;
       xp[item.author.id].Shroom4 -= 1;
 
-      msg.reply("Item sold for " + ItmSldE.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldE + "ß");
      }
    } else if (msg.content.includes("Shroom11")) {
      if (xp[item.author.id].Shroom11 > 0) {
@@ -560,7 +560,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldE;
       xp[item.author.id].Shroom11 -= 1;
 
-      msg.reply("Item sold for " + ItmSldE.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldE + "ß");
      }
    } else if (msg.content.includes("shooms bedsheet")) {
      if (xp[item.author.id].Shooms__Bedsheet > 0) {
@@ -568,7 +568,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldE;
       xp[item.author.id].Shooms__Bedsheet -= 1;
 
-      msg.reply("Item sold for " + ItmSldE.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldE + "ß");
      }
    } else if (msg.content.includes("shooms blanket")) {
      if (xp[item.author.id].Shooms__Blanket > 0) {
@@ -576,7 +576,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldE;
       xp[item.author.id].Shooms__Blanket -= 1;
 
-      msg.reply("Item sold for " + ItmSldE.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldE + "ß");
      }
    } else if (msg.content.includes("shroom0 cane")) {
      if (xp[item.author.id].Shroom0__Cane > 0) {
@@ -584,7 +584,7 @@ if (msg.content.startsWith("y-sell")) {
       xp[item.author.id].bal = xp[item.author.id].bal += +ItmSldE;
       xp[item.author.id].Shroom0__Cane -= 1;
 
-      msg.reply("Item sold for " + ItmSldE.toFixed(2) + "ß");
+      msg.reply("Item sold for " + ItmSldE + "ß");
      }
    }
 }
